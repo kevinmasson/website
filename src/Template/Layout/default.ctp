@@ -28,7 +28,7 @@ $this->end();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $siteTitle ?> - <?= $this->fetch('title') ?></title>
 
-    <?= $this->Html->meta('icon', 'favicon.ico') ?>
+    <?= $this->Html->meta('icon', 'favicon.png') ?>
     <?= $this->Html->css('bootstrap-reboot.min.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('bootstrap-grid.min.css') ?>
