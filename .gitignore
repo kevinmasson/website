@@ -1,0 +1,8 @@
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+composer.lock
+webroot/img/*
+webroot/media/*
+webroot/medias/*
