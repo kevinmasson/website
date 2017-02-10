@@ -81,7 +81,8 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 			<a href="https://github.com/kevinmasson/">github</a>, 
 			<a href="https://fr.linkedin.com/in/kevin-masson-968a35113">linkedin</a>, 
 			<a href="https://twitter.com/mindlessocto">twitter</a>, 
-			<a href="https://500px.com/km-studio">flickr</a> <span class="text-muted"> - v0.1</span>
+			<a href="https://500px.com/km-studio">flickr</a> <span class="text-muted"> - 
+			<a class="text-muted" href="https://github.com/kevinmasson/website">v0.1</a></span>
 		</span>
 	</nav>
     </footer>
