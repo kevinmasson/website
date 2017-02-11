@@ -20,7 +20,7 @@ $this->end();
 <h1 class="sr-only">Freelance basé à Strasbourg</h1>
 <h2>Créateur indépendant</h2>
 <hr>
-<p class="text-justify">Je me présente, Kevin Masson, étudiant en 3ème année de licence informatique et motion designer freelance. Étant passioné par tout ce qui touche l'art numérique et la programmation, je propose principalement des services de motion design, mais aussi de graphisme et de web design. Je pratique aussi beaucoup la photographie. Toutes ces compétences  me permettent d'intervenir sur diverses projets.</p>
+<p class="text-justify">Je me présente, Kevin Masson, étudiant en 3ème année de licence informatique et motion designer freelance. Étant passioné par tout ce qui touche l'art numérique et la programmation, je propose principalement mes services de motion design, mais aussi de graphisme et de web design. Je pratique aussi beaucoup la photographie, ce qui me permet de sortir un peu mon nez dehors(et oui, je ne suis pas en info pour rien) et d'avoir un meilleur oeil critique sur ce que je fait ! Toutes ces compétences  me permettent d'intervenir sur diverses projets. Vous retrouverez dans mon portfolio quelques uns d'entre eux.</p>
 
 <p style="text-align:center;"><a href="<?= Router::url(['_name' => 'contact']); ?>" class="btn btn-outline-success btn-lg"><?= __('Me contacter') ?></a></p>
 <h2 class="sr-only"><?= __("Mes dernières créations");?></h2>

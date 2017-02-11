@@ -33,7 +33,7 @@ $this->end();
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('bootstrap-grid.min.css') ?>
     <?= $this->Html->script('jquery.min.js') ?>
-    <?= $this->Html->script('bootstrap.min.js') ?> <?= $this->Html->script('tinymce/tinymce.min.js') ?> 
+    <?= $this->Html->script('bootstrap.min.js') ?> <?= $this->Html->script('tinymce/tinymce.min.js') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -45,10 +45,10 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
    echo $this->Element('admin_nav');
 ?>
 	<nav class="navbar navbar-full navbar-dark bg-inverse">
-	<button class="navbar-toggler hidden-lg-up" 
-		type="button" data-toggle="collapse" 
-		data-target="#regularNavResponsive" 
-		aria-controls="regularNavResponsive" aria-expanded="false" 
+	<button class="navbar-toggler hidden-lg-up"
+		type="button" data-toggle="collapse"
+		data-target="#regularNavResponsive"
+		aria-controls="regularNavResponsive" aria-expanded="false"
 		aria-label="Toggle navigation">
 	</button>
 	<div class="collapse navbar-toggleable-md" id="regularNavResponsive">
@@ -58,10 +58,10 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 		<li class="nav-item <?= $currentUrl === '/' ? 'active' : ''; ?>">
 			<a class="nav-link" href="<?= Router::url(['_name' => 'home']) ?>">Accueil<span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item <?= substr($currentUrl, 0, strlen('/portfolio')) === '/portfolio' ? 'active' : ''; ?>">		
+			<li class="nav-item <?= substr($currentUrl, 0, strlen('/portfolio')) === '/portfolio' ? 'active' : ''; ?>">
 				<a class="nav-link" href="<?= Router::url(['_name' => 'portfolio']); ?>">Portfolio</a>
 			</li>
-			<li class="nav-item <?= $currentUrl === '/contact' ? 'active' : ''; ?>">		
+			<li class="nav-item <?= $currentUrl === '/contact' ? 'active' : ''; ?>">
 				<a class="nav-link" href="<?= Router::url(['_name' => 'contact']); ?>">Contact</a>
 			</li>
 		</ul>
@@ -74,14 +74,14 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
     <footer>
 	<nav class="navbar navbar-fixed-bottom navbar-light navbar-full bg-faded">
 		<span class="navbar-text float-xs-left">
-			2016 &#169; Tous droits reservés
+			2016 &#169; Tout droits reservés
 		</span>
 		<span class="navbar-text float-xs-right">
-			<a href="https://www.facebook.com/kmassonstudio/">facebook</a>, 
-			<a href="https://github.com/kevinmasson/">github</a>, 
-			<a href="https://fr.linkedin.com/in/kevin-masson-968a35113">linkedin</a>, 
-			<a href="https://twitter.com/mindlessocto">twitter</a>, 
-			<a href="https://500px.com/km-studio">flickr</a> <span class="text-muted"> - 
+			<a href="https://www.facebook.com/kmassonstudio/">facebook</a>,
+			<a href="https://github.com/kevinmasson/">github</a>,
+			<a href="https://fr.linkedin.com/in/kevin-masson-968a35113">linkedin</a>,
+			<a href="https://twitter.com/mindlessocto">twitter</a>,
+			<a href="https://500px.com/km-studio">flickr</a> <span class="text-muted"> -
 			<a class="text-muted" href="https://github.com/kevinmasson/website">v0.1</a></span>
 		</span>
 	</nav>

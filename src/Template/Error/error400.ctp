@@ -35,7 +35,7 @@ if (Configure::read('debug')):
     $this->end();
 endif;
 ?>
-<div class="row">	
+<div class="row">
 	<div class="col-md-7">
 <?= $this->Html->image('missing.gif', ['class' => 'img-fluid']); ?>
 <?= $fail; ?>
@@ -44,7 +44,7 @@ endif;
   <h1 class="my-4">Woops !</h1>
   <p class="lead">Il semblerait que la page que vous avez demander n'existe pas ou n'existe plus...</p>
   <hr class="my-4">
-  <p>Faites plus attention la prochainne fois ;).</p>
+  <p>Faites plus attention la prochaine fois ;).</p>
   <p class="lead">
   <a class="btn btn-primary btn-lg" href="<?= Router::url(['_name' => 'home']); ?>" role="button">Retourner à l'accueil</a>
    </p>

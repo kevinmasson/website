@@ -32,97 +32,97 @@ use Cake\I18n\FrozenTime;
 class AppController extends Controller
 {
 
-	public $helpers = [
-		'Html' => [
-			'className' => 'Bootstrap.BootstrapHtml'
-		],
-		'Form' => [
-			'className' => 'Bootstrap.BootstrapForm'
-		],
-		'Paginator' => [
-			'className' => 'Bootstrap.BootstrapPaginator'
-		],
-		'Modal' => [
-			'className' => 'Bootstrap.BootstrapModal'
-		]
-	];
+    public $helpers = [
+        'Html' => [
+            'className' => 'Bootstrap.BootstrapHtml'
+        ],
+        'Form' => [
+            'className' => 'Bootstrap.BootstrapForm'
+        ],
+        'Paginator' => [
+            'className' => 'Bootstrap.BootstrapPaginator'
+        ],
+        'Modal' => [
+            'className' => 'Bootstrap.BootstrapModal'
+        ]
+    ];
 
 
-	/**
-	 * Initialization hook method.
-	 *
-	 * Use this method to add common initialization code like loading components.
-	 *
-	 * e.g. `$this->loadComponent('Security');`
-	 *
-	 * @return void
-	 */
-	public function initialize()
-	{
-		parent::initialize();
+    /**
+     * Initialization hook method.
+     *
+     * Use this method to add common initialization code like loading components.
+     *
+     * e.g. `$this->loadComponent('Security');`
+     *
+     * @return void
+     */
+    public function initialize()
+    {
+        parent::initialize();
 
-		$this->set('form_templates', Configure::read('Templates'));
-		$this->loadComponent('RequestHandler');
-		$this->loadComponent('Flash');
-		$this->loadComponent('Auth', [
-			'loginRedirect' => [
-				'_name' => 'admin_home'
-			],
-			'logoutRedirect' => [
-				'_name' => 'home'
-			],
-			'authError' => 'Vous n\'êtes pas autorisé à accéder ici.',
-			'authorize' => ['Controller'],
-			'unauthorizedRedirect' => false
-		]);
+        $this->set('form_templates', Configure::read('Templates'));
+        $this->loadComponent('RequestHandler');
+        $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                '_name' => 'admin_home'
+            ],
+            'logoutRedirect' => [
+                '_name' => 'home'
+            ],
+            'authError' => 'Vous n\'êtes pas autorisé à accéder ici.',
+            'authorize' => ['Controller'],
+            'unauthorizedRedirect' => false
+        ]);
 
-		/*
-		 * Enable the following components for recommended CakePHP security settings.
-		 * see http://book.cakephp.org/3.0/en/controllers/components/security.html
-		 */
-		//$this->loadComponent('Security');
-		//$this->loadComponent('Csrf');
-		Time::setDefaultLocale('fr-FR'); // For any mutable DateTime
-		Time::setToStringFormat('dd/MM/yyyy HH:mm');
-		FrozenTime::setDefaultLocale('fr-FR'); // For any mutable DateFrozenTime
-		FrozenTime::setToStringFormat('dd/MM/yyyy HH:mm');
-	}
+        /*
+         * Enable the following components for recommended CakePHP security settings.
+         * see http://book.cakephp.org/3.0/en/controllers/components/security.html
+         */
+        //$this->loadComponent('Security');
+        //$this->loadComponent('Csrf');
+        Time::setDefaultLocale('fr-FR'); // For any mutable DateTime
+        Time::setToStringFormat('dd/MM/yyyy HH:mm');
+        FrozenTime::setDefaultLocale('fr-FR'); // For any mutable DateFrozenTime
+        FrozenTime::setToStringFormat('dd/MM/yyyy HH:mm');
+    }
 
-	/**
-	 * Before render callback.
-	 *
-	 * @param \Cake\Event\Event $event The beforeRender event.
-	 * @return \Cake\Network\Response|null|void
-	 */
-	public function beforeRender(Event $event)
-	{
-		if (!array_key_exists('_serialize', $this->viewVars) &&
-			in_array($this->response->type(), ['application/json', 'application/xml'])
-		) {
-			$this->set('_serialize', true);
-		}
-
-
-	}
-
-	public function beforeFilter(Event $event)
-	{
-
-		if($this->request->param('prefix') === 'admin'){
-			$this->Auth->deny();
-			$this->Auth->allow(['logout']);
-		}
-		else $this->Auth->allow();
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return \Cake\Network\Response|null|void
+     */
+    public function beforeRender(Event $event)
+    {
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+            in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
 
 
-		$this->set('userDetails', $this->Auth->user());
-	}
+    }
 
-	public function isAuthorized($user){
+    public function beforeFilter(Event $event)
+    {
 
-		if($this->request->param('prefix') === 'admin') return isset($user['role']) && $user['role'] === 'admin';
+        if($this->request->param('prefix') === 'admin'){
+            $this->Auth->deny();
+            $this->Auth->allow(['logout']);
+        }
+        else $this->Auth->allow();
 
-		return parent::isAuthorized($user);
 
-	}
+        $this->set('userDetails', $this->Auth->user());
+    }
+
+    public function isAuthorized($user){
+
+        if($this->request->param('prefix') === 'admin') return isset($user['role']) && $user['role'] === 'admin';
+
+        return parent::isAuthorized($user);
+
+    }
 }
