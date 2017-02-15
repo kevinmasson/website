@@ -45,3 +45,30 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* line 14, ../sass/_margins.scss */
+.m0a {
+  margin: 0 auto;
+}
+
+/* line 15, ../sass/_margins.scss */
+.ma0 {
+  margin: auto 0;
+}
+
+/* line 16, ../sass/_margins.scss */
+.maa {
+  margin: auto auto;
+}
+
+/* line 10, ../sass/app.scss */
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* line 15, ../sass/app.scss */
+.wrap-full {
+  width: 100%;
+  margin: 0 auto;
+}

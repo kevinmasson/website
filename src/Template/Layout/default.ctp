@@ -33,7 +33,7 @@ $this->end();
     <?= $this->fetch('css') ?>
 
 </head>
-<body>
+<body class="pt70 pb120">
 <?php
 if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
    echo $this->Element('admin_nav');
@@ -50,7 +50,9 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 	<a class="navbar-brand" href="<?= Router::url(['_name' => 'home']) ?>"><?= $siteTitle ?></a>
 		<ul class="nav navbar-nav">
 		<li class="nav-item <?= $currentUrl === '/' ? 'active' : ''; ?>">
-			<a class="nav-link" href="<?= Router::url(['_name' => 'home']) ?>">Accueil<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?= Router::url(['_name' => 'home']) ?>">
+                Accueil<span class="sr-only">(current)</span>
+            </a>
 			</li>
 			<li class="nav-item <?= substr($currentUrl, 0, strlen('/portfolio')) === '/portfolio' ? 'active' : ''; ?>">
 				<a class="nav-link" href="<?= Router::url(['_name' => 'portfolio']); ?>">Portfolio</a>
@@ -60,11 +62,9 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 			</li>
 		</ul>
 	</div>
-	</nav>
-    <div class="container" style='margin-top:40px;padding-bottom:120px;'>
+    </nav>
       <?= $this->Flash->render() ?>
       <?= $this->fetch('content') ?>
-    </div>
     <footer>
 	<nav class="navbar navbar-fixed-bottom navbar-light navbar-full bg-faded">
 		<span class="navbar-text float-xs-left">

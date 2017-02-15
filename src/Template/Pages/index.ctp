@@ -15,7 +15,7 @@ $this->end();
 
 
 ?>
-
+<div class="wrap">
 <div class="clear"></div>
 <h1 class="sr-only">Freelance basé à Strasbourg</h1>
 <h2>Créateur indépendant</h2>
@@ -34,4 +34,6 @@ echo $this->element("grid_creations", [
 <p class="text-center"><a href="<?= Router::url(['_name' => 'portfolio']); ?>" class="btn btn-outline-info "><?= __('Plus de créations') ?></a></p>
 <div class="alert alert-info" role="alert">
   <strong>En construction !</strong> Le site web est en cours de construction, celui sur lequel vous êtes actuellement n'est qu'une première version. Ne vous inquiétez donc pas, le thème bootstrap ne va pas rester là très longtemps !
+</div>
+
 </div>
