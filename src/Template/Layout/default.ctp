@@ -27,16 +27,10 @@ $this->end();
     <?= $this->Html->charset(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $siteTitle ?> - <?= $this->fetch('title') ?></title>
-
+    <?= $this->Html->css("app.css"); ?>
     <?= $this->Html->meta('icon', 'favicon.png') ?>
-    <?= $this->Html->css('bootstrap-reboot.min.css') ?>
-    <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('bootstrap-grid.min.css') ?>
-    <?= $this->Html->script('jquery.min.js') ?>
-    <?= $this->Html->script('bootstrap.min.js') ?> <?= $this->Html->script('tinymce/tinymce.min.js') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 
 </head>
 <body>
@@ -86,5 +80,8 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 		</span>
 	</nav>
     </footer>
+    <?= $this->Html->script('jquery.min.js') ?>
+    <?= $this->Html->script('bootstrap.min.js') ?> <?= $this->Html->script('tinymce/tinymce.min.js') ?>
+    <?= $this->fetch('script') ?>
 </body>
 </html>
