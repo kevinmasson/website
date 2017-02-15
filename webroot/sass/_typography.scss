@@ -1,0 +1,93 @@
+$fontsDir : "";
+$robotoDir : $fontsDir + "roboto/";
+
+// ##########################
+// FONT FACE
+// ##########################
+
+$roboRegular : $robotoDir + "Roboto-Regular-webfont";
+$roboLight : $robotoDir + "Roboto-Light-webfont";
+$roboBold : $robotoDir + "Roboto-Bold-webfont";
+$roboItalic : $robotoDir + "Roboto-Italic-webfont";
+$roboBoldItalic : $robotoDir + "Roboto-BoldItalic-webfont";
+
+@include font-face("Roboto Light",
+    font-files(
+        $roboLight + ".woff",
+        $roboLight + ".ttf",
+        $roboLight + ".svg"
+    ), $roboLight + ".eot", "300", normal);
+
+@include font-face("Roboto",
+    font-files(
+        $roboRegular + ".woff",
+        $roboRegular + ".ttf",
+        $roboRegular + ".svg"
+    ), $roboRegular + ".eot", "400", normal);
+
+@include font-face("Roboto Bold",
+    font-files(
+        $roboBold + ".woff",
+        $roboBold + ".ttf",
+        $roboBold + ".svg"
+    ), $roboBold + ".eot", "700", normal);
+
+@include font-face("Roboto Italic",
+    font-files(
+        $roboItalic + ".woff",
+        $roboItalic + ".ttf",
+        $roboItalic + ".svg"
+    ), $roboItalic + ".eot", "400", italic);
+
+
+// ##########################
+// FONT MIXIN
+// ##########################
+
+@mixin font($font:"Roboto", $style:normal, $weight:300){
+    @if $font == "Roboto" {
+        @if $style == italic {
+            font-family: "Roboto Italic";
+        } @else {
+            @if $weight < 301 {
+                font-family: "Roboto Light";
+            } @else if $weight < 650 {
+                font-family: "Roboto";
+            } @else {
+                font-family: "Roboto Bold";
+                $weight : 400;
+            }
+
+        }
+    }
+    // Other fonts..
+
+
+
+    // In any case
+    font-style: $style;
+    font-weight: $weight;
+
+}
+
+
+// ##########################
+// TYPO
+// ##########################
+
+body{
+    @include font($font:"Roboto", $style:normal, $weight:400);
+    font-size: 1.1em;
+}
+
+b, strong{
+    @include font($font:"Roboto", $style:normal, $weight:700);
+}
+
+i, em{
+    @include font($font:"Roboto", $style:italic, $weight:400);
+}
+
+b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b{
+    @include font($font:"Roboto", $style:italic, $weight:700);
+}

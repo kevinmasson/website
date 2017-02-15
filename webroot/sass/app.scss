@@ -1,6 +1,7 @@
 @import "meyer-reset";
-@import "settings";
 @import "compass";
+@import "settings";
+@import "typography";
 @import "margins";
 
 // ##########################
@@ -17,3 +18,8 @@
    @include m0a;
 }
 
+
+body{
+    color: #3E3E3E;
+    background-color: #f3f3f3;
+}
