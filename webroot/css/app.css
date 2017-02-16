@@ -74,33 +74,106 @@ table {
   font-weight: "400";
   font-style: italic;
 }
-/* line 78, ../sass/_typography.scss */
+/* line 90, ../sass/_typography.scss */
 body {
-  font-family: "Roboto";
+  font-family: Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: 0em;
 }
 
-/* line 83, ../sass/_typography.scss */
+/* line 97, ../sass/_typography.scss */
 b, strong {
-  font-family: "Roboto Bold";
+  font-family: Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
 }
 
-/* line 87, ../sass/_typography.scss */
+/* line 101, ../sass/_typography.scss */
 i, em {
-  font-family: "Roboto Italic";
+  font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 
-/* line 91, ../sass/_typography.scss */
+/* line 105, ../sass/_typography.scss */
 b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b {
-  font-family: "Roboto Italic";
+  font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 700;
+}
+
+/* line 109, ../sass/_typography.scss */
+p, ol, ul, blockquote, pre, code {
+  line-height: 1.3em;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.3em;
+  text-align: justify;
+}
+
+/* line 118, ../sass/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+/* line 120, ../sass/_typography.scss */
+h1.dot, h2.dot, h3.dot, h4.dot, h5.dot, h6.dot {
+  text-align: center;
+}
+/* line 122, ../sass/_typography.scss */
+h1.dot:after, h2.dot:after, h3.dot:after, h4.dot:after, h5.dot:after, h6.dot:after {
+  content: '\25CF';
+  display: block;
+  line-height: 29px;
+  font-size: 20px;
+}
+
+/* line 132, ../sass/_typography.scss */
+h1 {
+  font-family: "Roboto Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3em;
+  line-height: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+/* line 137, ../sass/_typography.scss */
+h2 {
+  font-size: 2em;
+  line-height: 0.75em;
+  margin-bottom: 0.375em;
+}
+
+/* line 141, ../sass/_typography.scss */
+h3 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* line 145, ../sass/_typography.scss */
+h4 {
+  font-size: 1.3em;
+  line-height: 1.15385em;
+  margin-bottom: 0.57692em;
+}
+
+/* line 149, ../sass/_typography.scss */
+h5 {
+  font-size: 1.1em;
+  line-height: 1.36364em;
+  margin-bottom: 0.68182em;
+}
+
+/* line 153, ../sass/_typography.scss */
+h6 {
+  font-size: 0.9em;
+  line-height: 1.66667em;
+  margin-bottom: 0.83333em;
 }
 
 /* line 14, ../sass/_margins.scss */

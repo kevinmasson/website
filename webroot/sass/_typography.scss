@@ -1,9 +1,9 @@
-$fontsDir : "";
-$robotoDir : $fontsDir + "roboto/";
-
 // ##########################
 // FONT FACE
 // ##########################
+
+$fontsDir : "";
+$robotoDir : $fontsDir + "roboto/";
 
 $roboRegular : $robotoDir + "Roboto-Regular-webfont";
 $roboLight : $robotoDir + "Roboto-Light-webfont";
@@ -44,27 +44,31 @@ $roboBoldItalic : $robotoDir + "Roboto-BoldItalic-webfont";
 // FONT MIXIN
 // ##########################
 
-@mixin font($font:"Roboto", $style:normal, $weight:300){
+@mixin font($font:Helvetica, $style:normal, $weight:300){
+    $fonts : Arial, sans-serif;
     @if $font == "Roboto" {
         @if $style == italic {
-            font-family: "Roboto Italic";
+            $fonts : "Roboto Italic",  $fonts;
         } @else {
             @if $weight < 301 {
-                font-family: "Roboto Light";
+                $fonts : "Roboto Light",  $fonts;
             } @else if $weight < 650 {
-                font-family: "Roboto";
+                $fonts : "Roboto",  $fonts;
             } @else {
-                font-family: "Roboto Bold";
+                $fonts : "Roboto Bold",  $fonts;
                 $weight : 400;
             }
 
         }
+    } @else if $font == Helvetica {
+        $fonts : Helvetica,  $fonts;
     }
     // Other fonts..
 
 
 
     // In any case
+    font-family: $fonts;
     font-style: $style;
     font-weight: $weight;
 
@@ -75,19 +79,77 @@ $roboBoldItalic : $robotoDir + "Roboto-BoldItalic-webfont";
 // TYPO
 // ##########################
 
+$body-lh : 1.5em;
+
+@mixin flm($size, $factor:1em){
+    font-size: $size;
+    line-height: $body-lh/$size*$factor;
+    margin-bottom: $body-lh/(2*$size)*$factor;
+}
+
 body{
-    @include font($font:"Roboto", $style:normal, $weight:400);
-    font-size: 1.1em;
+    @include font($style:normal, $weight:400);
+    font-size: 1em;
+    line-height: $body-lh;
+    letter-spacing: 0em;
 }
 
 b, strong{
-    @include font($font:"Roboto", $style:normal, $weight:700);
+    @include font($style:normal, $weight:700);
 }
 
 i, em{
-    @include font($font:"Roboto", $style:italic, $weight:400);
+    @include font($style:italic, $weight:400);
 }
 
 b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b{
-    @include font($font:"Roboto", $style:italic, $weight:700);
+    @include font($style:italic, $weight:700);
+}
+
+p, ol, ul, blockquote, pre, code{
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.3em;
+    text-align: justify;
+}
+
+// HEADINGS
+
+#{headings()}{
+    @include font($font:"Roboto", $weight:400);
+    &.dot{
+        text-align: center;
+        &:after{
+            content: '\25CF';
+            display: block;
+            line-height: 29px;
+            font-size: 20px;
+        }
+    }
+}
+
+
+h1{
+    @include font($font:"Roboto", $weight:700);
+    @include flm(3em);
+}
+
+h2 {
+    @include flm(2em);
+}
+
+h3 {
+    @include flm(1.5em);
+}
+
+h4 {
+    @include flm(1.3em);
+}
+
+h5 {
+    @include flm(1.1em);
+}
+
+h6 {
+    @include flm(.9em);
 }
