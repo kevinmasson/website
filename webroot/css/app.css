@@ -100,40 +100,48 @@ body {
   font-style: normal;
   font-weight: 400;
   color: #262525;
-  font-size: 1rem;
+  font-size: 12.5pt;
   line-height: 1.5em;
   letter-spacing: 0rem;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
-/* line 120, ../sass/_typography.scss */
+/* line 126, ../sass/_typography.scss */
 b, strong {
   font-family: Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
-/* line 124, ../sass/_typography.scss */
+/* line 130, ../sass/_typography.scss */
 i, em {
   font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 
-/* line 128, ../sass/_typography.scss */
+/* line 134, ../sass/_typography.scss */
 b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b {
   font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 700;
 }
 
-/* line 132, ../sass/_typography.scss */
+/* line 138, ../sass/_typography.scss */
 p, ol, ul, blockquote, pre, code {
   margin-bottom: 1.3rem;
   line-height: 1.3em;
   text-align: justify;
   text-shadow: 1px 1px 1px #dadada;
+  overflow-wrap: normal;
+  text-overflow: ellipsis;
 }
-/* line 138, ../sass/_typography.scss */
+/* line 146, ../sass/_typography.scss */
 p a, ol a, ul a, blockquote a, pre a, code a {
   text-decoration: none;
   border-bottom: 1px dashed #747070;
@@ -141,41 +149,48 @@ p a, ol a, ul a, blockquote a, pre a, code a {
   text-shadow: 1px 1px 1px #e6e6e6;
 }
 
-/* line 150, ../sass/_typography.scss */
+/* line 158, ../sass/_typography.scss */
+hr {
+  border-color: #dadada;
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* line 164, ../sass/_typography.scss */
 a {
   color: #eaaa3b;
 }
 
-/* line 154, ../sass/_typography.scss */
+/* line 168, ../sass/_typography.scss */
 .small, small {
   font-size: 60%;
 }
 
-/* line 158, ../sass/_typography.scss */
+/* line 172, ../sass/_typography.scss */
 .mark, mark {
   padding: .2em;
   background-color: #fcf8e3;
 }
 
-/* line 165, ../sass/_typography.scss */
+/* line 179, ../sass/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   margin-bottom: .5rem;
 }
-/* line 167, ../sass/_typography.scss */
+/* line 181, ../sass/_typography.scss */
 h1.dot, h2.dot, h3.dot, h4.dot, h5.dot, h6.dot {
   text-align: center;
 }
-/* line 169, ../sass/_typography.scss */
+/* line 183, ../sass/_typography.scss */
 h1.dot:after, h2.dot:after, h3.dot:after, h4.dot:after, h5.dot:after, h6.dot:after {
   content: '\25CF';
   display: block;
   line-height: 29px;
   font-size: 20px;
 }
-/* line 177, ../sass/_typography.scss */
+/* line 191, ../sass/_typography.scss */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   color: #747070;
   font-family: "Roboto Light", Arial, sans-serif;
@@ -183,7 +198,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-weight: 300;
 }
 
-/* line 187, ../sass/_typography.scss */
+/* line 201, ../sass/_typography.scss */
 h1 {
   font-family: "Roboto Bold", Arial, sans-serif;
   font-style: normal;
@@ -192,31 +207,31 @@ h1 {
   line-height: 1.1;
 }
 
-/* line 192, ../sass/_typography.scss */
+/* line 206, ../sass/_typography.scss */
 h2 {
   font-size: 2em;
   line-height: 1.1;
 }
 
-/* line 196, ../sass/_typography.scss */
+/* line 210, ../sass/_typography.scss */
 h3 {
   font-size: 1.5em;
   line-height: 1.1;
 }
 
-/* line 200, ../sass/_typography.scss */
+/* line 214, ../sass/_typography.scss */
 h4 {
   font-size: 1.3em;
   line-height: 1.1;
 }
 
-/* line 204, ../sass/_typography.scss */
+/* line 218, ../sass/_typography.scss */
 h5 {
   font-size: 1.1em;
   line-height: 1.1;
 }
 
-/* line 208, ../sass/_typography.scss */
+/* line 222, ../sass/_typography.scss */
 h6 {
   font-size: 0.9em;
   line-height: 1.1;
@@ -237,19 +252,28 @@ h6 {
   margin: auto auto;
 }
 
-/* line 11, ../sass/app.scss */
+/* line 13, ../sass/app.scss */
 .wrap {
   max-width: 960px;
-  margin: 0 auto;
 }
 
-/* line 16, ../sass/app.scss */
+/* line 17, ../sass/app.scss */
 .wrap-full {
   width: 100%;
-  margin: 0 auto;
 }
 
-/* line 22, ../sass/app.scss */
+/* line 21, ../sass/app.scss */
+.wrap, .wrap-full {
+  margin: 0 auto;
+}
+@media screen and (max-width: 63.9375em) {
+  /* line 21, ../sass/app.scss */
+  .wrap, .wrap-full {
+    padding: 1em;
+  }
+}
+
+/* line 31, ../sass/app.scss */
 body {
   background-color: #f3f3f3;
 }

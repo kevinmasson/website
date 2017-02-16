@@ -1,6 +1,7 @@
 @import "meyer-reset";
 @import "compass";
 @import "settings";
+@import "queries";
 @import "typography";
 @import "margins";
 
@@ -8,15 +9,23 @@
 // WRAPPING
 // ##########################
 
+
 .wrap{
    max-width: $wrap-width;
-   @include m0a;
 }
 
 .wrap-full{
    width: 100%;
-   @include m0a;
 }
+
+.wrap, .wrap-full{
+   @include m0a;
+
+   @include breakpoint(medium down){
+	   padding: 1em;
+   }
+}
+
 
 
 body{

@@ -112,9 +112,15 @@ $body-lh : 1.5em;
 body{
     @include font($style:normal, $weight:400);
     color: $color;
-    font-size: 1rem;
+    font-size: 12.5pt;
     line-height: $body-lh;
     letter-spacing: 0rem;
+	word-break: normal;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
 }
 
 b, strong{
@@ -133,7 +139,9 @@ p, ol, ul, blockquote, pre, code{
     margin-bottom: 1.3rem;
     line-height: 1.3em;
     text-align: justify;
-    text-shadow: 1px 1px 1px darken($background, 10%);;
+    text-shadow: 1px 1px 1px darken($background, 10%);
+	overflow-wrap: normal;
+	text-overflow: ellipsis;
 
     a {
         text-decoration: none;
@@ -145,6 +153,12 @@ p, ol, ul, blockquote, pre, code{
             // Nothing
         }
     }
+}
+
+hr{
+	border-color: darken($background, 10%);
+	border-style: solid;
+	border-width: 2px;
 }
 
 a{
