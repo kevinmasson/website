@@ -74,6 +74,25 @@ $roboBoldItalic : $robotoDir + "Roboto-BoldItalic-webfont";
 
 }
 
+// ##########################
+// UTILS
+// ##########################
+
+.text-justify{
+    text-align: justify;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-right:justify;
+}
+
+.text-muted{
+    color: lighten($color, 30%);
+}
 
 // ##########################
 // TYPO
@@ -81,17 +100,21 @@ $roboBoldItalic : $robotoDir + "Roboto-BoldItalic-webfont";
 
 $body-lh : 1.5em;
 
-@mixin flm($size, $factor:1em){
+@mixin flm($size, $factor:1em, $margin:1){
     font-size: $size;
-    line-height: $body-lh/$size*$factor;
-    margin-bottom: $body-lh/(2*$size)*$factor;
+    line-height: 1.1;
+    //line-height: ($body-lh/$size)*$factor;
+    // @if $margin == 1{
+    //     margin-bottom: $body-lh/($size)*$factor;
+    // }
 }
 
 body{
     @include font($style:normal, $weight:400);
-    font-size: 1em;
+    color: $color;
+    font-size: 1rem;
     line-height: $body-lh;
-    letter-spacing: 0em;
+    letter-spacing: 0rem;
 }
 
 b, strong{
@@ -107,10 +130,34 @@ b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b{
 }
 
 p, ol, ul, blockquote, pre, code{
+    margin-bottom: 1.3rem;
     line-height: 1.3em;
-    letter-spacing: 0.01em;
-    margin-bottom: 1.3em;
     text-align: justify;
+    text-shadow: 1px 1px 1px darken($background, 10%);;
+
+    a {
+        text-decoration: none;
+        border-bottom: 1px dashed lighten($color, 30%);
+        color: lighten($color, 30%);
+        text-shadow: 1px 1px 1px darken($background, 5%);
+
+        &:before{
+            // Nothing
+        }
+    }
+}
+
+a{
+    color: $primaryColor;
+}
+
+.small, small{
+    font-size: 60%;
+}
+
+.mark, mark {
+    padding: .2em;
+    background-color: #fcf8e3;
 }
 
 // HEADINGS
@@ -126,6 +173,14 @@ p, ol, ul, blockquote, pre, code{
             font-size: 20px;
         }
     }
+
+    small {
+        color: lighten($color, 30%);
+        @include font($font:"Roboto", $weight:300);
+
+    }
+
+    margin-bottom: .5rem;
 }
 
 

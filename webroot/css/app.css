@@ -74,106 +74,152 @@ table {
   font-weight: "400";
   font-style: italic;
 }
-/* line 90, ../sass/_typography.scss */
+/* line 81, ../sass/_typography.scss */
+.text-justify {
+  text-align: justify;
+}
+
+/* line 85, ../sass/_typography.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 89, ../sass/_typography.scss */
+.text-right {
+  text-right: justify;
+}
+
+/* line 93, ../sass/_typography.scss */
+.text-muted {
+  color: #747070;
+}
+
+/* line 112, ../sass/_typography.scss */
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  color: #262525;
+  font-size: 1rem;
   line-height: 1.5em;
-  letter-spacing: 0em;
+  letter-spacing: 0rem;
 }
 
-/* line 97, ../sass/_typography.scss */
+/* line 120, ../sass/_typography.scss */
 b, strong {
   font-family: Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
-/* line 101, ../sass/_typography.scss */
+/* line 124, ../sass/_typography.scss */
 i, em {
   font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 
-/* line 105, ../sass/_typography.scss */
+/* line 128, ../sass/_typography.scss */
 b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b {
   font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 700;
 }
 
-/* line 109, ../sass/_typography.scss */
+/* line 132, ../sass/_typography.scss */
 p, ol, ul, blockquote, pre, code {
+  margin-bottom: 1.3rem;
   line-height: 1.3em;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.3em;
   text-align: justify;
+  text-shadow: 1px 1px 1px #dadada;
+}
+/* line 138, ../sass/_typography.scss */
+p a, ol a, ul a, blockquote a, pre a, code a {
+  text-decoration: none;
+  border-bottom: 1px dashed #747070;
+  color: #747070;
+  text-shadow: 1px 1px 1px #e6e6e6;
 }
 
-/* line 118, ../sass/_typography.scss */
+/* line 150, ../sass/_typography.scss */
+a {
+  color: #eaaa3b;
+}
+
+/* line 154, ../sass/_typography.scss */
+.small, small {
+  font-size: 60%;
+}
+
+/* line 158, ../sass/_typography.scss */
+.mark, mark {
+  padding: .2em;
+  background-color: #fcf8e3;
+}
+
+/* line 165, ../sass/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
+  margin-bottom: .5rem;
 }
-/* line 120, ../sass/_typography.scss */
+/* line 167, ../sass/_typography.scss */
 h1.dot, h2.dot, h3.dot, h4.dot, h5.dot, h6.dot {
   text-align: center;
 }
-/* line 122, ../sass/_typography.scss */
+/* line 169, ../sass/_typography.scss */
 h1.dot:after, h2.dot:after, h3.dot:after, h4.dot:after, h5.dot:after, h6.dot:after {
   content: '\25CF';
   display: block;
   line-height: 29px;
   font-size: 20px;
 }
+/* line 177, ../sass/_typography.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: #747070;
+  font-family: "Roboto Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
 
-/* line 132, ../sass/_typography.scss */
+/* line 187, ../sass/_typography.scss */
 h1 {
   font-family: "Roboto Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 3em;
-  line-height: 0.5em;
-  margin-bottom: 0.25em;
+  line-height: 1.1;
 }
 
-/* line 137, ../sass/_typography.scss */
+/* line 192, ../sass/_typography.scss */
 h2 {
   font-size: 2em;
-  line-height: 0.75em;
-  margin-bottom: 0.375em;
+  line-height: 1.1;
 }
 
-/* line 141, ../sass/_typography.scss */
+/* line 196, ../sass/_typography.scss */
 h3 {
   font-size: 1.5em;
-  line-height: 1em;
-  margin-bottom: 0.5em;
+  line-height: 1.1;
 }
 
-/* line 145, ../sass/_typography.scss */
+/* line 200, ../sass/_typography.scss */
 h4 {
   font-size: 1.3em;
-  line-height: 1.15385em;
-  margin-bottom: 0.57692em;
+  line-height: 1.1;
 }
 
-/* line 149, ../sass/_typography.scss */
+/* line 204, ../sass/_typography.scss */
 h5 {
   font-size: 1.1em;
-  line-height: 1.36364em;
-  margin-bottom: 0.68182em;
+  line-height: 1.1;
 }
 
-/* line 153, ../sass/_typography.scss */
+/* line 208, ../sass/_typography.scss */
 h6 {
   font-size: 0.9em;
-  line-height: 1.66667em;
-  margin-bottom: 0.83333em;
+  line-height: 1.1;
 }
 
 /* line 14, ../sass/_margins.scss */
@@ -205,6 +251,5 @@ h6 {
 
 /* line 22, ../sass/app.scss */
 body {
-  color: #3E3E3E;
   background-color: #f3f3f3;
 }
