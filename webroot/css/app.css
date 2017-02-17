@@ -47,56 +47,63 @@ table {
 }
 
 @font-face {
-  font-family: "Roboto Light";
-  src: url('../fonts/roboto/Roboto-Light-webfont.eot?1487171960');
-  src: url('../fonts/roboto/Roboto-Light-webfont.eot?&1487171960#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Light-webfont.woff?1487171960') format('woff'), url('../fonts/roboto/Roboto-Light-webfont.ttf?1487171960') format('truetype'), url('../fonts/roboto/Roboto-Light-webfont.svg?1487171960') format('svg');
-  font-weight: "300";
+  font-family: "RobotoSlab";
+  src: url('../fonts/roboto-slab/RobotoSlab-Regular-webfont.eot?1487315714');
+  src: url('../fonts/roboto-slab/RobotoSlab-Regular-webfont.eot?&1487315714#iefix') format('embedded-opentype'), url('../fonts/roboto-slab/RobotoSlab-Regular-webfont.woff?1487315714') format('woff'), url('../fonts/roboto-slab/RobotoSlab-Regular-webfont.ttf?1487315714') format('truetype'), url('../fonts/roboto-slab/RobotoSlab-Regular-webfont.svg?1487315714') format('svg');
+  font-weight: 400;
   font-style: normal;
+}
+@font-face {
+  font-family: "RobotoSlab";
+  src: url('../fonts/roboto-slab/RobotoSlab-Bold-webfont.eot?1487315714');
+  src: url('../fonts/roboto-slab/RobotoSlab-Bold-webfont.eot?&1487315714#iefix') format('embedded-opentype'), url('../fonts/roboto-slab/RobotoSlab-Bold-webfont.woff?1487315714') format('woff'), url('../fonts/roboto-slab/RobotoSlab-Bold-webfont.ttf?1487315714') format('truetype'), url('../fonts/roboto-slab/RobotoSlab-Bold-webfont.svg?1487315714') format('svg');
+  font-weight: 700;
+  font-style: bold;
 }
 @font-face {
   font-family: "Roboto";
   src: url('../fonts/roboto/Roboto-Regular-webfont.eot?1487171960');
   src: url('../fonts/roboto/Roboto-Regular-webfont.eot?&1487171960#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Regular-webfont.woff?1487171960') format('woff'), url('../fonts/roboto/Roboto-Regular-webfont.ttf?1487171960') format('truetype'), url('../fonts/roboto/Roboto-Regular-webfont.svg?1487171960') format('svg');
-  font-weight: "400";
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Roboto Bold";
+  font-family: "Roboto";
   src: url('../fonts/roboto/Roboto-Bold-webfont.eot?1487171960');
   src: url('../fonts/roboto/Roboto-Bold-webfont.eot?&1487171960#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Bold-webfont.woff?1487171960') format('woff'), url('../fonts/roboto/Roboto-Bold-webfont.ttf?1487171960') format('truetype'), url('../fonts/roboto/Roboto-Bold-webfont.svg?1487171960') format('svg');
-  font-weight: "700";
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Roboto Italic";
+  font-family: "Roboto";
   src: url('../fonts/roboto/Roboto-Italic-webfont.eot?1487171960');
   src: url('../fonts/roboto/Roboto-Italic-webfont.eot?&1487171960#iefix') format('embedded-opentype'), url('../fonts/roboto/Roboto-Italic-webfont.woff?1487171960') format('woff'), url('../fonts/roboto/Roboto-Italic-webfont.ttf?1487171960') format('truetype'), url('../fonts/roboto/Roboto-Italic-webfont.svg?1487171960') format('svg');
-  font-weight: "400";
+  font-weight: 400;
   font-style: italic;
 }
-/* line 81, ../sass/_typography.scss */
+/* line 70, ../sass/_typography.scss */
 .text-justify {
   text-align: justify;
 }
 
-/* line 85, ../sass/_typography.scss */
+/* line 74, ../sass/_typography.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 89, ../sass/_typography.scss */
+/* line 78, ../sass/_typography.scss */
 .text-right {
   text-right: justify;
 }
 
-/* line 93, ../sass/_typography.scss */
+/* line 82, ../sass/_typography.scss */
 .text-muted {
   color: #747070;
 }
 
-/* line 112, ../sass/_typography.scss */
+/* line 101, ../sass/_typography.scss */
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   color: #262525;
@@ -111,28 +118,17 @@ body {
   -ms-hyphens: auto;
 }
 
-/* line 126, ../sass/_typography.scss */
+/* line 117, ../sass/_typography.scss */
 b, strong {
-  font-family: Helvetica, Arial, sans-serif;
-  font-style: normal;
   font-weight: 700;
 }
 
-/* line 130, ../sass/_typography.scss */
+/* line 121, ../sass/_typography.scss */
 i, em {
-  font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
-  font-weight: 400;
 }
 
-/* line 134, ../sass/_typography.scss */
-b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b {
-  font-family: Helvetica, Arial, sans-serif;
-  font-style: italic;
-  font-weight: 700;
-}
-
-/* line 138, ../sass/_typography.scss */
+/* line 129, ../sass/_typography.scss */
 p, ol, ul, blockquote, pre, code {
   margin-bottom: 1.3rem;
   line-height: 1.3em;
@@ -141,7 +137,7 @@ p, ol, ul, blockquote, pre, code {
   overflow-wrap: normal;
   text-overflow: ellipsis;
 }
-/* line 146, ../sass/_typography.scss */
+/* line 137, ../sass/_typography.scss */
 p a, ol a, ul a, blockquote a, pre a, code a {
   text-decoration: none;
   border-bottom: 1px dashed #747070;
@@ -149,91 +145,88 @@ p a, ol a, ul a, blockquote a, pre a, code a {
   text-shadow: 1px 1px 1px #e6e6e6;
 }
 
-/* line 158, ../sass/_typography.scss */
+/* line 149, ../sass/_typography.scss */
 hr {
   border-color: #dadada;
   border-style: solid;
   border-width: 2px;
 }
 
-/* line 164, ../sass/_typography.scss */
+/* line 155, ../sass/_typography.scss */
 a {
   color: #eaaa3b;
 }
 
-/* line 168, ../sass/_typography.scss */
+/* line 159, ../sass/_typography.scss */
 .small, small {
   font-size: 60%;
 }
 
-/* line 172, ../sass/_typography.scss */
+/* line 163, ../sass/_typography.scss */
 .mark, mark {
   padding: .2em;
   background-color: #fcf8e3;
 }
 
-/* line 179, ../sass/_typography.scss */
+/* line 170, ../sass/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", Arial, sans-serif;
-  font-style: normal;
+  font-family: "RobotoSlab", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-style: normal;
   margin-bottom: .5rem;
 }
-/* line 181, ../sass/_typography.scss */
+/* line 174, ../sass/_typography.scss */
 h1.dot, h2.dot, h3.dot, h4.dot, h5.dot, h6.dot {
   text-align: center;
 }
-/* line 183, ../sass/_typography.scss */
+/* line 176, ../sass/_typography.scss */
 h1.dot:after, h2.dot:after, h3.dot:after, h4.dot:after, h5.dot:after, h6.dot:after {
   content: '\25CF';
   display: block;
   line-height: 29px;
   font-size: 20px;
 }
-/* line 191, ../sass/_typography.scss */
+/* line 184, ../sass/_typography.scss */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   color: #747070;
-  font-family: "Roboto Light", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
-/* line 201, ../sass/_typography.scss */
+/* line 195, ../sass/_typography.scss */
 h1 {
-  font-family: "Roboto Bold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 3em;
+  font-weight: 700;
+  font-size: 2.5em;
   line-height: 1.1;
 }
 
-/* line 206, ../sass/_typography.scss */
+/* line 200, ../sass/_typography.scss */
 h2 {
   font-size: 2em;
   line-height: 1.1;
 }
 
-/* line 210, ../sass/_typography.scss */
+/* line 204, ../sass/_typography.scss */
 h3 {
+  font-size: 1.75em;
+  line-height: 1.1;
+}
+
+/* line 208, ../sass/_typography.scss */
+h4 {
   font-size: 1.5em;
   line-height: 1.1;
 }
 
-/* line 214, ../sass/_typography.scss */
-h4 {
-  font-size: 1.3em;
-  line-height: 1.1;
-}
-
-/* line 218, ../sass/_typography.scss */
+/* line 212, ../sass/_typography.scss */
 h5 {
-  font-size: 1.1em;
+  font-size: 1.4em;
   line-height: 1.1;
 }
 
-/* line 222, ../sass/_typography.scss */
+/* line 216, ../sass/_typography.scss */
 h6 {
-  font-size: 0.9em;
+  font-size: 1.3em;
   line-height: 1.1;
 }
 

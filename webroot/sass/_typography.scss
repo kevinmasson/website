@@ -4,6 +4,7 @@
 
 $fontsDir : "";
 $robotoDir : $fontsDir + "roboto/";
+$robotoSlabDir : $fontsDir + "roboto-slab/";
 
 $roboRegular : $robotoDir + "Roboto-Regular-webfont";
 $roboLight : $robotoDir + "Roboto-Light-webfont";
@@ -11,67 +12,55 @@ $roboBold : $robotoDir + "Roboto-Bold-webfont";
 $roboItalic : $robotoDir + "Roboto-Italic-webfont";
 $roboBoldItalic : $robotoDir + "Roboto-BoldItalic-webfont";
 
-@include font-face("Roboto Light",
+$robotoSlabRegular : $robotoSlabDir + "RobotoSlab-Regular-webfont";
+$robotoSlabThin : $robotoSlabDir + "RobotoSlab-Thin-webfont";
+$robotoSlabLight : $robotoSlabDir + "RobotoSlab-Light-webfont";
+$robotoSlabBold : $robotoSlabDir + "RobotoSlab-Bold-webfont";
+
+@include font-face("RobotoSlab",
     font-files(
-        $roboLight + ".woff",
-        $roboLight + ".ttf",
-        $roboLight + ".svg"
-    ), $roboLight + ".eot", "300", normal);
+        $robotoSlabRegular + ".woff",
+        $robotoSlabRegular + ".ttf",
+        $robotoSlabRegular + ".svg"
+    ), $robotoSlabRegular + ".eot", 400, normal);
+
+@include font-face("RobotoSlab",
+    font-files(
+        $robotoSlabBold + ".woff",
+        $robotoSlabBold + ".ttf",
+        $robotoSlabBold + ".svg"
+    ), $robotoSlabBold + ".eot", 700, bold);
+
+// @include font-face("Roboto",
+//     font-files(
+//         $roboLight + ".woff",
+//         $roboLight + ".ttf",
+//         $roboLight + ".svg"
+//     ), $roboLight + ".eot", 300, normal);
 
 @include font-face("Roboto",
     font-files(
         $roboRegular + ".woff",
         $roboRegular + ".ttf",
         $roboRegular + ".svg"
-    ), $roboRegular + ".eot", "400", normal);
+    ), $roboRegular + ".eot", 400, normal);
 
-@include font-face("Roboto Bold",
+@include font-face("Roboto",
     font-files(
         $roboBold + ".woff",
         $roboBold + ".ttf",
         $roboBold + ".svg"
-    ), $roboBold + ".eot", "700", normal);
+    ), $roboBold + ".eot", 700, normal);
 
-@include font-face("Roboto Italic",
+@include font-face("Roboto",
     font-files(
         $roboItalic + ".woff",
         $roboItalic + ".ttf",
         $roboItalic + ".svg"
-    ), $roboItalic + ".eot", "400", italic);
+    ), $roboItalic + ".eot", 400, italic);
 
-
-// ##########################
-// FONT MIXIN
-// ##########################
-
-@mixin font($font:Helvetica, $style:normal, $weight:300){
-    $fonts : Arial, sans-serif;
-    @if $font == "Roboto" {
-        @if $style == italic {
-            $fonts : "Roboto Italic",  $fonts;
-        } @else {
-            @if $weight < 301 {
-                $fonts : "Roboto Light",  $fonts;
-            } @else if $weight < 650 {
-                $fonts : "Roboto",  $fonts;
-            } @else {
-                $fonts : "Roboto Bold",  $fonts;
-                $weight : 400;
-            }
-
-        }
-    } @else if $font == Helvetica {
-        $fonts : Helvetica,  $fonts;
-    }
-    // Other fonts..
-
-
-
-    // In any case
-    font-family: $fonts;
-    font-style: $style;
-    font-weight: $weight;
-
+@mixin ffamily($font){
+    font-family: $font, Helvetica, Arial, sans-serif;
 }
 
 // ##########################
@@ -110,7 +99,9 @@ $body-lh : 1.5em;
 }
 
 body{
-    @include font($style:normal, $weight:400);
+    @include ffamily("Roboto");
+    font-style: normal;
+    font-weight: 400;
     color: $color;
     font-size: 12.5pt;
     line-height: $body-lh;
@@ -124,15 +115,15 @@ body{
 }
 
 b, strong{
-    @include font($style:normal, $weight:700);
+    font-weight: 700;
 }
 
 i, em{
-    @include font($style:italic, $weight:400);
+    font-style: italic;
 }
 
 b > i, b > em, strong > i, strong > em, em > strong, em > b, i > strong, i > b{
-    @include font($style:italic, $weight:700);
+    // Nothing
 }
 
 p, ol, ul, blockquote, pre, code{
@@ -177,7 +168,9 @@ a{
 // HEADINGS
 
 #{headings()}{
-    @include font($font:"Roboto", $weight:400);
+    @include ffamily("RobotoSlab");
+    font-weight: 400;
+    font-style: normal;
     &.dot{
         text-align: center;
         &:after{
@@ -190,7 +183,8 @@ a{
 
     small {
         color: lighten($color, 30%);
-        @include font($font:"Roboto", $weight:300);
+        font-weight: 400;
+        @include ffamily("Roboto");
 
     }
 
@@ -199,8 +193,8 @@ a{
 
 
 h1{
-    @include font($font:"Roboto", $weight:700);
-    @include flm(3em);
+    font-weight: 700;
+    @include flm(2.5em);
 }
 
 h2 {
@@ -208,17 +202,17 @@ h2 {
 }
 
 h3 {
-    @include flm(1.5em);
+    @include flm(1.75em);
 }
 
 h4 {
-    @include flm(1.3em);
+    @include flm(1.5em);
 }
 
 h5 {
-    @include flm(1.1em);
+    @include flm(1.4em);
 }
 
 h6 {
-    @include flm(.9em);
+    @include flm(1.3em);
 }
