@@ -75,8 +75,12 @@ $robotoSlabBold : $robotoSlabDir + "RobotoSlab-Bold-webfont";
     text-align: left;
 }
 
+.text-center{
+    text-align: center;
+}
+
 .text-right{
-    text-right:justify;
+    text-align: right;
 }
 
 .text-muted{
@@ -139,6 +143,10 @@ p, ol, ul, blockquote, pre, code{
         border-bottom: 1px dashed lighten($color, 30%);
         color: lighten($color, 30%);
         text-shadow: 1px 1px 1px darken($background, 5%);
+
+        &:hover, &:focus{
+            color: lighten($color, 10%);
+        }
 
         &:before{
             // Nothing

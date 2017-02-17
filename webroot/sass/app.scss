@@ -2,8 +2,10 @@
 @import "compass";
 @import "settings";
 @import "queries";
+@import "display";
 @import "typography";
-@import "margins";
+@import "media";
+@import "spacing";
 
 // ##########################
 // WRAPPING
@@ -19,7 +21,7 @@
 }
 
 .wrap, .wrap-full{
-   @include m0a;
+    margin: 0 auto;
 
    @include breakpoint(medium down){
 	   padding: 1em;

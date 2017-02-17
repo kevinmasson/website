@@ -33,35 +33,26 @@ $this->end();
     <?= $this->fetch('css') ?>
 
 </head>
-<body class="pt70 pb120">
+<body>
+      <?= $this->fetch('topContent') ?>
 <?php
 if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
    echo $this->Element('admin_nav');
 ?>
-	<nav class="navbar navbar-full navbar-dark bg-inverse">
-	<button class="navbar-toggler hidden-lg-up"
-		type="button" data-toggle="collapse"
-		data-target="#regularNavResponsive"
-		aria-controls="regularNavResponsive" aria-expanded="false"
-		aria-label="Toggle navigation">
-	</button>
-	<div class="collapse navbar-toggleable-md" id="regularNavResponsive">
-
-	<a class="navbar-brand" href="<?= Router::url(['_name' => 'home']) ?>"><?= $siteTitle ?></a>
-		<ul class="nav navbar-nav">
-		<li class="nav-item <?= $currentUrl === '/' ? 'active' : ''; ?>">
-            <a class="nav-link" href="<?= Router::url(['_name' => 'home']) ?>">
-                Accueil<span class="sr-only">(current)</span>
+	<nav>
+        <ul>
+        <li class="<?= $currentUrl === '/' ? 'active' : ''; ?>">
+            <a href="<?= Router::url(['_name' => 'home']) ?>">
+                Accueil
             </a>
 			</li>
-			<li class="nav-item <?= substr($currentUrl, 0, strlen('/portfolio')) === '/portfolio' ? 'active' : ''; ?>">
-				<a class="nav-link" href="<?= Router::url(['_name' => 'portfolio']); ?>">Portfolio</a>
+			<li class="<?= substr($currentUrl, 0, strlen('/portfolio')) === '/portfolio' ? 'active' : ''; ?>">
+				<a href="<?= Router::url(['_name' => 'portfolio']); ?>">Portfolio</a>
 			</li>
-			<li class="nav-item <?= $currentUrl === '/contact' ? 'active' : ''; ?>">
-				<a class="nav-link" href="<?= Router::url(['_name' => 'contact']); ?>">Contact</a>
+			<li class="<?= $currentUrl === '/contact' ? 'active' : ''; ?>">
+				<a href="<?= Router::url(['_name' => 'contact']); ?>">Contact</a>
 			</li>
 		</ul>
-	</div>
     </nav>
       <?= $this->Flash->render() ?>
       <?= $this->fetch('content') ?>
