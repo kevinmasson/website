@@ -11,22 +11,24 @@ use Cake\Routing\Router;
 if( !$creations->isEmpty()):
 $i = 0;
 foreach ($creations as $creation):
-	
+
 	if($i % 3 == 0){
 ?>
-	<div class='card-deck'>
+	<div class="portfolio">
 <?php
 	}
 ?>
-	<div class="card">
+	<div class="portfolio-item">
 		<a href="<?= Router::url(['_name' => 'portfolio_item', $creation->slug])?>">
-			<?= $this->Html->cimage($creation, 'thumbnail', ['alt' => $creation->title, 'class' => 'img-fluid']); ?>
+			<?= $this->Html->cimage(
+				$creation,
+				'thumbnail', [
+					'alt' => $creation->title,
+					'class' => 'img-fluid portfolio-thumbnail'
+				]); ?>
 		</a>
-  		<div class="card-block">
-			<h3 class="sr-only card-title"><a href="<?=			
-		Router::url(['_name' => 'portfolio_item', $creation->slug])
-		?>"><?= $creation->title ?></a></h3>
-			<h6 class="card-subtitle text-muted">
+		<h4 class="portfolio-item-title mb1"><?= $creation->title ?></h4>
+        <h6 class="portfolio-item-tag">
 			<?php $start = 0;
 				$count = count($creation->types);
 				foreach ($creation->types as $type):
@@ -35,8 +37,7 @@ foreach ($creations as $creation):
 					if($count > 1 && $start < $count) echo ", ";
 				endforeach;
 			?>
-			</h6>
-  		</div>
+        </h6>
 	</div>
 <?php
 	$i += 1;

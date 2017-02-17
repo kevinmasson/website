@@ -31,12 +31,12 @@ $robotoSlabBold : $robotoSlabDir + "RobotoSlab-Bold-webfont";
         $robotoSlabBold + ".svg"
     ), $robotoSlabBold + ".eot", 700, bold);
 
-// @include font-face("Roboto",
-//     font-files(
-//         $roboLight + ".woff",
-//         $roboLight + ".ttf",
-//         $roboLight + ".svg"
-//     ), $roboLight + ".eot", 300, normal);
+@include font-face("Roboto",
+    font-files(
+        $roboLight + ".woff",
+        $roboLight + ".ttf",
+        $roboLight + ".svg"
+    ), $roboLight + ".eot", 300, normal);
 
 @include font-face("Roboto",
     font-files(
@@ -214,13 +214,19 @@ h3 {
 }
 
 h4 {
-    @include flm(1.5em);
+    @include flm(1.3em);
+    font-weight: 700;
+    @include ffamily("Roboto");
 }
 
 h5 {
-    @include flm(1.4em);
+    @include flm(1.1em);
+    @include ffamily("Roboto");
+    color: lighten($color, 30%);
 }
 
 h6 {
-    @include flm(1.3em);
+    @include flm(0.9em);
+    @include ffamily("Roboto");
+    color: lighten($color, 30%);
 }

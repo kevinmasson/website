@@ -55,7 +55,10 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 		</ul>
     </nav>
       <?= $this->Flash->render() ?>
+    <div class="wrap">
       <?= $this->fetch('content') ?>
+    </div>
+      <?= $this->fetch('contentNoWrap') ?>
     <footer>
 	<nav class="navbar navbar-fixed-bottom navbar-light navbar-full bg-faded">
 		<span class="navbar-text float-xs-left">

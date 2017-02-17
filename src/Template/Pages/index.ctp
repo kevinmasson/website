@@ -25,7 +25,6 @@ echo $this->Html->image("km_logo_home.png", [
 $this->end();
 
 ?>
-<div class="wrap">
 <h2 class="sr-only"><?= __("Mes dernières créations");?></h2>
 <?php
 echo $this->element("grid_creations", [
@@ -35,7 +34,7 @@ echo $this->element("grid_creations", [
 ?>
 <p class="text-right">
 	<a href="<?= Router::url(['_name' => 'portfolio']); ?>">
-		<?= __('Plus de créations') ?>
+		<?= __('Je veux tout voir !') ?>
 	</a>
 </p>
 
@@ -48,4 +47,3 @@ echo $this->element("grid_creations", [
 		<?= __('Me contacter') ?>
 	</a>
 </p>
-</div>

@@ -2,6 +2,7 @@
 @import "compass";
 @import "settings";
 @import "queries";
+@import "grid";
 @import "display";
 @import "typography";
 @import "media";
@@ -28,8 +29,67 @@
    }
 }
 
-
+* {
+  @include box-sizing(border-box);
+}
 
 body{
     background-color: $background;
 }
+
+// ##########################
+// PORTFOLIO
+// ##########################
+
+.portfolio{
+	$pad : 20px;
+
+
+	&:after {
+		/* Or @extend clearfix */
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.portfolio-item{
+		float: left;
+		width: 33.33%;
+		padding-right: $pad / 2;
+		padding-left: $pad / 2;
+		&:last-of-type {
+			padding-right: 0;
+			padding-left: $pad;
+		}
+		&:first-of-type {
+			padding-left: 0;
+			padding-right: $pad;
+		}
+
+		.portfolio-item-tag{
+			font-weight: 200;
+			font-style: italic;
+		}
+
+		@include breakpoint(small only){
+			float: none;
+			width: 100%;
+			padding-right: 0;
+			padding-left: 0;
+
+			&:last-of-type {
+				padding-right: 0;
+				padding-left: 0;
+			}
+			&:first-of-type {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			.portfolio-thumbnail{
+				width: 100%;
+			}
+		}
+	}
+}
+
