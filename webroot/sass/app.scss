@@ -12,21 +12,22 @@
 // WRAPPING
 // ##########################
 
-
+[class^='wrap']{
+    margin: 0 auto;
+   @include breakpoint(medium down){
+	   padding: 1em;
+   }
+}
 .wrap{
-   max-width: $wrap-width;
+	width: map-get($breakpoints, normal);
+}
+
+.wrap-xl{
+	width: map-get($breakpoints, large);
 }
 
 .wrap-full{
    width: 100%;
-}
-
-.wrap, .wrap-full{
-    margin: 0 auto;
-
-   @include breakpoint(medium down){
-	   padding: 1em;
-   }
 }
 
 * {

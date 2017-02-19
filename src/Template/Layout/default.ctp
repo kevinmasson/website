@@ -39,7 +39,8 @@ $this->end();
 if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
    echo $this->Element('admin_nav');
 ?>
-	<nav>
+	<div class="wrap-xl grid">
+	<nav class="col-1-4">
         <ul>
         <li class="<?= $currentUrl === '/' ? 'active' : ''; ?>">
             <a href="<?= Router::url(['_name' => 'home']) ?>">
@@ -55,9 +56,10 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 		</ul>
     </nav>
       <?= $this->Flash->render() ?>
-    <div class="wrap">
+    <div class="col-3-4">
       <?= $this->fetch('content') ?>
     </div>
+	</div>
       <?= $this->fetch('contentNoWrap') ?>
     <footer>
 	<nav class="navbar navbar-fixed-bottom navbar-light navbar-full bg-faded">
