@@ -13,7 +13,7 @@ foreach ($types as $type):
     if(!$first) echo ", ";
     $first = False;
         ?>
-		<a class="btn btn-outline-secondary btn-sm"  href="<?=
+		<a href="<?=
 		Router::url(['_name' => 'portfolio_type', $type->slug]) ?>">
 			<?= (h($type->name)) ?>
 		</a>

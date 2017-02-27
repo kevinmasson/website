@@ -156,7 +156,22 @@ ul{
     input, textarea{
         margin-bottom: 1em;
         width: 100%;
+        background-color: darken($background, 5%);
+        color: lighten($color, 15%);
+        border: none;
+        padding: 0.8em 1.3em;
     }
+}
+
+// ##########################
+// BUTTONS
+// ##########################
+
+.btn{
+    border: none;
+    padding: 0.8em 1.3em;
+    background-color: $color;
+    color: $background;
 }
 
 // ##########################

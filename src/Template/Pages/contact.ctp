@@ -8,7 +8,7 @@ echo $this->Html->meta(
 $this->end();
 
 
-echo $this->Element('page_header', ['mainTitle' => __('Contact')]); 
+echo $this->Element('page_header', ['mainTitle' => __('Contact')]);
 
 echo $this->Form->create($contact);
 echo $this->Form->input('name',[
@@ -27,7 +27,9 @@ echo $this->Form->input('body', [
 	'label' => __('Message (entre 100 et 700 caractères)'),
 	'required' => true
 ]);
-echo $this->Form->button(__('Envoyer'));
+echo $this->Form->button(__('Envoyer'), [
+    'class' => 'mt3'
+]);
 echo $this->Form->end();
 
 ?>

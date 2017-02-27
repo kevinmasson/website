@@ -14,7 +14,7 @@ foreach ($creation->types as $type):
     if(!$first) $tags .= ", ";
         $first = False;
 		$tags .=
-		'<a class="btn btn-outline-secondary btn-sm" href="' .
+		'<a href="' .
 		Router::url(['_name' => 'portfolio_type', $type->slug]) .
 		'">' .
 		__(h($type->name)) .

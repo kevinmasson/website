@@ -996,15 +996,27 @@ ul li a {
 .form-group input, .form-group textarea {
   margin-bottom: 1em;
   width: 100%;
+  background-color: #e6e6e6;
+  color: #4d4b4b;
+  border: none;
+  padding: 0.8em 1.3em;
 }
 
-/* line 166, ../sass/app.scss */
+/* line 170, ../sass/app.scss */
+.btn {
+  border: none;
+  padding: 0.8em 1.3em;
+  background-color: #262525;
+  color: #f3f3f3;
+}
+
+/* line 181, ../sass/app.scss */
 .alert {
   padding: 0.5em 1em;
   background-color: #262525;
   color: #f3f3f3;
 }
-/* line 172, ../sass/app.scss */
+/* line 187, ../sass/app.scss */
 .alert .close {
   border: none;
   background: none;
@@ -1015,7 +1027,7 @@ ul li a {
   right: 3px;
 }
 
-/* line 185, ../sass/app.scss */
+/* line 200, ../sass/app.scss */
 .alert-danger {
   background-color: #dc3737;
 }
