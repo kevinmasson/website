@@ -65,12 +65,12 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
       <?= $this->Flash->render() ?>
       <div class="<?= $currentUrl === "/" ? '' : 'main-content'; ?>">
       <?= $this->fetch('content') ?>
-    <footer class="mt4 text-right">
-	<nav class="navbar navbar-fixed-bottom navbar-light navbar-full bg-faded">
-		<span class="navbar-text float-xs-left">
+    <footer class="mt4 text-right text-muted">
+	<nav class="">
+		<span>
 			2016 &#169; Tout droits reservés
 		</span>
-		<span class="navbar-text float-xs-right">
+		<span>
 			<a href="https://www.facebook.com/kmassonstudio/">facebook</a>,
 			<a href="https://github.com/kevinmasson/">github</a>,
 			<a href="https://fr.linkedin.com/in/kevin-masson-968a35113">linkedin</a>,
