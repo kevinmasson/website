@@ -14,24 +14,24 @@
 
 [class*='wrap']{
     margin: 0 auto;
-   @include breakpoint(medium down){
-	   padding: 1em;
-   }
+    @include breakpoint(medium down){
+        padding: 1em;
+    }
 }
 .wrap{
-	max-width: map-get($breakpoints, normal);
+    max-width: map-get($breakpoints, normal);
 }
 
 .wrap-xl{
-	max-width: map-get($breakpoints, large);
+    max-width: map-get($breakpoints, large);
 }
 
 .wrap-full{
-   width: 100%;
+    width: 100%;
 }
 
 * {
-  @include box-sizing(border-box);
+    @include box-sizing(border-box);
 }
 
 body{
@@ -92,55 +92,55 @@ ul{
 // ##########################
 
 .portfolio{
-	$pad : 20px;
+    $pad : 20px;
 
 
-	&:after {
-		/* Or @extend clearfix */
-		content: "";
-		display: table;
-		clear: both;
-	}
+    &:after {
+        /* Or @extend clearfix */
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-	.portfolio-item{
-		float: left;
-		width: 33.33%;
-		padding-right: $pad / 2;
-		padding-left: $pad / 2;
-		&:last-of-type {
-			padding-right: 0;
-			padding-left: $pad;
-		}
-		&:first-of-type {
-			padding-left: 0;
-			padding-right: $pad;
-		}
+    .portfolio-item{
+        float: left;
+        width: 33.33%;
+        padding-right: $pad / 2;
+        padding-left: $pad / 2;
+        &:last-of-type {
+            padding-right: 0;
+            padding-left: $pad;
+        }
+        &:first-of-type {
+            padding-left: 0;
+            padding-right: $pad;
+        }
 
-		.portfolio-item-tag{
-			font-weight: 200;
-			font-style: italic;
-		}
+        .portfolio-item-tag{
+            font-weight: 200;
+            font-style: italic;
+        }
 
-		@include breakpoint(small only){
-			float: none;
-			width: 100%;
-			padding-right: 0;
-			padding-left: 0;
+        @include breakpoint(small only){
+            float: none;
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
 
-			&:last-of-type {
-				padding-right: 0;
-				padding-left: 0;
-			}
-			&:first-of-type {
-				padding-left: 0;
-				padding-right: 0;
-			}
+            &:last-of-type {
+                padding-right: 0;
+                padding-left: 0;
+            }
+            &:first-of-type {
+                padding-left: 0;
+                padding-right: 0;
+            }
 
-			.portfolio-thumbnail{
-				width: 100%;
-			}
-		}
-	}
+            .portfolio-thumbnail{
+                width: 100%;
+            }
+        }
+    }
 }
 
 // ##########################
@@ -157,4 +157,31 @@ ul{
         margin-bottom: 1em;
         width: 100%;
     }
+}
+
+// ##########################
+// ALERTS
+// ##########################
+
+.alert{
+
+    padding: 0.5em 1em;
+    background-color: $color;
+    color: $background;
+
+    .close{
+        border: none;
+        background: none;
+        color: white;
+        font-size: 1.5em;
+        position: absolute;
+        top: -2px;
+        right: 3px;
+    }
+
+
+}
+
+.alert-danger{
+    background-color: #dc3737;
 }

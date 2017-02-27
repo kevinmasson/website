@@ -997,3 +997,25 @@ ul li a {
   margin-bottom: 1em;
   width: 100%;
 }
+
+/* line 166, ../sass/app.scss */
+.alert {
+  padding: 0.5em 1em;
+  background-color: #262525;
+  color: #f3f3f3;
+}
+/* line 172, ../sass/app.scss */
+.alert .close {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1.5em;
+  position: absolute;
+  top: -2px;
+  right: 3px;
+}
+
+/* line 185, ../sass/app.scss */
+.alert-danger {
+  background-color: #dc3737;
+}

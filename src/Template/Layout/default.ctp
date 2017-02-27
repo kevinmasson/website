@@ -34,6 +34,7 @@ $this->end();
 
 </head>
 <body>
+      <?= $this->Flash->render() ?>
       <?= $this->fetch('topContent') ?>
 <?php
 if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
@@ -62,7 +63,6 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 			</li>
 		</ul>
     </nav>
-      <?= $this->Flash->render() ?>
       <div class="<?= $currentUrl === "/" ? '' : 'main-content'; ?>">
       <?= $this->fetch('content') ?>
     <footer class="my4 text-right text-muted">
