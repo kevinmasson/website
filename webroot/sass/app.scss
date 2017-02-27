@@ -39,6 +39,26 @@ body{
 }
 
 // ##########################
+// MAIN WRAP
+// ##########################
+
+.main-nav{
+    float:left;
+    max-width:15%;
+    padding-right:1.3em;
+}
+
+.main-content{
+    margin-left:15%;
+
+    &:after{
+        content:'';
+        display:block;
+        clear:both;
+    }
+}
+
+// ##########################
 // PORTFOLIO
 // ##########################
 

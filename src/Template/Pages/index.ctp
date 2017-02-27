@@ -17,7 +17,7 @@ $this->append('topContent');
 
 echo $this->Html->image("km_logo_home.png", [
     "alt" => __("Logo km"),
-    "class" => "img-fluid mx-auto d-block mt5"
+    "class" => "img-fluid mxa d-block mt5"
 ]);
 ?>
 <h1 class="text-center mt3 mb4">Motion designer freelance <small class="d-block mt1">Mais aussi chasseur de poulpes</small></h1>

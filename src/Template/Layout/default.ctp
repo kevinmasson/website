@@ -39,8 +39,15 @@ $this->end();
 if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
    echo $this->Element('admin_nav');
 ?>
-	<div class="wrap-xl grid">
-	<nav class="col-1-4">
+    <div class="mt5 mxa <?= $currentUrl === "/" ? 'wrap' : 'wrap-xl'; ?>">
+    <nav class="mt2 <?= $currentUrl === '/' ? 'sr-only' : 'main-nav'; ?>">
+    <div class="mr3 mb5">
+    <?= $this->Html->image("km_logo_home.png", [
+    "alt" => __("Logo km"),
+    "class" => "img-fluid"
+]);
+?></div>
+<p class="sr-only">Kevin Masson, Motion designer freelance</p>
         <ul>
         <li class="<?= $currentUrl === '/' ? 'active' : ''; ?>">
             <a href="<?= Router::url(['_name' => 'home']) ?>">
@@ -56,7 +63,7 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 		</ul>
     </nav>
       <?= $this->Flash->render() ?>
-    <div class="col-3-4">
+      <div class="<?= $currentUrl === "/" ? '' : 'main-content'; ?>">
       <?= $this->fetch('content') ?>
     </div>
 	</div>
