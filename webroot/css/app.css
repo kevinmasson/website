@@ -986,3 +986,14 @@ ul li a {
     width: 100%;
   }
 }
+
+/* line 151, ../sass/app.scss */
+.form-group label {
+  display: block;
+  margin-bottom: .2em;
+}
+/* line 156, ../sass/app.scss */
+.form-group input, .form-group textarea {
+  margin-bottom: 1em;
+  width: 100%;
+}
