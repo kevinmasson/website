@@ -20,7 +20,7 @@ echo $this->Html->image("km_logo_home.png", [
     "class" => "img-fluid mxa d-block mt5"
 ]);
 ?>
-<h1 class="text-center mt3 mb4">Motion designer freelance <small class="d-block mt1">Mais aussi chasseur de poulpes</small></h1>
+<h1 class="text-center mt3 mb4">Motion designer freelance <small class="d-block mt1">Sans oublier collectionneur de poulpes</small></h1>
 <?php
 $this->end();
 

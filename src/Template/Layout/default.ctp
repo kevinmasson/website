@@ -65,7 +65,7 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
       <?= $this->Flash->render() ?>
       <div class="<?= $currentUrl === "/" ? '' : 'main-content'; ?>">
       <?= $this->fetch('content') ?>
-    <footer class="mt4 text-right text-muted">
+    <footer class="my4 text-right text-muted">
 	<nav class="">
 		<span>
 			2016 &#169; Tout droits reservés
