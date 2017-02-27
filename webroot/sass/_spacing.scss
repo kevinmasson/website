@@ -26,25 +26,25 @@
     }
 
     @if $direction == x {
-        #{$type}-left : $size-x;
-        #{$type}-right : $size-x;
+        #{$type}-left : $size-x !important;
+        #{$type}-right : $size-x !important;
     } @else if $direction == y{
-        #{$type}-bottom : $size-y;
-        #{$type}-top : $size-y;
+        #{$type}-bottom : $size-y !important;
+        #{$type}-top : $size-y !important;
     } @else if $direction == all{
-        #{$type}-left : $size-x;
-        #{$type}-right : $size-x;
-        #{$type}-bottom : $size-y;
-        #{$type}-top : $size-y;
+        #{$type}-left : $size-x !important;
+        #{$type}-right : $size-x !important;
+        #{$type}-bottom : $size-y !important;
+        #{$type}-top : $size-y !important;
     } @else {
         @if $direction == top {
-            #{$type}-#{$direction} : $size-y;
+            #{$type}-#{$direction} : $size-y !important;
         } @else if $direction == bottom {
-            #{$type}-#{$direction} : $size-y;
+            #{$type}-#{$direction} : $size-y !important;
         } @else if $direction == left {
-            #{$type}-#{$direction} : $size-x;
+            #{$type}-#{$direction} : $size-x !important;
         } @else if $direction == right {
-            #{$type}-#{$direction} : $size-x;
+            #{$type}-#{$direction} : $size-x !important;
         }
     }
 }

@@ -44,7 +44,7 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
     <div class="mr3 mb5">
     <?= $this->Html->image("km_logo_home.png", [
     "alt" => __("Logo km"),
-    "class" => "img-fluid"
+    "class" => "img-fluid mxa d-block"
 ]);
 ?></div>
 <p class="sr-only">Kevin Masson, Motion designer freelance</p>
@@ -65,10 +65,7 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
       <?= $this->Flash->render() ?>
       <div class="<?= $currentUrl === "/" ? '' : 'main-content'; ?>">
       <?= $this->fetch('content') ?>
-    </div>
-	</div>
-      <?= $this->fetch('contentNoWrap') ?>
-    <footer>
+    <footer class="mt4 text-right">
 	<nav class="navbar navbar-fixed-bottom navbar-light navbar-full bg-faded">
 		<span class="navbar-text float-xs-left">
 			2016 &#169; Tout droits reservés
@@ -79,11 +76,14 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 			<a href="https://fr.linkedin.com/in/kevin-masson-968a35113">linkedin</a>,
 			<a href="https://twitter.com/mindlessocto">twitter</a>,
 			<a href="https://www.flickr.com/photos/kevinmasson/">flickr</a> <span class="text-muted"> -
-			<a class="text-muted" href="https://github.com/kevinmasson/website">v0.1</a></span>
+			<a class="text-muted" href="https://github.com/kevinmasson/website">v0.2</a></span>
 		</span>
 	</nav>
     </footer>
-    <?= $this->Html->script('jquery.min.js') ?>
+</div>
+	</div>
+      <?= $this->fetch('contentNoWrap') ?>
+        <?= $this->Html->script('jquery.min.js') ?>
     <?= $this->Html->script('bootstrap.min.js') ?> <?= $this->Html->script('tinymce/tinymce.min.js') ?>
     <?= $this->fetch('script') ?>
 </body>

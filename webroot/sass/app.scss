@@ -12,18 +12,18 @@
 // WRAPPING
 // ##########################
 
-[class^='wrap']{
+[class*='wrap']{
     margin: 0 auto;
    @include breakpoint(medium down){
 	   padding: 1em;
    }
 }
 .wrap{
-	width: map-get($breakpoints, normal);
+	max-width: map-get($breakpoints, normal);
 }
 
 .wrap-xl{
-	width: map-get($breakpoints, large);
+	max-width: map-get($breakpoints, large);
 }
 
 .wrap-full{
@@ -42,20 +42,25 @@ body{
 // MAIN WRAP
 // ##########################
 
-.main-nav{
-    float:left;
-    max-width:15%;
-    padding-right:1.3em;
-}
+@include breakpoint(normal up){
 
-.main-content{
-    margin-left:15%;
 
-    &:after{
-        content:'';
-        display:block;
-        clear:both;
+    .main-nav{
+        float:left;
+        max-width:15%;
+        padding-right:1.3em;
     }
+
+    .main-content{
+        margin-left:15%;
+
+        &:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+    }
+
 }
 
 // ##########################
