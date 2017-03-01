@@ -40,8 +40,8 @@ $this->end();
 if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
    echo $this->Element('admin_nav');
 ?>
-    <div class="mt5 mxa <?= $currentUrl === "/" ? 'wrap' : 'wrap-xl'; ?>">
-    <nav class="mt2 <?= $currentUrl === '/' ? 'sr-only' : 'main-nav'; ?>">
+    <div class="mt5 mxa wrap-xl">
+    <nav class="mt2 main-nav">
     <div class="mr3 mb5">
     <?= $this->Html->image("km_logo_home.png", [
     "alt" => __("Logo km"),
@@ -63,7 +63,7 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 			</li>
 		</ul>
     </nav>
-      <div class="<?= $currentUrl === "/" ? '' : 'main-content'; ?>">
+      <div class="main-content">
       <?= $this->fetch('content') ?>
     <footer class="my4 text-right text-muted">
 	<nav class="">

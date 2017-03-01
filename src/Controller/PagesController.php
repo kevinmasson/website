@@ -77,7 +77,7 @@ class PagesController extends AppController
 			'conditions' => ['Creations.public =' => 1],
 			'contain' => ['Types'],
 			'order' => ['Creations.created' => 'desc'],
-			'limit' => 3
+			'limit' => 6
 		])->all();
 
 		$this->set(compact('creations'));

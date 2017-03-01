@@ -1,7 +1,7 @@
 <?php
 
 use Cake\Routing\Router;
-$this->assign('title', "freelance basé à Strasbourg");
+$this->assign('title', "Motion Designer freelance");
 $this->append('meta');
 echo $this->Html->meta(
 	'description',
@@ -15,12 +15,15 @@ $this->end();
 
 $this->append('topContent');
 
-echo $this->Html->image("km_logo_home.png", [
-    "alt" => __("Logo km"),
-    "class" => "img-fluid mxa d-block mt5"
-]);
 ?>
-<h1 class="text-center mt3 mb4">Motion designer freelance <small class="d-block mt1">Sans oublier collectionneur de poulpes</small></h1>
+<div class="welcome-info my5 wrap">
+    <?= $this->Html->image("km_pic_home.png", [
+        "alt" => __("C'est moi de dos !"),
+        "class" => "img-fluid mxa d-block"
+    ]); ?>
+<h1 class="text-center mt2 mb2">Bienvenue sur mon portail de l'internet<small class="d-block mt1">Attendez, restez !</small></h1>
+    <p class="text-center pb5">Motion designer freelance basé à Strasbourg. Mais aussi passioné de photographie et étudiant en informatique. Essaye de rendre le monde meilleur en contribuant à <?= $this->Html->link("duik", "https://rainboxprod.coop/fr/outils/duik/", ['alt' =>  "Page du projet"]); ?>.</p>
+</div>
 <?php
 $this->end();
 
