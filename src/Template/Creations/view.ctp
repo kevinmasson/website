@@ -43,4 +43,3 @@ endif;
 		<?= $creation->body ?>
 	</div>
 </div>
-</div>

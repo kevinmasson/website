@@ -43,13 +43,17 @@ body{
 // MAIN WRAP
 // ##########################
 
-@include breakpoint(small up){
+@include breakpoint(medium up){
 
 
     .main-nav{
         float:left;
         max-width:15%;
         padding-right:1.3em;
+
+        .site-logo{
+            display:block;
+        }
     }
 
     .main-content{
@@ -64,7 +68,7 @@ body{
 
 }
 
-@include breakpoint(small down){
+@include breakpoint(medium down){
     .welcome-info{
         h1{
             font-size: 1.5em;
@@ -199,13 +203,8 @@ nav{
 
 
     }
-
-	&:after{
-		content:'';
-		display:block;
-		clear:both;
-	}
 }
+
 
 // ##########################
 // BUTTONS

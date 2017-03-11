@@ -29,7 +29,7 @@ $robotoSlabBold : $robotoSlabDir + "RobotoSlab-Bold-webfont";
         $robotoSlabBold + ".woff",
         $robotoSlabBold + ".ttf",
         $robotoSlabBold + ".svg"
-    ), $robotoSlabBold + ".eot", 700, bold);
+    ), $robotoSlabBold + ".eot", 700, normal);
 
 @include font-face("Roboto",
     font-files(

@@ -424,7 +424,7 @@ class BootstrapFormHelper extends FormHelper {
                 ];
             }
         }
-        
+
         $fakeInput = $this->text($fieldName, array_merge($fakeInputCustomOptions, [
             'name' => $fieldName.'-text',
             'readonly' => 'readonly',
