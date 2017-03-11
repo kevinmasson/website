@@ -202,25 +202,55 @@ a{
 
 h1{
     font-weight: 700;
-    @include flm(2.5em);
+    @include breakpoint(small down){
+        @include flm(1.7em);
+    }
+
+    @include breakpoint(normal up){
+        @include flm(2.5em);
+    }
 }
 
 h2 {
-    @include flm(2em);
+    @include breakpoint(small down){
+        @include flm(1.4em);
+    }
+
+    @include breakpoint(normal up){
+        @include flm(2em);
+    }
 }
 
 h3 {
-    @include flm(1.75em);
+    @include breakpoint(small down){
+        @include flm(1.2em);
+    }
+
+    @include breakpoint(normal up){
+        @include flm(1.75em);
+    }
 }
 
 h4 {
-    @include flm(1.3em);
+    @include breakpoint(small down){
+        @include flm(1.1em);
+    }
+
+    @include breakpoint(normal up){
+        @include flm(1.3em);
+    }
     font-weight: 700;
     @include ffamily("Roboto");
 }
 
 h5 {
-    @include flm(1.1em);
+    @include breakpoint(small down){
+        @include flm(1em);
+    }
+
+    @include breakpoint(normal up){
+        @include flm(1.1em);
+    }
     @include ffamily("Roboto");
     color: lighten($color, 30%);
 }

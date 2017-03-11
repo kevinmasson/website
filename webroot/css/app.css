@@ -299,39 +299,93 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 /* line 203, ../sass/_typography.scss */
 h1 {
   font-weight: 700;
-  font-size: 2.5em;
-  line-height: 1.1;
+}
+@media screen and (max-width: 39.9375em) {
+  /* line 203, ../sass/_typography.scss */
+  h1 {
+    font-size: 1.7em;
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 60em) {
+  /* line 203, ../sass/_typography.scss */
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.1;
+  }
 }
 
-/* line 208, ../sass/_typography.scss */
-h2 {
-  font-size: 2em;
-  line-height: 1.1;
+@media screen and (max-width: 39.9375em) {
+  /* line 214, ../sass/_typography.scss */
+  h2 {
+    font-size: 1.4em;
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 60em) {
+  /* line 214, ../sass/_typography.scss */
+  h2 {
+    font-size: 2em;
+    line-height: 1.1;
+  }
 }
 
-/* line 212, ../sass/_typography.scss */
-h3 {
-  font-size: 1.75em;
-  line-height: 1.1;
+@media screen and (max-width: 39.9375em) {
+  /* line 224, ../sass/_typography.scss */
+  h3 {
+    font-size: 1.2em;
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 60em) {
+  /* line 224, ../sass/_typography.scss */
+  h3 {
+    font-size: 1.75em;
+    line-height: 1.1;
+  }
 }
 
-/* line 216, ../sass/_typography.scss */
+/* line 234, ../sass/_typography.scss */
 h4 {
-  font-size: 1.3em;
-  line-height: 1.1;
   font-weight: 700;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
+@media screen and (max-width: 39.9375em) {
+  /* line 234, ../sass/_typography.scss */
+  h4 {
+    font-size: 1.1em;
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 60em) {
+  /* line 234, ../sass/_typography.scss */
+  h4 {
+    font-size: 1.3em;
+    line-height: 1.1;
+  }
+}
 
-/* line 222, ../sass/_typography.scss */
+/* line 246, ../sass/_typography.scss */
 h5 {
-  font-size: 1.1em;
-  line-height: 1.1;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   color: #747070;
 }
+@media screen and (max-width: 39.9375em) {
+  /* line 246, ../sass/_typography.scss */
+  h5 {
+    font-size: 1em;
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 60em) {
+  /* line 246, ../sass/_typography.scss */
+  h5 {
+    font-size: 1.1em;
+    line-height: 1.1;
+  }
+}
 
-/* line 228, ../sass/_typography.scss */
+/* line 258, ../sass/_typography.scss */
 h6 {
   font-size: 0.9em;
   line-height: 1.1;
@@ -918,81 +972,105 @@ body {
     clear: both;
   }
 }
-/* line 71, ../sass/app.scss */
+@media screen and (max-width: 39.9375em) {
+  /* line 67, ../sass/app.scss */
+  .welcome-info {
+    margin-bottom: 0 !important;
+  }
+  /* line 68, ../sass/app.scss */
+  .welcome-info h1 {
+    font-size: 1.5em;
+  }
+  /* line 72, ../sass/app.scss */
+  .welcome-info p {
+    padding-bottom: 0 !important;
+  }
+
+  /* line 79, ../sass/app.scss */
+  .main-wrap {
+    margin-top: 0 !important;
+  }
+
+  /* line 84, ../sass/app.scss */
+  .main-nav .site-logo {
+    display: none;
+  }
+}
+/* line 95, ../sass/app.scss */
 ul li {
   margin-bottom: 0.5em;
 }
-/* line 75, ../sass/app.scss */
+/* line 99, ../sass/app.scss */
 ul li.active a {
   color: #262525;
   font-weight: 700;
   margin-left: 0.2em;
 }
-/* line 83, ../sass/app.scss */
+/* line 107, ../sass/app.scss */
 ul li a {
   text-decoration: none;
   border-bottom: none;
 }
 
-/* line 98, ../sass/app.scss */
+/* line 122, ../sass/app.scss */
 .portfolio:after {
   /* Or @extend clearfix */
   content: "";
   display: table;
   clear: both;
 }
-/* line 105, ../sass/app.scss */
+/* line 129, ../sass/app.scss */
 .portfolio .portfolio-item {
   float: left;
   width: 33.33%;
   padding-right: 10px;
   padding-left: 10px;
 }
-/* line 110, ../sass/app.scss */
+/* line 134, ../sass/app.scss */
 .portfolio .portfolio-item:last-of-type {
   padding-right: 0;
   padding-left: 20px;
 }
-/* line 114, ../sass/app.scss */
+/* line 138, ../sass/app.scss */
 .portfolio .portfolio-item:first-of-type {
   padding-left: 0;
   padding-right: 20px;
 }
-/* line 119, ../sass/app.scss */
+/* line 143, ../sass/app.scss */
 .portfolio .portfolio-item .portfolio-item-tag {
   font-weight: 200;
   font-style: italic;
 }
 @media screen and (max-width: 39.9375em) {
-  /* line 105, ../sass/app.scss */
+  /* line 129, ../sass/app.scss */
   .portfolio .portfolio-item {
     float: none;
     width: 100%;
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 130, ../sass/app.scss */
+  /* line 154, ../sass/app.scss */
   .portfolio .portfolio-item:last-of-type {
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 134, ../sass/app.scss */
+  /* line 158, ../sass/app.scss */
   .portfolio .portfolio-item:first-of-type {
     padding-left: 0;
     padding-right: 0;
   }
-  /* line 139, ../sass/app.scss */
+  /* line 163, ../sass/app.scss */
   .portfolio .portfolio-item .portfolio-thumbnail {
     width: 100%;
   }
 }
 
-/* line 151, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 .form-group label {
   display: block;
   margin-bottom: .2em;
 }
-/* line 156, ../sass/app.scss */
+/* line 180, ../sass/app.scss */
 .form-group input, .form-group textarea {
   margin-bottom: 1em;
   width: 100%;
@@ -1002,7 +1080,7 @@ ul li a {
   padding: 0.8em 1.3em;
 }
 
-/* line 170, ../sass/app.scss */
+/* line 194, ../sass/app.scss */
 .btn {
   border: none;
   padding: 0.8em 1.3em;
@@ -1010,13 +1088,13 @@ ul li a {
   color: #f3f3f3;
 }
 
-/* line 181, ../sass/app.scss */
+/* line 205, ../sass/app.scss */
 .alert {
   padding: 0.5em 1em;
   background-color: #262525;
   color: #f3f3f3;
 }
-/* line 187, ../sass/app.scss */
+/* line 211, ../sass/app.scss */
 .alert .close {
   border: none;
   background: none;
@@ -1027,7 +1105,7 @@ ul li a {
   right: 3px;
 }
 
-/* line 200, ../sass/app.scss */
+/* line 224, ../sass/app.scss */
 .alert-danger {
   background-color: #dc3737;
 }

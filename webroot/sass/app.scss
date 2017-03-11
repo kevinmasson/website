@@ -63,6 +63,30 @@ body{
 
 }
 
+@include breakpoint(small down){
+    .welcome-info{
+        h1{
+            font-size: 1.5em;
+        }
+
+        p{
+            padding-bottom: 0 !important;
+        }
+
+        margin-bottom: 0 !important;
+    }
+
+    .main-wrap{
+        margin-top: 0 !important;
+    }
+
+    .main-nav{
+        .site-logo{
+            display:none;
+        }
+    }
+}
+
 // ##########################
 // NAV
 // ##########################
