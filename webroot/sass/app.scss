@@ -111,6 +111,17 @@ ul{
     }
 }
 
+nav{
+
+	ul.pagination{
+		li{
+			display:inline-block;
+			padding: 0.7em 1em;
+		}
+
+	}
+}
+
 // ##########################
 // PORTFOLIO
 // ##########################
@@ -184,7 +195,15 @@ ul{
         color: lighten($color, 15%);
         border: none;
         padding: 0.8em 1.3em;
+
+
     }
+
+	&:after{
+		content:'';
+		display:block;
+		clear:both;
+	}
 }
 
 // ##########################
@@ -196,6 +215,17 @@ ul{
     padding: 0.8em 1.3em;
     background-color: $color;
     color: $background;
+    display: inline-block;
+}
+
+a.btn{
+    text-decoration:none;
+}
+
+.btn-group{
+    .btn{
+        margin: 0 0.5em 0.5em 0;
+    }
 }
 
 // ##########################
@@ -223,4 +253,43 @@ ul{
 
 .alert-danger{
     background-color: #dc3737;
+}
+
+// ##########################
+// TABLE
+// ##########################
+
+table {
+	border:darken($background, 10%) 1px solid;
+	color: $color;
+	font-weight: 300;
+	text-align: left;
+	width:100%;
+
+	margin-bottom: 1em;
+
+	a{
+		color: inherit;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	th{
+		padding: 1.2em 0.7em;
+		background: $color;
+		color: $background;
+
+	}
+
+	tr{
+		border-bottom: darken($background, 10%) 1px solid;
+		&:hover td{
+			background: lighten($background, 10%);
+		}
+	}
+
+	td{
+		padding: 1em 0.7em;
+		background: lighten($background, 30%);
+	}
 }

@@ -1012,65 +1012,71 @@ ul li a {
   border-bottom: none;
 }
 
-/* line 122, ../sass/app.scss */
+/* line 117, ../sass/app.scss */
+nav ul.pagination li {
+  display: inline-block;
+  padding: 0.7em 1em;
+}
+
+/* line 133, ../sass/app.scss */
 .portfolio:after {
   /* Or @extend clearfix */
   content: "";
   display: table;
   clear: both;
 }
-/* line 129, ../sass/app.scss */
+/* line 140, ../sass/app.scss */
 .portfolio .portfolio-item {
   float: left;
   width: 33.33%;
   padding-right: 10px;
   padding-left: 10px;
 }
-/* line 134, ../sass/app.scss */
+/* line 145, ../sass/app.scss */
 .portfolio .portfolio-item:last-of-type {
   padding-right: 0;
   padding-left: 20px;
 }
-/* line 138, ../sass/app.scss */
+/* line 149, ../sass/app.scss */
 .portfolio .portfolio-item:first-of-type {
   padding-left: 0;
   padding-right: 20px;
 }
-/* line 143, ../sass/app.scss */
+/* line 154, ../sass/app.scss */
 .portfolio .portfolio-item .portfolio-item-tag {
   font-weight: 200;
   font-style: italic;
 }
 @media screen and (max-width: 39.9375em) {
-  /* line 129, ../sass/app.scss */
+  /* line 140, ../sass/app.scss */
   .portfolio .portfolio-item {
     float: none;
     width: 100%;
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 154, ../sass/app.scss */
+  /* line 165, ../sass/app.scss */
   .portfolio .portfolio-item:last-of-type {
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 158, ../sass/app.scss */
+  /* line 169, ../sass/app.scss */
   .portfolio .portfolio-item:first-of-type {
     padding-left: 0;
     padding-right: 0;
   }
-  /* line 163, ../sass/app.scss */
+  /* line 174, ../sass/app.scss */
   .portfolio .portfolio-item .portfolio-thumbnail {
     width: 100%;
   }
 }
 
-/* line 175, ../sass/app.scss */
+/* line 186, ../sass/app.scss */
 .form-group label {
   display: block;
   margin-bottom: .2em;
 }
-/* line 180, ../sass/app.scss */
+/* line 191, ../sass/app.scss */
 .form-group input, .form-group textarea {
   margin-bottom: 1em;
   width: 100%;
@@ -1079,22 +1085,39 @@ ul li a {
   border: none;
   padding: 0.8em 1.3em;
 }
+/* line 202, ../sass/app.scss */
+.form-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
-/* line 194, ../sass/app.scss */
+/* line 213, ../sass/app.scss */
 .btn {
   border: none;
   padding: 0.8em 1.3em;
   background-color: #262525;
   color: #f3f3f3;
+  display: inline-block;
 }
 
-/* line 205, ../sass/app.scss */
+/* line 221, ../sass/app.scss */
+a.btn {
+  text-decoration: none;
+}
+
+/* line 226, ../sass/app.scss */
+.btn-group .btn {
+  margin: 0 0.5em 0.5em 0;
+}
+
+/* line 235, ../sass/app.scss */
 .alert {
   padding: 0.5em 1em;
   background-color: #262525;
   color: #f3f3f3;
 }
-/* line 211, ../sass/app.scss */
+/* line 241, ../sass/app.scss */
 .alert .close {
   border: none;
   background: none;
@@ -1105,7 +1128,42 @@ ul li a {
   right: 3px;
 }
 
-/* line 224, ../sass/app.scss */
+/* line 254, ../sass/app.scss */
 .alert-danger {
   background-color: #dc3737;
+}
+
+/* line 262, ../sass/app.scss */
+table {
+  border: #dadada 1px solid;
+  color: #262525;
+  font-weight: 300;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 1em;
+}
+/* line 271, ../sass/app.scss */
+table a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+/* line 277, ../sass/app.scss */
+table th {
+  padding: 1.2em 0.7em;
+  background: #262525;
+  color: #f3f3f3;
+}
+/* line 284, ../sass/app.scss */
+table tr {
+  border-bottom: #dadada 1px solid;
+}
+/* line 286, ../sass/app.scss */
+table tr:hover td {
+  background: white;
+}
+/* line 291, ../sass/app.scss */
+table td {
+  padding: 1em 0.7em;
+  background: white;
 }

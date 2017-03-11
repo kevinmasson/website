@@ -3,12 +3,9 @@ $this->assign('title', __('Gestion du portfolio'));
 ?>
 <?= $this->Element('page_header', ['mainTitle' => 'Gestion du portfolio', 'subtitle' => "Types"]) ?>
 
-<div class="types row">
-	<div class="col-md-3">
-		<?= $this->Element('admin_portfolio_actions'); ?>
-	</div>
-	<div class="col-md-9">
-	    <table class="table table-hover">
+<?= $this->Element('admin_portfolio_actions'); ?>
+<div class="types my3">
+	    <table>
 	        <thead>
 	            <tr>
 	                <th><?= $this->Paginator->sort('id') ?></th>
@@ -23,7 +20,7 @@ $this->assign('title', __('Gestion du portfolio'));
 	                <td><?= $this->Number->format($type->id) ?></td>
 	                <td><?= $this->Html->link($type->name, ['action' => 'view', $type->id]) ?></td>
 	                <td><?= h($type->slug) ?></td>
-	                <td class="actions">                    
+	                <td class="actions">
 	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $type->id]) ?>
 	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $type->id], ['confirm' => __('Êtes vous sûr de vouloir supprimer le type {0}?', $type->id)]) ?>
 	                </td>
@@ -39,5 +36,4 @@ $this->assign('title', __('Gestion du portfolio'));
 	            <?= $this->Paginator->next(__('next') . ' >') ?>
 		  </ul>
 	</nav>
-	</div>
 </div>

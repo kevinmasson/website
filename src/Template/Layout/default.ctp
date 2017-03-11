@@ -36,10 +36,6 @@ $this->end();
 <body>
       <?= $this->Flash->render() ?>
       <?= $this->fetch('topContent') ?>
-<?php
-if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
-   echo $this->Element('admin_nav');
-?>
     <div class="mt5 mxa wrap-xl main-wrap">
     <nav class="mt2 main-nav">
     <div class="mr3 mb5 site-logo">
@@ -80,6 +76,10 @@ if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'a
 		</span>
 	</nav>
     </footer>
+<?php
+if (isset($userDetails) && !is_null($userDetails) && $userDetails['role'] === 'admin')
+   echo $this->Element('admin_nav');
+?>
 </div>
 	</div>
       <?= $this->fetch('contentNoWrap') ?>

@@ -3,12 +3,9 @@ $this->assign('title', 'Gestion du portfolio');
 ?>
 <?= $this->Element('page_header', ['mainTitle' => 'Gestion du portfolio', 'subtitle' => "Créations"]) ?>
 
-<div class="creations row">
-	<div class="col-md-3">
-		<?= $this->Element('admin_portfolio_actions'); ?>
-	</div>
-	<div class="col-md-9">
-    <table class="table table-hover">
+<?= $this->Element('admin_portfolio_actions'); ?>
+<div class="creations my3">
+    <table>
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
@@ -30,7 +27,7 @@ $this->assign('title', 'Gestion du portfolio');
                 <td><?= h($creation->created) ?></td>
                 <td><?= h($creation->modified) ?></td>
                 <td class="actions">
-                    
+
                     <?= $this->Html->link(__('Edit'), ['_name' => 'admin_creations_edit', $creation->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['_name' => 'admin_creations_delete', $creation->id], ['confirm' => __('Êtes vous sûr de vouloir supprimer la création {0}?', $creation->id)]) ?>
                 </td>
@@ -46,5 +43,4 @@ $this->assign('title', 'Gestion du portfolio');
             <?= $this->Paginator->next(__('next') . ' >') ?>
   </ul>
 </nav>
-</div>
 </div>
