@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.sitemaps import ping_google
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
@@ -25,3 +26,7 @@ class Article(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Article, self).save(*args, **kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass
