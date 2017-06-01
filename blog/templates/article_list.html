@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 <ul>
     {% for article in object_list %}
     <a href="{% url "blog_article_detail" article.slug %}">Plus</a>
@@ -5,3 +8,4 @@
         <p> {{ article.text }} </p>
     {% endfor %}
 </ul>
+{% endblock content %}
