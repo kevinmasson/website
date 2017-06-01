@@ -1,5 +1,6 @@
 <ul>
     {% for article in object_list %}
+    <a href="{% url "blog_article_detail" article.slug %}">Plus</a>
         <li> {{ article.title }} <br/>
         <p> {{ article.text }} </p>
     {% endfor %}
