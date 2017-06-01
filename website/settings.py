@@ -26,7 +26,9 @@ SECRET_KEY = 'v8!1t^+=dy-uh99#+yjlwr+@o9s0be5-8u-tvrh4%je(%%05m='
 DEBUG = True
 
 SITE_ID = 1
-
+ROBOTS_SITEMAP_VIEW_NAME = 'sitemap'
+ROBOTS_USE_HOST = False
+ROBOTS_CACHE_TIMEOUT = 60*60*24
 ALLOWED_HOSTS = []
 
 
@@ -34,6 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog',
+    'robots',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
