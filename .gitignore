@@ -11,4 +11,5 @@ lib64
 *.pyc
 *.pyo
 db.sqlite3
-static/bourbon
+static/stylesheets/sass/bourbon
+.sass-cache

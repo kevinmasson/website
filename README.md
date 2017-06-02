@@ -4,4 +4,4 @@
 
 * Install
 
-`bourbon install --path=static`
+`bourbon install --path=static/stylesheets/sass`
