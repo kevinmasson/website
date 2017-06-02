@@ -1,6 +1,11 @@
-@import "bourbon/bourbon"
-@import "neat/neat"
+@import "bourbon/bourbon";
+@import "neat/neat";
 
 h1 {
-    color: red;
+  font-family: $helvetica;
+  font-size: golden-ratio(14px,  1);
+}
+
+body {
+    background: red;
 }

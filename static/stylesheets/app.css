@@ -1,37 +1,8 @@
-/*
-Error: Invalid CSS after "...ourbon/bourbon"": expected selector or at-rule, was "@import "neat/n..."
-        on line 2 of static/stylesheets/sass/app.scss
+h1 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 22.652px; }
 
-1: @import "bourbon/bourbon"
-2: @import "neat/neat"
-3: 
-4: h1 {
-5:     color: red;
-6: }
+body {
+  background: red; }
 
-Backtrace:
-static/stylesheets/sass/app.scss:2
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1207:in `expected'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1137:in `expected'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:42:in `parse'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:406:in `_to_tree'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `each'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:294:in `watch'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/plugin.rb:109:in `method_missing'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/exec/base.rb:52:in `parse'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/lib/sass/exec/base.rb:19:in `parse!'
-/home/oktomus/.gem/ruby/2.4.0/gems/sass-3.4.24/bin/sass:13:in `<top (required)>'
-/home/oktomus/.gem/ruby/2.4.0/bin/sass:22:in `load'
-/home/oktomus/.gem/ruby/2.4.0/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...ourbon/bourbon\"\": expected selector or at-rule, was \"@import \"neat/n...\"\A         on line 2 of static/stylesheets/sass/app.scss\A \A 1: @import \"bourbon/bourbon\"\A 2: @import \"neat/neat\"\A 3: \A 4: h1 {\A 5:     color: red;\A 6: }"; }
+/*# sourceMappingURL=app.css.map */
