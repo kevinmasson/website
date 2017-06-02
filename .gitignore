@@ -12,4 +12,5 @@ lib64
 *.pyo
 db.sqlite3
 static/stylesheets/sass/bourbon
+static/stylesheets/sass/neat
 .sass-cache
