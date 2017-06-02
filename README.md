@@ -5,4 +5,7 @@
 * Install
 
 `bourbon install --path=static/stylesheets/sass`
+
 `cd static/stylesheets/sass && neat install && cd -`
+
+`cd static/stylesheets/sass && bitters install && cd -`

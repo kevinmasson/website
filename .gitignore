@@ -13,4 +13,5 @@ lib64
 db.sqlite3
 static/stylesheets/sass/bourbon
 static/stylesheets/sass/neat
+static/stylesheets/sass/base
 .sass-cache

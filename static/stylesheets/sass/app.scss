@@ -1,11 +1,8 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-h1 {
-  font-family: $helvetica;
-  font-size: golden-ratio(14px,  1);
-}
+$font-stack-system: $helvetica;
 
-body {
-    background: red;
-}
+@import "base/base";
+
+
