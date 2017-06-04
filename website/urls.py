@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemap import BlogSitemap
+from django.contrib.flatpages import views
 
 sitemaps = {
         'blog': BlogSitemap,
@@ -28,4 +29,5 @@ urlpatterns = [
     url(r'^sitemap\.xml', sitemap, {'sitemaps': sitemaps},
         name='sitemap'),
     url(r'^robots\.txt', include('robots.urls')),
+    url(r'^(?P<url>.*/)$', views.flatpage),
 ]
