@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.flatpages.sitemaps import FlatPageSitemap
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemap import BlogSitemap
 from django.contrib.flatpages import views
 
 sitemaps = {
         'blog': BlogSitemap,
+        'pages': FlatPageSitemap,
         }
 
 urlpatterns = [
