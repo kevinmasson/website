@@ -9,3 +9,5 @@
 `cd static/stylesheets/sass && neat install && cd -`
 
 `cd static/stylesheets/sass && bitters install && cd -`
+
+`./manage.py collectstatic`

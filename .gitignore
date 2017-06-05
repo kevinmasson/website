@@ -14,4 +14,6 @@ db.sqlite3
 static/stylesheets/sass/bourbon
 static/stylesheets/sass/neat
 static/stylesheets/sass/base
+static/markdownx
+static/admin
 .sass-cache

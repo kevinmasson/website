@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^sitemap\.xml', sitemap, {'sitemaps': sitemaps},
         name='sitemap'),
     url(r'^robots\.txt', include('robots.urls')),
+    url(r'^markdownx/', include('markdownx.urls')),
     url(r'^(?P<url>.*/)$', views.flatpage),
 ]

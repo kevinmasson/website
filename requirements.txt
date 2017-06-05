@@ -1,2 +1,3 @@
 django-robots
 Markdown
+django-markdownx
