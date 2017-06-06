@@ -19,6 +19,8 @@ from django.contrib.flatpages.sitemaps import FlatPageSitemap
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemap import BlogSitemap
 from django.contrib.flatpages import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 sitemaps = {
         'blog': BlogSitemap,
@@ -32,5 +34,6 @@ urlpatterns = [
         name='sitemap'),
     url(r'^robots\.txt', include('robots.urls')),
     url(r'^markdownx/', include('markdownx.urls')),
-    url(r'^(?P<url>.*/)$', views.flatpage),
-]
+#   url(r'^page/(?P<url>.*/)$', views.flatpage),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

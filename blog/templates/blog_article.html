@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-{% load markup %}
+{% load markdown_deux_tags %}
 
 {% block content %}
 <h2>{{ article.title }}</h2>
 
 <div class="content">
-    <p>
-        {{ post.text | markdown }}
-    </p>
+    CONTENU:
+    {{ article.text | markdown }}
     <span>
-        Written on {{ post.created_on }}
+        Written on {{ article.created_on }}
     </span>
 </div>
 {% endblock content %}

@@ -16,4 +16,5 @@ static/stylesheets/sass/neat
 static/stylesheets/sass/base
 static/markdownx
 static/admin
+media
 .sass-cache
