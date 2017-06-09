@@ -30,6 +30,7 @@ sitemaps = {
 urlpatterns = [
     url(r'^$', views.flatpage, {'url': '/home/'}, name='home'),
     url(r'^about/$', views.flatpage, {'url': '/about/'}, name='about'),
+    url(r'^work/$', views.flatpage, {'url': '/work/'}, name='work'),
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls')),
     url(r'^sitemap\.xml', sitemap, {'sitemaps': sitemaps},
