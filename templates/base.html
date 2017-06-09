@@ -6,6 +6,32 @@
         <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/app.css' %}"/>
     </head>
     <body>
+
+        {% block navbar %}
+        <div class="top">
+            <nav>
+                <ul>
+                    <li><a 
+                            href="{% url "home" %}" title="Homepage">
+                            Home
+                    </a></li>
+                    <li><a 
+                            href="/work/" title="See my work">
+                            Work
+                    </a></li>
+                    <li><a 
+                            href="{% url "article_list" %}" title="Read my articles">
+                            Blog
+                    </a></li>
+                    <li><a 
+                            href="/about/" title="About me">
+                            About
+                    </a></li>
+                </ul>
+            </nav>
+        </nav>
+        {% endblock %}
+
         {% block content %}
         {% endblock %}
         {% block sidebar %}
