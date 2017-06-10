@@ -5,10 +5,15 @@
 
 {% block content %}
 
-<div class="content">
-    {{ article.text | markdown }}
-    <span>
-        Written on {{ article.created_on|date:"F d, Y" }}
-    </span>
+<div class="container content">
+    <div class="post">
+        <h1 class="post-title">{{ article.title }}</h1>
+        <span class="post-info">
+            {{ article.created_on|date:"F d, Y" }}
+        </span>
+        <div class="post-content">
+            {{ article.text | markdown }}
+        </div>
+    </div>
 </div>
 {% endblock content %}
