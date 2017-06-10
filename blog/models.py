@@ -6,6 +6,7 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     text = models.TextField()
+    description = models.CharField(max_length=500)
     thumbnail = models.ImageField(
             blank=True,
             upload_to="blog/thumbnails/%Y/%m/")
