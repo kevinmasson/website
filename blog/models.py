@@ -6,6 +6,9 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     text = models.TextField()
+    thumbnail = models.ImageField(
+            blank=True,
+            upload_to="blog/thumbnails/%Y/%m/")
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
