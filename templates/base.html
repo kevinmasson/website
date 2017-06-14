@@ -2,14 +2,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}{% endblock %} - oktomus.me</title>
+        <title>{% block title %}{% endblock %} - Digital art and programming</title>
         <link rel="stylesheet" type="text/css" href="{% static 'app.css' %}"/>
     </head>
     <body>
 
         {% block navbar %}
-        <div class="top">
-            <nav>
+        <div class="site-header">
+            <div class="site-logo">
+                Digital art and programming
+            </div>
+            <nav class="site-nav">
                 <ul>
                     <li><a 
                             href="{% url "home" %}" title="Homepage">
@@ -29,7 +32,8 @@
                     </a></li>
                 </ul>
             </nav>
-        </nav>
+        </div>
+        <div class="clear"></div>
         {% endblock %}
 
         {% block content %}
@@ -37,20 +41,22 @@
         {% block sidebar %}
         {% endblock %}
         {% block footer %}
-        <p>Everything is licensed under a 
-            <a 
-                title="Licence used on my content" 
-                href="https://creativecommons.org/licenses/by/4.0/">
-                Creative Commons Attribution 4.0 license
-            </a> unless otherwise noted in the page.
-        </p>
-        <p>This website was made using Django and the 
-            <a 
-                title="Website source code" 
-                href="https://github.com/oktomus/website">
-                source code
-            </a> is available on github
-        </p>
+        <div class="site-footer">
+            <p>Everything is licensed under a 
+                <a 
+                    title="Licence used on my content" 
+                    href="https://creativecommons.org/licenses/by/4.0/">
+                    Creative Commons Attribution 4.0 license
+                </a> unless otherwise noted in the page.
+            </p>
+            <p>This website was made using Django and the 
+                <a 
+                    title="Website source code" 
+                    href="https://github.com/oktomus/website">
+                    source code
+                </a> is available on github
+            </p>
+        </div>
         {% endblock %}
     </body>
 </html>

@@ -2,18 +2,25 @@
 
 {% block title %}Blog ({{ object_list|length }}){% endblock %}
 {% block content %}
-<ul>
+<div class="container content">
+<ul class="article-list">
     {% for article in object_list %}
-        <li>
-        <a 
+        <li class="article-item">
+        <a
+            class="article-title"
             href="{% url "blog_article_detail" article.slug %}">
             {{ article.title }}
         </a>
-        {{ article.created_on|date:"Y/m/d" }}
-        <p>{{ article.description }}</p>  
+        <span class="post-info">
+            {{ article.created_on|date:"Y/m/d" }}
+        </span>
         {% if article.thumbnail %}
-        <img src="{{ article.thumbnail.url }}"/>
+        <img class="article-thumb" src="{{ article.thumbnail.url }}"/>
         {% endif %}
+        <p class="article-desc">{{ article.description }}</p>  
+        <hr>
+        </li>
     {% endfor %}
 </ul>
+</div>
 {% endblock content %}
