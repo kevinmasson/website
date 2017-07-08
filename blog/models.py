@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.sitemaps import ping_google
+from django.utils import timezone
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
@@ -11,6 +12,8 @@ class Article(models.Model):
             blank=True,
             upload_to="blog/thumbnails/%Y/%m/")
     created_on = models.DateTimeField(auto_now_add=True)
+    publish_date = models.DateTimeField(default=timezone.now)
+    edited_on = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.title
