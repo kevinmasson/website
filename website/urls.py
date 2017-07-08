@@ -38,5 +38,6 @@ urlpatterns = [
     url(r'^$', views.flatpage, {'url': '/home/'}, name='home'),
     url(r'^about/$', views.flatpage, {'url': '/about/'}, name='about'),
     url(r'^work/$', views.flatpage, {'url': '/work/'}, name='work'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
