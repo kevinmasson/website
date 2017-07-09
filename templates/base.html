@@ -3,8 +3,10 @@
 <html>
     <head>
         <title>{% block title %}{% endblock %} - Digital art and programming</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/app.css' %}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/app.css' %}"/>
+        {% block html_head %}
+        {% endblock %}
     </head>
     <body class="site">
 
