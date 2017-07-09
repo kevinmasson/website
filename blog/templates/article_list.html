@@ -12,7 +12,7 @@
             {{ article.title }}
         </a>
         <span class="post-info">
-            {{ article.created_on|date:"Y/m/d" }}
+            {{ article.publish_date|date:"F d, Y" }}
         </span>
         {% if article.thumbnail %}
         <img class="article-thumb" src="{{ article.thumbnail.url }}"/>

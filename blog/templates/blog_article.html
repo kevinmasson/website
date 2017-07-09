@@ -9,7 +9,7 @@
     <div class="post">
         <h1 class="post-title">{{ article.title }}</h1>
         <span class="post-info">
-            {{ article.created_on|date:"F d, Y" }}
+            {{ article.publish_date|date:"F d, Y" }}
         </span>
         <div class="post-content">
             {{ article.text | markdown }}
