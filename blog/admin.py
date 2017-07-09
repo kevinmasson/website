@@ -24,7 +24,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
     fieldsets = (
             ('General', {
-                'classes': ['collapse',],
+                'classes': ('wide', 'extrapretty',),
                 'fields': ['title', 'status', 'slug', 'publish_date']
                 }
             ),
