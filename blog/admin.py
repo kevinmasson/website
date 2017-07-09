@@ -13,6 +13,7 @@ make_published.short_description = "Mark selected articles as published"
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'publish_date', 'status']
     actions = [make_published]
+    prepopulated_fields = {'slug': ('title', ), }
     date_hierarchy = 'publish_date'
     ordering = ['-publish_date', 'title']
     exclude = ('created_on', 'edited_on')
