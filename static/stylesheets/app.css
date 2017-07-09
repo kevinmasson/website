@@ -335,14 +335,6 @@ tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: #f9f9f9; }
 
-/* Container */
-.container {
-  max-width: 38rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto; }
-
 /* Posts and Pages */
 .page,
 .post {
@@ -390,9 +382,10 @@ h1.page-title {
   .site .site-header, .site .site-footer {
     flex: none; }
 
-.content {
-  padding-top: 1rem;
-  padding-bottom: 4rem; }
+.wrapper {
+  max-width: 38rem;
+  padding: 1rem;
+  margin: 0 auto; }
 
 @media (min-width: 1160px) {
   .content {
