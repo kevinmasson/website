@@ -445,10 +445,14 @@ h1.page-title {
   text-align: justify; }
 
 /* Home page */
+.landing-center {
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  flex-direction: column; }
+
 .home-descriptor {
   text-align: center;
-  max-width: 100%;
-  margin: 20% auto;
   font-size: 150%; }
   .home-descriptor .name a {
     color: black; }
