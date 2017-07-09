@@ -222,6 +222,22 @@ h1.page-title {
 }
 /* Container */
 
+.site {
+    min-height: 100vh; // Full height
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    .site-content{
+        flex: 1;
+    }
+
+    .site-content, .site-header, .site-footer{
+        flex-shrink: 0;
+    }
+
+}
+
 .content {
   padding-top:    1rem;
   padding-bottom: 4rem;
@@ -242,11 +258,11 @@ h1.page-title {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    padding: 1em;
+    padding: 1rem;
 
     .site-logo{
         flex-grow: 1;
-        font-size: 150%;
+        font-size: 1.5rem;
 
     }
 
@@ -257,7 +273,7 @@ h1.page-title {
             li{
                 list-style-type:none;
                 & + li{
-                    margin-left: 2em;
+                    margin-left: 2rem;
                     margin-top: 0;
                 }
             }
@@ -265,22 +281,32 @@ h1.page-title {
         }
     }
 }
-
-@media (max-width: 600px){
+@media (max-width: 800px){
     .site-header{
         flex-flow: column wrap;
         .site-logo{
             text-align: center;
         }
         .site-nav{
-            margin-top: 1em;
+            margin-top: 1rem;
+            ul{
+                justify-content: space-around;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 600px){
+    .site-header{
+        .site-nav{
             ul{
                 text-align: center;
                 flex-flow: column wrap;
                 li{
                     & + li{
                         margin-left: 0;
-                        margin-top: 0.5em;
+                        margin-top: 0.5rem;
                     }
                 }
             }
@@ -294,6 +320,7 @@ h1.page-title {
 
     padding: 1em;
     text-align:center;
+    font-size: 0.7rem;
 
     p{
         margin: 0;
