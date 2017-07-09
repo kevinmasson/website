@@ -198,10 +198,6 @@ hr {
   border-top: 0;
   margin: 1.5em 0; }
 
-@media (min-width: 1160px) {
-  body {
-    margin-top: 70px; } }
-
 .clear {
   clear: both;
   float: none; }
@@ -391,34 +387,36 @@ h1.page-title {
     padding-top: 4rem;
     max-width: 40rem; } }
 /* Header */
-.site-header .site-logo {
-  font-size: 150%; }
-  @media (min-width: 1160px) {
-    .site-header .site-logo {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      text-align: left; } }
-  @media (max-width: 1159px) {
-    .site-header .site-logo {
-      text-align: center;
-      position: inherit;
-      margin: 30px 0; } }
-@media (min-width: 1160px) {
-  .site-header .site-nav {
-    position: absolute;
-    right: 30px;
-    top: 30px; } }
-.site-header .site-nav ul li {
-  list-style-type: none;
-  float: none;
-  text-align: center; }
-  @media (min-width: 1160px) {
+.site-header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 1em; }
+  .site-header .site-logo {
+    flex-grow: 1;
+    font-size: 150%; }
+  .site-header .site-nav ul {
+    display: flex;
+    flex-flow: row wrap; }
     .site-header .site-nav ul li {
-      float: left; }
+      list-style-type: none; }
       .site-header .site-nav ul li + li {
-        margin-left: 30px; } }
+        margin-left: 2em;
+        margin-top: 0; }
 
+@media (max-width: 600px) {
+  .site-header {
+    flex-flow: column wrap; }
+    .site-header .site-logo {
+      text-align: center; }
+    .site-header .site-nav {
+      margin-top: 1em; }
+      .site-header .site-nav ul {
+        text-align: center;
+        flex-flow: column wrap; }
+        .site-header .site-nav ul li + li {
+          margin-left: 0;
+          margin-top: 0.5em; } }
 /* Site footer */
 .site-footer {
   padding: 1em;

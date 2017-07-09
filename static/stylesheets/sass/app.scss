@@ -3,12 +3,6 @@
 $font-stack-system: $helvetica;
 @import "base/base";
 
-body{
-    @media (min-width: 1160px) {
-        margin-top:70px;
-    }
-}
-
 .clear{
     clear:both;
     float:none;
@@ -80,6 +74,7 @@ code,
 pre {
   font-family: "Source Code Pro", Menlo, Monaco, "Courier New", monospace;
 }
+
 code {
   padding: .125em .5em;
   font-size: 85%;
@@ -241,55 +236,57 @@ h1.page-title {
 
 /* Header */
 
+
 .site-header{
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 1em;
+
     .site-logo{
-
-        @media (min-width: 1160px) {
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            text-align: left;
-        }
-
-        @media (max-width: 1159px) {
-            text-align:center;
-            position: inherit;
-            margin: 30px 0;
-
-        }
-
+        flex-grow: 1;
         font-size: 150%;
 
     }
 
     .site-nav{
-
-        @media (min-width: 1160px) {
-            position: absolute;
-            right: 30px;
-            top: 30px;
-        }
-        
         ul{
-            
+            display: flex;
+            flex-flow: row wrap;
             li{
                 list-style-type:none;
-                @media (min-width: 1160px) {
-                    float: left;
-
-                    & + li{
-                        margin-left: 30px;
-                    }
+                & + li{
+                    margin-left: 2em;
+                    margin-top: 0;
                 }
-
-                float:none;
-                text-align:center;
-
             }
 
         }
 
 
+    }
+}
+
+@media (max-width: 600px){
+    .site-header{
+        flex-flow: column wrap;
+        .site-logo{
+            text-align: center;
+        }
+        .site-nav{
+            margin-top: 1em;
+            ul{
+                text-align: center;
+                flex-flow: column wrap;
+                li{
+                    & + li{
+                        margin-left: 0;
+                        margin-top: 0.5em;
+                    }
+                }
+            }
+        }
     }
 }
 
