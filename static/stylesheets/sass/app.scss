@@ -226,14 +226,18 @@ h1.page-title {
     min-height: 100vh; // Full height
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
 
     .site-content{
-        flex: 1;
+        display: flex;
+        flex: 1 0 auto;
+
+        & > * {
+            flex: 0 100%;
+        }
     }
 
-    .site-content, .site-header, .site-footer{
-        flex-shrink: 0;
+    .site-header, .site-footer{
+        flex: none;
     }
 
 }
@@ -352,7 +356,7 @@ h1.page-title {
 
 .landing-center{
     display: flex;
-    min-height: 100%;
+    flex: 1;
     justify-content: center;
     flex-direction: column;
 }
@@ -360,6 +364,7 @@ h1.page-title {
 .home-descriptor{
     text-align: center;
     font-size: 150%;
+    padding: 1rem;
 
     .name a{
         color: black;

@@ -381,12 +381,14 @@ h1.page-title {
 .site {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0; }
+  flex-direction: column; }
   .site .site-content {
-    flex: 1; }
-  .site .site-content, .site .site-header, .site .site-footer {
-    flex-shrink: 0; }
+    display: flex;
+    flex: 1 0 auto; }
+    .site .site-content > * {
+      flex: 0 100%; }
+  .site .site-header, .site .site-footer {
+    flex: none; }
 
 .content {
   padding-top: 1rem;
@@ -447,13 +449,14 @@ h1.page-title {
 /* Home page */
 .landing-center {
   display: flex;
-  min-height: 100%;
+  flex: 1;
   justify-content: center;
   flex-direction: column; }
 
 .home-descriptor {
   text-align: center;
-  font-size: 150%; }
+  font-size: 150%;
+  padding: 1rem; }
   .home-descriptor .name a {
     color: black; }
   .home-descriptor .subtitle a {
