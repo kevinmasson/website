@@ -3,6 +3,12 @@ from django.template.defaultfilters import slugify
 from django.contrib.sitemaps import ping_google
 from django.utils import timezone
 
+STATUS_CHOICES = (
+    ('d', 'Draft'),
+    ('p', 'Published'),
+    ('w', 'Withdrawn'),
+)
+
 class DescriptionField(models.CharField):
     pass
 
@@ -11,6 +17,7 @@ class Article(models.Model):
     slug = models.SlugField(unique=True)
     text = models.TextField()
     description = DescriptionField(max_length=500)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     thumbnail = models.ImageField(
             blank=True,
             upload_to="blog/thumbnails/%Y/%m/")

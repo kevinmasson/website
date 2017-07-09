@@ -7,5 +7,6 @@ from .models import Article
 class ArticleListView(ListView):
     template_name="article_list.html"
     queryset = Article.objects \
+            .filter(status='p') \
             .filter(publish_date__lt=timezone.now()) \
             .order_by('-publish_date')
