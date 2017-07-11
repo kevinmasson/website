@@ -200,7 +200,8 @@ hr {
 
 .clear {
   clear: both;
-  float: none; }
+  float: none;
+  display: block; }
 
 /* Links */
 a, a strong {

@@ -4,10 +4,10 @@
 
 * Install
 
-`bourbon install --path=static/stylesheets/sass`
+`bourbon install --path=sass`
 
-`cd static/stylesheets/sass && neat install && cd -`
+`cd sass && neat install && cd -`
 
-`cd static/stylesheets/sass && bitters install && cd -`
+`cd sass && bitters install && cd -`
 
 `./manage.py collectstatic`
