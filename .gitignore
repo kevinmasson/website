@@ -18,3 +18,4 @@ static/markdownx
 static/admin
 media
 .sass-cache
+website/prod-settings.py
