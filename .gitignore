@@ -11,9 +11,9 @@ lib64
 *.pyc
 *.pyo
 db.sqlite3
-static/stylesheets/sass/bourbon
-static/stylesheets/sass/neat
-static/stylesheets/sass/base
+sass/bourbon
+sass/neat
+sass/base
 static/markdownx
 static/admin
 media
