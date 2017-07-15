@@ -9,4 +9,4 @@ class BlogSitemap(Sitemap):
         return Article.objects.all()
 
     def lastmod(self, obj):
-        return obj.created_on
+        return obj.edited_on
