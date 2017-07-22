@@ -2,11 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% block title %}{% endblock %} - Digital art and programming</title>
+        <meta charset="UTF-8">
+        <title>{% block title %}Digital art and programming{% endblock %} - oktomus.com</title>
+        <meta 
+            name="description" 
+            content="{% block meta_description %}Programming, digital art, check out my work and my blog and then let's work together !{% endblock %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/app.css' %}"/>
-        {% block html_head %}
-        {% endblock %}
+        <link rel="canonical" href="https://oktomus.com{{ request.path }}" />
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'faveicon.ico' %}" />
     </head>
     <body class="site">
 

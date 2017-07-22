@@ -452,8 +452,12 @@ h1.page-title {
   font-size: 150%;
   padding: 1rem; }
   .home-descriptor .name a {
-    color: black; }
+    color: black;
+    font-weight: 300;
+    font-size: 2rem; }
   .home-descriptor .subtitle a {
-    color: grey; }
+    color: grey;
+    font-weight: 300;
+    font-size: 1.5rem; }
 
 /*# sourceMappingURL=app.css.map */
