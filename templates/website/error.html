@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="wrapper">
+    <h1>{{ title }}</h1>
+    <img src={% static 'missing.gif' %}>
+    <br />
+    <p>{{ message }}</p>
+</div>
+{% endblock content %}

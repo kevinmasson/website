@@ -22,6 +22,7 @@ from django.contrib.flatpages import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 sitemaps = {
         'blog': BlogSitemap,
         'pages': FlatPageSitemap,
@@ -41,3 +42,8 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler400 = 'website.views.bad_request'
+handler403 = 'website.views.denied'
+handler404 = 'website.views.not_found'
+handler500 = 'website.views.error'
