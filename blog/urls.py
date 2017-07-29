@@ -1,8 +1,7 @@
 from django.conf.urls import * 
 from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
 from blog.models import Article
-from .views import ArticleListView
+from .views import ArticleListView, ArticleDetail
 
 #urlpatterns = [
         #url(r'^$', views.home, name='home'),
@@ -11,10 +10,7 @@ from .views import ArticleListView
 #        ]
 urlpatterns = [
     url(r'^(?P<slug>[-\w]+)$', 
-        DetailView.as_view(
-            model=Article,
-            template_name='blog_article.html'
-        ),
+        ArticleDetail.as_view(),
         name='blog_article_detail'
         ),
     url(r'^$', 
