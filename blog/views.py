@@ -18,7 +18,7 @@ class ArticleDetail(DetailView):
     template_name = "blog/article_detail.html"
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(ArticleDetail, self).get_context_data(**kwargs)
         print(context)
         mark = markdown2.Markdown(extras=[
             "code-friendly", 
