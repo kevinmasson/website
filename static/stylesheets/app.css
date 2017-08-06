@@ -460,4 +460,33 @@ h1.page-title {
     font-weight: 300;
     font-size: 1.5rem; }
 
+/* Work */
+.work-list {
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100vw; }
+  .work-list .work-item {
+    width: 20%; }
+    @media (max-width: 1110px) {
+      .work-list .work-item {
+        width: 25%; } }
+    @media (max-width: 800px) {
+      .work-list .work-item {
+        width: 33.333333%; } }
+    @media (max-width: 600px) {
+      .work-list .work-item {
+        width: 50%; } }
+    @media (max-width: 400px) {
+      .work-list .work-item {
+        width: 100%; } }
+    .work-list .work-item .work-title {
+      display: none; }
+    .work-list .work-item .work-thumb {
+      border: none;
+      border-radius: 0;
+      width: 100%;
+      height: auto; }
+
 /*# sourceMappingURL=app.css.map */

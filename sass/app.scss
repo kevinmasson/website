@@ -371,3 +371,51 @@ h1.page-title {
     }
 
 }
+
+/* Work */
+
+.work-list{
+
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    width: 100vw;
+    
+    .work-item{
+
+        @media (max-width: 1110px){
+            width: 25%;
+        }
+
+        @media (max-width: 800px){
+            width: 33.333333%;
+        }
+
+        @media (max-width: 600px){
+            width: 50%;
+        }
+
+        @media (max-width: 400px){
+            width: 100%;
+        }
+
+        width: 20%;
+
+        .work-title{
+            display: none;
+
+        }
+
+        .work-thumb{
+            border: none;
+            border-radius: 0;
+            width: 100%;
+            height: auto;
+
+        }
+
+    }
+
+}
