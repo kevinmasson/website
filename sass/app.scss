@@ -385,6 +385,8 @@ h1.page-title {
     
     .work-item{
 
+        position: relative;
+
         @media (max-width: 1110px){
             width: 25%;
         }
@@ -403,9 +405,34 @@ h1.page-title {
 
         width: 20%;
 
-        .work-title{
-            display: none;
+        &:hover .work-title{
+            opacity: 1;
+        }
 
+        .work-title{
+            position: absolute;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, .4);
+            color: rgb(250, 250, 250);
+            display: flex;
+            align-items: flex-end;
+            justify-content: left;
+            padding: .5em;
+            opacity: 1;
+
+            @media (min-width: 600px){
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, .4);
+                opacity: 0;
+            }
+
+            @media (max-width: 600px){
+                background: -moz-linear-gradient(top,  rgba(0,0,0,0) 62%, rgba(0,0,0,0) 83%, rgba(0,0,0,0.65) 100%);
+                background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 62%,rgba(0,0,0,0) 83%,rgba(0,0,0,0.65) 100%);
+                background: linear-gradient(to bottom,  rgba(0,0,0,0) 62%,rgba(0,0,0,0) 83%,rgba(0,0,0,0.65) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+            }
         }
 
         .work-thumb{
