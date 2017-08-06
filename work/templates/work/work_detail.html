@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ work.title }}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="work-detail">
+        <h1 class="work-title">{{ work.title }}</h1>
+        <div class="work-content">
+            {{ work.text | safe }}
+        </div>
+    </div>
+</div>
+{% endblock content %}
