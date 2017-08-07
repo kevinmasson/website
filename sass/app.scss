@@ -374,6 +374,17 @@ h1.page-title {
 
 /* Work */
 
+.work-detail{
+
+
+    img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+}
+
 .work-list{
 
     display: flex;
