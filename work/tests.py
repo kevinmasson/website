@@ -162,3 +162,23 @@ class WorkAvailabalityTestCase(TestCase):
             obj = wm.Work.objects.get(title=candidate)
             response = self.client.get(obj.get_absolute_url())
             self.assertEqual(response.status_code, 404)
+
+    def test_published_query_content(self):
+        """
+        Test that the published query contains only published posts
+        """
+
+        candidates = ["Earlier", "Yesterday"]
+        posts = []
+
+        for title in candidates:
+            obj = wm.Work.objects.get(title=title)
+            posts.append(obj)
+
+        print(posts)
+        print(wm.Work.objects.published())
+
+        self.assertEqual(
+                posts,
+                list(wm.Work.objects.published())
+        )

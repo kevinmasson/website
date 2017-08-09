@@ -13,6 +13,17 @@ STATUS_CHOICES = (
     (STATUS_WITHDRAWN, 'Withdrawn'),
 )
 
+class WorkManager(models.Manager):
+
+    def published(self):
+        """
+        Return published posts only
+        """
+        return Work.objects.filter(
+                status=STATUS_PUBLIC, 
+                publish_date__lte=timezone.now()
+                ).order_by("-publish_date")
+
 class Work(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
@@ -24,6 +35,8 @@ class Work(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     publish_date = models.DateTimeField(default=timezone.now)
     edited_on = models.DateTimeField(auto_now=True)
+
+    objects = WorkManager()
 
     def __unicode__(self):
         return unicode(self.__str__())

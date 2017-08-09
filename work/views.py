@@ -8,10 +8,7 @@ import markdown2
 
 class WorkList(ListView):
     template_name="work/work_list.html"
-    queryset = Work.objects \
-            .filter(status='p') \
-            .filter(publish_date__lt=timezone.now()) \
-            .order_by('-publish_date')
+    queryset = Work.objects.published()
 
 class WorkDetail(DetailView):
     model = Work
