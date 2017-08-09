@@ -161,7 +161,7 @@ class WorkAvailabalityTestCase(TestCase):
         for candidate in candidates:
             obj = wm.Work.objects.get(title=candidate)
             response = self.client.get(obj.get_absolute_url())
-            self.assertEqual(response.status_code, 404)
+            self.assertEqual(response.status_code, 200)
 
     def test_published_query_content(self):
         """
@@ -174,9 +174,6 @@ class WorkAvailabalityTestCase(TestCase):
         for title in candidates:
             obj = wm.Work.objects.get(title=title)
             posts.append(obj)
-
-        print(posts)
-        print(wm.Work.objects.published())
 
         self.assertEqual(
                 posts,
