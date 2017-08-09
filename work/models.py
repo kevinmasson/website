@@ -3,17 +3,21 @@ from django.template.defaultfilters import slugify
 from django.contrib.sitemaps import ping_google
 from django.utils import timezone
 
+STATUS_PUBLIC = 'p'
+STATUS_DRAFT = 'd'
+STATUS_WITHDRAWN = 'w'
+
 STATUS_CHOICES = (
-    ('d', 'Draft'),
-    ('p', 'Published'),
-    ('w', 'Withdrawn'),
+    (STATUS_DRAFT, 'Draft'),
+    (STATUS_PUBLIC, 'Published'),
+    (STATUS_WITHDRAWN, 'Withdrawn'),
 )
 
 class Work(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     text = models.TextField()
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=STATUS_DRAFT)
     thumbnail = models.ImageField(
             blank=False,
             upload_to="work/thumbnails/%Y/%m/")
@@ -33,6 +37,12 @@ class Work(models.Model):
                 {
                     'slug': self.slug,
                 })
+
+    def is_available(self):
+        return (
+                self.status == STATUS_PUBLIC and
+                self.publish_date <= timezone.now()
+                )
 
     def save(self, *args, **kwargs):
         if not self.slug:
