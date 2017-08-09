@@ -139,3 +139,26 @@ class WorkAvailabalityTestCase(TestCase):
         self.assertTrue(
                 future_withdrawn not in response.context_data['object_list']
         )
+
+    def test_detail_view_not_published(self):
+        """
+        Test that not published post can't be viewed
+        """
+        candidates = ["Past_draft", "Past_withdrawn", "Future_draft", "Future_withdrawn",
+                "Default", "Later", "Tomorrow"]
+
+        for candidate in candidates:
+            obj = wm.Work.objects.get(title=candidate)
+            response = self.client.get(obj.get_absolute_url())
+            self.assertEqual(response.status_code, 404)
+
+    def test_detail_view_published(self):
+        """
+        Test that published posts can be viewed
+        """
+        candidates = ["Yesterday", "Earlier"]
+
+        for candidate in candidates:
+            obj = wm.Work.objects.get(title=candidate)
+            response = self.client.get(obj.get_absolute_url())
+            self.assertEqual(response.status_code, 404)
