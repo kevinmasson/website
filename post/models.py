@@ -1,3 +1,5 @@
+from django.db.models.signals import post_init, post_save
+from django.dispatch import receiver
 from django.db import models
 from django.urls import reverse
 from django.template.defaultfilters import slugify
@@ -30,6 +32,14 @@ class PublishedPostManager(models.Manager):
                 publish_date__lte=timezone.now()
                 ).order_by("-publish_date")
 
+def post_thumbnail_path(instance, filename):
+    filename =  "%s_%s" % (instance.title, filename)
+    return "{0}/thumbnails/{1}/{2}/{3}".format(
+            instance.__class__.__name__.lower(), 
+            timezone.now().year,
+            timezone.now().month,
+            filename)
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
@@ -37,7 +47,7 @@ class Post(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=STATUS_DRAFT)
     thumbnail = models.ImageField(
             blank=False,
-            upload_to="work/thumbnails/%Y/%m/")
+            upload_to=post_thumbnail_path)
     created_on = models.DateTimeField(auto_now_add=True)
     publish_date = models.DateTimeField(default=timezone.now)
     edited_on = models.DateTimeField(auto_now=True)
@@ -71,3 +81,13 @@ class Post(models.Model):
                 "%s:%s" % (self.__class__.__name__.lower(), "detail")
                 , args=[self.slug])
         
+@receiver(post_init, sender=Post)
+def backup_image_path(sender, instance, **kwargs):
+    instance._current_thumb_file = instance.thumbnail
+
+
+@receiver(post_save, sender=Post)
+def delete_old_image(sender, instance, **kwargs):
+    if hasattr(instance, '_current_thumb_file'):
+        if instance._current_thumb_file.path != instance.thumbnail.path:
+            instance._current_thumb_file.delete(save=False)
