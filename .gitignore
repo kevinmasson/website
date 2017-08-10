@@ -21,3 +21,4 @@ media
 website/prod-settings.py
 static_collect
 website/settings.py
+website/redirects.txt

@@ -22,6 +22,8 @@ from work.sitemap import WorkSitemap
 from django.contrib.flatpages import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import RedirectView
+import os
 
 
 sitemaps = {
@@ -41,6 +43,28 @@ urlpatterns = [
     url(r'^$', views.flatpage, {'url': '/home/'}, name='home'),
     url(r'^about/$', views.flatpage, {'url': '/about/'}, name='about'),
 ]
+
+# Permanent redirections from redirects.txt
+file_path = os.path.abspath(os.path.join(
+            os.path.dirname(__file__),
+            "redirects.txt"
+        )
+)
+if os.path.isfile(file_path):
+    with open(file_path, "r") as buf:
+        buf.readline() # Skip first line
+        for line in buf:
+            while line[-1] in [' ', '\n']:
+                line = line [:-1]
+            params = line.split(' ')
+            source = params[0]
+            destination = params[1]
+            permanent = True if len(params) == 3 and params[2] == '1' else False
+            urlpatterns.append(
+                    url(source, RedirectView.as_view(url=destination,
+                        permanent=permanent)
+                    )
+            )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
