@@ -77,8 +77,10 @@ class Post(models.Model):
             pass
 
     def absolute_url(self):
+        namespace = self.__module__.split('.')[0]
+        url_name = "%s_detail" % (self.__class__.__name__.lower())
         return reverse(
-                "%s:%s" % (self.__class__.__name__.lower(), "detail")
+                "%s:%s" % (namespace, url_name)
                 , args=[self.slug])
         
 @receiver(post_init, sender=Post)

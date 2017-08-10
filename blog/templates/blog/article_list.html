@@ -9,7 +9,7 @@
         <li class="article-item">
         <a
             class="article-title"
-            href="{% url "blog_article_detail" article.slug %}">
+            href="{{ article.absolute_url }}">
             {{ article.title }}
         </a>
         <span class="post-info">

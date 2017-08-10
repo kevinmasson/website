@@ -5,7 +5,7 @@ from .views import PostList, MarkdownPostDetail
 testpatterns = [
     url(r'^(?P<slug>[-\w]+)$', 
         MarkdownPostDetail.as_view(),
-        name='detail'
+        name='post_detail'
         ),
     url(r'^$', 
         PostList.as_view(),

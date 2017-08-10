@@ -34,7 +34,7 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('blog.urls')),
+    url(r'^blog/', include('blog.urls', namespace="blog")),
     url(r'^work/', include('work.urls', namespace="work")),
     url(r'^sitemap\.xml', sitemap, {'sitemaps': sitemaps},
         name='sitemap'),
