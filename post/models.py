@@ -83,7 +83,8 @@ class Post(models.Model):
         
 @receiver(post_init, sender=Post)
 def backup_image_path(sender, instance, **kwargs):
-    instance._current_thumb_file = instance.thumbnail
+    if instance.thumbnail:
+        instance._current_thumb_file = instance.thumbnail
 
 
 @receiver(post_save, sender=Post)
