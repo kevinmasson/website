@@ -46,7 +46,7 @@ class Post(models.Model):
     text = models.TextField()
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=STATUS_DRAFT)
     thumbnail = models.ImageField(
-            blank=False,
+            blank=True,
             upload_to=post_thumbnail_path)
     created_on = models.DateTimeField(auto_now_add=True)
     publish_date = models.DateTimeField(default=timezone.now)
