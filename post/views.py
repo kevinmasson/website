@@ -9,16 +9,16 @@ import markdown2
 class PostList(ListView):
 
     model = Post
-    template_name = 'post/post_list.html'
+    template_name = 'post/list.html'
 
-    def get_query_set(self):
+    def get_queryset(self):
         return self.model.published.all()
 
 
 class MarkdownPostDetail(DetailView):
 
     model = Post
-    template_name = 'post/post_detail.html'
+    template_name = 'post/detail.html'
 
     def get_queryset(self):
         return self.model.published.all()
