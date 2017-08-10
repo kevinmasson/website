@@ -82,6 +82,10 @@ class Post(models.Model):
         return reverse(
                 "%s:%s" % (namespace, url_name)
                 , args=[self.slug])
+
+
+    def get_absolute_url(self):
+        return self.absolute_url()
         
 @receiver(post_init, sender=Post)
 def backup_image_path(sender, instance, **kwargs):
