@@ -24,13 +24,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 import os
+from .sitemaps import StaticViewSitemap
 
 
 sitemaps = {
         'blog': BlogSitemap,
         'work': WorkSitemap,
-        'pages': FlatPageSitemap,
-        }
+        'static': StaticViewSitemap
+}
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
