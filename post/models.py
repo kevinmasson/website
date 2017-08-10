@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.template.defaultfilters import slugify
 from django.contrib.sitemaps import ping_google
 from django.utils import timezone
@@ -64,3 +65,9 @@ class Post(models.Model):
             ping_google()
         except Exception:
             pass
+
+    def absolute_url(self):
+        return reverse(
+                "%s:%s" % (self.__class__.__name__.lower(), "detail")
+                , args=[self.slug])
+        
