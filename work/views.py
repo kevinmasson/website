@@ -8,14 +8,14 @@ import markdown2
 
 class WorkList(ListView):
     template_name="work/work_list.html"
-    queryset = Work.objects.published()
+    queryset = Work.published.all()
 
 class WorkDetail(DetailView):
     model = Work
     template_name = "work/work_detail.html"
 
     def get_queryset(self):
-        return self.model.objects.published()
+        return self.model.published.all()
 
     def get_context_data(self, **kwargs):
         context = super(WorkDetail, self).get_context_data(**kwargs)
