@@ -1,13 +1,18 @@
 - Python **3.6.1**
 - Django **1.11**
 
+# Setup
 
-* Install
+	cp website/settings.py.default website/settings.py
+	# edit settings file
+	./manage.py migrate
+	./manage.py createsuperuser
+	./manage.py collectstatic
+	./manage.py runserver
 
-`bourbon install --path=sass`
+# SASS Setup
 
-`cd sass && neat install && cd -`
-
-`cd sass && bitters install && cd -`
-
-`./manage.py collectstatic`
+	bourbon install --path=sass
+	cd sass && neat install && cd -
+	cd sass && bitters install && cd -
+	./manage.py collectstatic
