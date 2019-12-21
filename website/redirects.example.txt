@@ -1,3 +1,0 @@
-Source Destination Permanent
-^nope(/)?$ / 1
-^nope2(/)?$ / 

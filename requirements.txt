@@ -1,4 +1,0 @@
-django-robots
-Markdown
-django-markdownx
-markdown2
