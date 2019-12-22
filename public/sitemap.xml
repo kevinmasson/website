@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://oktomus.com/posts/2017/migrate-models-when-adding-inheritance-django/</loc>
+    <lastmod>2017-09-17T21:28:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oktomus.com/</loc>
+    <lastmod>2017-09-17T21:28:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oktomus.com/posts/</loc>
+    <lastmod>2017-09-17T21:28:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oktomus.com/posts/2017/red-light-alarm-check-your-website-status/</loc>
+    <lastmod>2017-07-29T21:18:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oktomus.com/posts/2017/safely-manage-blenders-handlers-while-developing/</loc>
+    <lastmod>2017-07-14T21:06:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oktomus.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://oktomus.com/tags/</loc>
+  </url>
+  
+</urlset>

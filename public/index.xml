@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oktomus | computer graphics</title>
+    <link>https://oktomus.com/</link>
+    <description>Recent content on oktomus | computer graphics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Sep 2017 21:28:15 +0100</lastBuildDate>
+    
+	<atom:link href="https://oktomus.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrate models when adding inheritance in Django</title>
+      <link>https://oktomus.com/posts/2017/migrate-models-when-adding-inheritance-django/</link>
+      <pubDate>Sun, 17 Sep 2017 21:28:15 +0100</pubDate>
+      
+      <guid>https://oktomus.com/posts/2017/migrate-models-when-adding-inheritance-django/</guid>
+      <description>When you have one or more models that you are already using in your application and you want to change the parent class, the Django migration tool doesn&#39;t know what to do with the fields that will be transferred into the parent class values. By default, Django will erase existing fields and create new ones.
+Here is a scheme a what you may want to do.
+Changing the parent class is useful when you want to share some attributes and operations throughout multiple models.</description>
+    </item>
+    
+    <item>
+      <title>Set up a red light alarm to check your website status with python, cron and the Philips hue API</title>
+      <link>https://oktomus.com/posts/2017/red-light-alarm-check-your-website-status/</link>
+      <pubDate>Sat, 29 Jul 2017 21:18:57 +0100</pubDate>
+      
+      <guid>https://oktomus.com/posts/2017/red-light-alarm-check-your-website-status/</guid>
+      <description>Just to let you know, there are much better ways to monitor your services. But I found this quite funny to make and it&#39;s a first step on creating incredibly useful Hue apps \o/.
+The result It seems that your browser doesn&#39;t support native HTML5 videos..
+ A cron tab is set on the NAS which run my python script every minutes. The script then check for the website and if it&#39;s down, it makes the lamps blink.</description>
+    </item>
+    
+    <item>
+      <title>Safely manage Blender&#39;s handlers while developing</title>
+      <link>https://oktomus.com/posts/2017/safely-manage-blenders-handlers-while-developing/</link>
+      <pubDate>Fri, 14 Jul 2017 21:06:12 +0100</pubDate>
+      
+      <guid>https://oktomus.com/posts/2017/safely-manage-blenders-handlers-while-developing/</guid>
+      <description>What is a handler ? Handlers are basically callbacks that you create to execute a specific function every time something happens. Blender&#39;s API currently provide some handlers, frame_change_pre will be used in this article. Each handler is a list of functions, in this case, every function in frame_change_pre will be executed before a switch of frame.
+The problem Let&#39;s say that you are working on your callback function, everytime you change your function you will have to add it in the handler list to be able to use it.</description>
+    </item>
+    
+  </channel>
+</rss>
