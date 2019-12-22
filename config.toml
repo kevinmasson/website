@@ -1,0 +1,30 @@
+baseURL = "https://oktomus.com/"
+languageCode = "en-us"
+title = "oktomus = Kevin Masson"
+theme = "m10c"
+author = "Kevin Masson"
+description = "A guy who make 3D softwares, photography, while eating noodles."
+avatar = "static/avatar.jpg"
+
+[[params.social]]
+  name = "github"
+  url = "https://github.com/oktomus"
+
+[[params.social]]
+  name = "twitter"
+  url = "https://twitter.com/oktomus"
+
+[[params.social]]
+  name = "instagram"
+  url = "https://www.instagram.com/oktomus/"
+
+[[params.social]]
+  name = "500px"
+  url = "https://500px.com/oktomus"
+
+[[params.social]]
+  name = "flickr"
+  url = "https://www.flickr.com/photos/kevinmasson/"
+
+[markup.goldmark.renderer]
+unsafe= true
