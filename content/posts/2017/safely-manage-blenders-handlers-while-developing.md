@@ -2,6 +2,7 @@
 title: "Safely manage Blender's handlers while developing"
 date: 2017-07-14T21:06:12+01:00
 draft: false
+aliases: ["/blog/safely-manage-blenders-handlers-while-developing"]
 ---
 
 ## What is a handler ?
@@ -10,10 +11,10 @@ Handlers are basically **callbacks** that you create to execute a specific funct
 
 ## The problem
 
-Let's say that you are working on your callback function, everytime you change your function you will have to add it in the handler list to be able to use it. But you also have to remove the old one, otherwise, both functions would be executed. However, you can't be 100% sure which one is your function in the handler list. 
+Let's say that you are working on your callback function, everytime you change your function you will have to add it in the handler list to be able to use it. But you also have to remove the old one, otherwise, both functions would be executed. However, you can't be 100% sure which one is your function in the handler list.
 
 ## Can't I just clear the handler list ?
-    
+
 Take this script, run it, modify the process function and run it again.
 
 ```python
@@ -21,7 +22,7 @@ from bpy.app.handlers import frame_change_pre
 
 def process(scene):
     print("Hello!")
-        
+
 frame_change_pre.append(process)
 
 ```
@@ -41,7 +42,7 @@ bpy.app.handlers.frame_change_pre.clear()
 frame_change_pre.append(process)
 ```
 
-But if you are using multiple handlers, or if one of your addon does, you will also get rid of them. Thus, to be sure to don't break anything, you should delete from the list only the function you add in the current script. To do that, you need to store the function you have added. 
+But if you are using multiple handlers, or if one of your addon does, you will also get rid of them. Thus, to be sure to don't break anything, you should delete from the list only the function you add in the current script. To do that, you need to store the function you have added.
 
 ## Use the driver namespace
 
@@ -125,7 +126,7 @@ class ProcessHandler():
 
 def __init__(self, p_name):
     self.name = p_name
-    
+
 def process(self, scene):
     print(self.name)
 
@@ -135,7 +136,7 @@ def remove_handler(self):
 
 def add_handler(self):
     frame_change_pre.append(self.process)
-    
+
 
 if handler_key in driver_namespace:
 driver_namespace[handler_key].remove_handler()

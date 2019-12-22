@@ -2,6 +2,7 @@
 title: "Set up a red light alarm to check your website status with python, cron and the Philips hue API"
 date: 2017-07-29T21:18:57+01:00
 draft: false
+aliases: ["/blog/red-light-alarm-check-your-website-status"]
 ---
 
 Just to let you know, there are much better ways to monitor your services. But I found this quite funny to make and it's a first step on creating incredibly useful Hue apps \o/.
@@ -14,7 +15,7 @@ Just to let you know, there are much better ways to monitor your services. But I
 </video>
 
 
-A cron tab is set on the NAS which run my python script every minutes. The script then check for the website and if it's down, it makes the lamps blink. 
+A cron tab is set on the NAS which run my python script every minutes. The script then check for the website and if it's down, it makes the lamps blink.
 
 ## Play with the Philips hue API
 
@@ -22,7 +23,7 @@ Before diving in the code, I suggest to you to read the official [hue beginner's
 
 ## Write your script
 
-For the script, I choosed to use Python because it's really easy to get started. 
+For the script, I choosed to use Python because it's really easy to get started.
 
 Before working on the module which would have helped me interface the Hue API, I have made some researches and I came across with [phue](https://github.com/studioimaginaire/phue), a lightweight Python library for the Philips Hue system. It's even easier to manage your lights.
 
@@ -46,7 +47,7 @@ b = Bridge('192.168.0.12') # You should know your bridge's ip if you had read Ph
 b.connect()
 ```
 
-Now run the script using `python webCheck.py` and you should get **an exception** telling you that you haven't any API key. This is `b.connect()` that actually fails, you have to press the button on your Bridge and re-run the script. 
+Now run the script using `python webCheck.py` and you should get **an exception** telling you that you haven't any API key. This is `b.connect()` that actually fails, you have to press the button on your Bridge and re-run the script.
 
 *phue* will then create a file in your user directory containing the API key, this will prevent you to press the button each time you want to run the script. But I suggest you to **specify a key file**, because when you will deploy your script, you won't have to press the button again and if you use a system user to run your script (**highly recommended**), it will still work.
 
@@ -91,17 +92,17 @@ def alarm(bridge, light_id, tr_time, blink_count):
         'sat': 254, # Full saturation
         'hue': 65535 # Red
     }
-    
+
     animOut = {'transitiontime': tr_time,
         'on': True,
         'bri':5, # Almost off
         'sat': 70, # Less saturation
         'hue': 65535 # Still red
     }
-    
+
     sleep_time = float(tr_time + 1) / 10.0
-    
-    
+
+
     for i in range(0, blink_count):
         b.set_light(light_id, animIn)
         sleep(sleep_time)
@@ -109,7 +110,7 @@ def alarm(bridge, light_id, tr_time, blink_count):
         sleep(sleep_time)
 ```
 
-This will turn the light red then *on* and *off* *blink_count* times with a transition time of *tr_time*. The unit time used by the Philips hue API is 1/100 seconds, so you have to set it to 10 if you want a transition of 1 seconds -- which is very long, I personally use 5 for 500ms. 
+This will turn the light red then *on* and *off* *blink_count* times with a transition time of *tr_time*. The unit time used by the Philips hue API is 1/100 seconds, so you have to set it to 10 if you want a transition of 1 seconds -- which is very long, I personally use 5 for 500ms.
 
 Each time you send an animation to the lamp, you have to wait the end of the animation before starting another, this is what `sleep` does. But `sleep` requires seconds, if you give 1 to it, it will sleep for 1 second. So divide it by 10 to get the same time as the light animation. I use a float conversion before dividing to avoid weird results that you can get when mixing integers and floats ([which is totally normal by the way](https://stackoverflow.com/questions/2958684/python-division)).
 
@@ -129,7 +130,7 @@ def alarm(bridge, light_id, tr_time, blink_count):
         'bri': default['state']['bri'],
     }
 
-    b.set_light(light_id, animOut)  # Reset to default 
+    b.set_light(light_id, animOut)  # Reset to default
 ```
 
 You can test your animation by running your function at the end of your script and running your python file.
@@ -176,16 +177,16 @@ That's it. Let met show the [full script](https://gist.github.com/oktomus/1928ee
 Set a red alarm on a given light when the specified website is down
 
 """
-    
+
 import os
 from phue import Bridge
 from time import sleep
 from requests import get
 import sys
-    
+
 SCRIPT_PATH = os.path.dirname(__file__) # Directory of the current file
 KEY_FILE = os.path.join(SCRIPT_PATH, ".python_hue") # Path to hidden key file
-    
+
 def alarm(bridge, light_id, tr_time, blink_count):
     default = b.get_light(light_id) # Default state
 
@@ -222,12 +223,12 @@ def alarm(bridge, light_id, tr_time, blink_count):
     b.set_light(light_id, animOut)  # Reset to default state
 
 if __name__ == "__main__":
-    
+
     b = Bridge(IP_ADDRESS, config_file_path=KEY_FILE)
     b.connect()
-    
+
     site_down = False
-    
+
     try:
         r = get("http://yourwbesite.tld/")  # Or you can use sys.argv to specifiy the url when calling the script
 
@@ -239,7 +240,7 @@ if __name__ == "__main__":
 
     if site_down:
         alarm(b, 1, 5, 10)
-        
+
     sys.exit(0)
 ```
 
