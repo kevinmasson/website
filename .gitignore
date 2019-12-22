@@ -1,24 +1,12 @@
-.installed.cfg
-bin
-develop-eggs
-dist
-downloads
-eggs
-parts
-src/*.egg-info
-lib
-lib64
-*.pyc
-*.pyo
-db.sqlite3
-sass/bourbon
-sass/neat
-sass/base
-static/markdownx
-static/admin
-media
-.sass-cache
-website/prod-settings.py
-static_collect
-website/settings.py
-website/redirects.txt
+/public
+/resources
+
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OSX
+.DS_Store
