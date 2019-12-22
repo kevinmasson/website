@@ -1,0 +1,83 @@
+
+
+$background-color: #fbfbfb;
+$header-background-color: #0f0f0f;
+$header-social-color: #ffa736;
+$header-description-color: #f2f2f2;
+$header-title-color: #f2f2f2;
+
+$main-title-color: #1c1c1c;
+
+$post-time-color: #959595;
+
+$darkest-color: $header-background-color;
+$dark-color: $background-color;
+$light-color: $post-time-color;
+$lightest-color: $header-social-color;
+$primary-color: #2d2d2d;
+
+
+.app-header-avatar {
+  max-width: 10rem;
+  max-height: 10rem;
+  border: none;
+}
+
+.app-header-social a {
+  color: $header-social-color;
+}
+
+.app-header h1 {
+  color: $header-title-color;
+}
+
+.app-header p {
+  color: $header-description-color;
+}
+
+.app-container h1 {
+  color: $main-title-color;
+}
+
+.app-container .posts-list-item-title {
+  color: $primary-color;
+  border-bottom: none;
+}
+
+.post-list-item-description {
+  color: $post-time-color;
+}
+
+.app-container, .app-container p {
+  color: $primary-color;
+}
+
+.app-container strong a, .app-container a {
+  color: $lightest-color;
+  border-bottom: 1px dotted #000;
+  text-decoration: none;
+}
+
+.app-container h2, .app-container h3, .app-container h4, .app-container h5, .app-container h6 {
+  color: $main-title-color;
+}
+
+.app-container p code, .app-container li code {
+  background-color: #dfdfdf;
+  color: rgba(4, 4, 4, 0.8);
+  padding: 0 0.3em;
+}
+
+.app-container pre code {
+  color: inherit;
+}
+
+.app-container pre:not([class]) {
+  background-color: #dfdfdf;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+
+  code:not([class]) {
+    color: $main-title-color;
+  }
+}
