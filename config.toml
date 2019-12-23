@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "oktomus | computer graphics"
 theme = "m10c"
 avatar = "static/avatar.jpg"
-disableKinds = ["taxonomyTerm", "taxonomy"]
+disableKinds = ["taxonomyTerm", "taxonomy", "section"]
 
 [taxonomies]
     category = "categories"
