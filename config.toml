@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "oktomus | computer graphics"
 theme = "m10c"
 avatar = "static/avatar.jpg"
+disableKinds = ["taxonomyTerm", "taxonomy"]
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
 
 [params]
   author = "Kevin Masson"
