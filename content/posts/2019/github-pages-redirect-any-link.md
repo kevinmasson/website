@@ -33,6 +33,6 @@ With this, the user will be redirected to `/posts/2019/i-really-failed` when goi
 
 You can push these html redirection files directly on your repo.
 
-> *Tip*: *hugo* creates all those html redirection pages automatically if you specify aliases in your posts. See the [aliases documentation](https://gohugo.io/content-management/urls/#aliases).
+> *Tip*: *hugo* can create all those html redirection pages automatically if you specify aliases in your posts. See the [aliases documentation](https://gohugo.io/content-management/urls/#aliases).
 
-While this tip is useful to do some redirections, you may not want to do this if you have a lot of content to redirect. 
+While this tip is useful to do some redirections, you may not want to do this if you have a lot of content to redirect.
