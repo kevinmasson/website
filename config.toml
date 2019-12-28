@@ -1,7 +1,7 @@
 baseURL = "https://oktomus.com/"
 languageCode = "en-us"
 title = "oktomus | computer graphics"
-theme = "m10c"
+theme = "m10c-customized"
 avatar = "static/avatar.jpg"
 disableKinds = ["taxonomyTerm", "taxonomy", "section"]
 
