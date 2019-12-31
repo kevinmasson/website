@@ -1,6 +1,6 @@
 ---
 title: "Writting a ray tracer for the web"
-date: 2020-01-01T18:50:00+01:00
+date: 2010-01-01T18:50:00+01:00
 draft: true
 ---
 
@@ -26,11 +26,24 @@ If you never used *WebGL* and you want to learn how to use it, take a look at [W
 
 ## Random numbers
 
-The most important thing needed for a raytracer is probably the *Random Number Generator (RNG)*. It needs to be fast, pseudo random, must not have noticeable patterns and behave correctly in time. Unfortunately, it is not so easy.
+The most important thing needed for a raytracer is probably the *Random Number Generator (RNG)*.
+Most physically-based renderers use the Monte-Carlo approach, which is all about randomness.
+
+We need a way to generate number that is fast, pseudo random, must not have noticeable patterns and behave correctly in time. Unfortunately, it is not as easy as it sounds.
 
 The one I use is directly copied from [somewhere on internet](https://stackoverflow.com/questions/12964279/whats-the-origin-of-this-glsl-rand-one-liner) and is seed-based.
 
+I created a simple demo showing the RNG result, so that you can easily understand how to use the WebGL 2.0 Compute API : [demo](https://oktomus.com/web-experiments/webgl-compute/rng/) / [code](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/rng). Here is the shader:
+
 ```glsl
+#version 310 es
+
+layout (local_size_x = 16, local_size_y = 16, local_size_z = 1) in;
+
+layout (rgba8, binding = 0) writeonly uniform highp image2D outputTex;
+
+uniform float uSeed;
+
 float rand(inout float seed, vec2 pixel)
 {
     float result = fract(sin(seed / 100.0f * dot(pixel, vec2(12.9898f, 78.233f))) * 43758.5453f);
@@ -38,42 +51,84 @@ float rand(inout float seed, vec2 pixel)
     return result;
 }
 
-vec2 rand2(inout float seed, vec2 pixel)
-{
-    return vec2(rand(seed, pixel), rand(seed, pixel));
-}
-```
-
-The seed is a *uniform* that is being incremented each time I run the ray-tracing shader.
-
-```glsl
-uniform float uInitialSeed;
-
-...
-
 void main() {
-    // gl_LocalInvocationId: local index of the worker in its group.
-    // gl_WorkGroupId : index of the current working group.
-    // gl_WorkGroupSize : local size of a work group. here it is 16x16x1.
-    // gl_GlovalInvocationId : global exectuion index of the current worker.
-    // gl_GlobalInvocationId = gl_WorkGroupID * gl_WorkGroupSize + gl_LocalInvocationID
-
     ivec2 storePos = ivec2(gl_GlobalInvocationID.xy);
     ivec2 imageSize = ivec2(gl_NumWorkGroups.xy * gl_WorkGroupSize.xy);
     vec2 uv = vec2(storePos) / vec2(imageSize);
-    float seed = uInitialSeed;
-    ...
 
-    // Generate a random number.
+    float seed = uSeed;
+
     float n = rand(seed, uv);
+    vec4 color = vec4(n, n, n, 1.0);
+
+    imageStore(outputTex, storePos, color);
 }
 ```
 
-This RNG could be better because the seed is sequential, we can notice some repetitions and patterns. Using a hash of the seed could be better.
+This RNG could be much better. The seed is sequential, we can notice some repetitions and patterns. Using a hash of the seed could give better results.
 
 There is a really nice shadertoy tool to compare different RNGs that you can find [here](https://www.shadertoy.com/view/wljXDz).
 
+## Shading
 
+Coding the shading on the GPU is pretty close to coding it on the CPU except that:
+- dynamic allocation isn't allowed and
+- recursive functions are not a thing.
 
+Regarding dynamic allocation, it's not really a problem because you should already be doing the same on CPU if you want your raytracer to be fast.
+
+For the recursive part, it's a bit annoying at the begining and it can make coding a bit more difficult. But in the end, you can acheive the same thing using `while` loops and some adjustements in your calculations.
+
+So you can pretty much copy-paste your CPU code into a shader.
+
+## Computing ray triangle intersections
+
+This one is pretty easy since the GPU code can almost be copied as-is from the CPU. Here is the one I use that doesn't cull backfaces:
+
+```glsl
+// Test intersection between a ray and a triangle using Möller–Trumbore algorithm.
+bool hit_triangle_mt(Ray r, vec3 v0, vec3 v1, vec3 v2, out float t)
+{
+    vec3 e1 = v1 - v0;
+    vec3 e2 = v2 - v0;
+    vec3 h = cross(r.direction, e2);
+    float a = dot(e1, h);
+
+    if (a < EPSILON && a > EPSILON)
+        return false;
+
+    float f = 1.0 / a;
+    vec3 s = r.origin - v0;
+    float u = f * dot(s, h);
+
+    if (u < 0.0 || u > 1.0)
+        return false;
+
+    vec3 q = cross(s, e1);
+    float v = f * dot(r.direction, q);
+    if (v < 0.0 || u + v > 1.0)
+        return false;
+
+    t = f * dot(e2, q);
+    if (t > EPSILON)
+    {
+        return true;
+    }
+
+    return false;
+}
+```
+
+There is a lot of operations that are already implmented like `cross` and `dot`.
+
+## Acessing triangles on the GPU
+
+I'm really not an expert on this so I won't explain too much how this is working. But if you want to learn more, you can read about
+
+memory layout
+
+## Progressive and interactive rendering
+
+Accumulation example.
 
 
