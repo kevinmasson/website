@@ -26,8 +26,10 @@
     <div class="post-content">
       {{ .Content }}
     </div>
+    {{"<!-- begin comments //-->" | safeHTML}}
     <div class="post-footer">
-      {{ template "_internal/disqus.html" . }}
+      <section id="isso-thread"></section>
     </div>
+    {{"<!-- end comments //-->" | safeHTML}}
   </article>
 {{ end }}
