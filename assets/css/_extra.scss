@@ -1,5 +1,4 @@
 
-
 $background-color: #fbfbfb;
 $header-background-color: #2b2b2b;
 $header-social-color: #ffa736;
@@ -16,7 +15,6 @@ $light-color: $post-time-color;
 $lightest-color: $header-social-color;
 $link-color: #a25b00;
 $primary-color: #2d2d2d;
-
 
 .app-header-avatar {
   max-width: 10rem;
@@ -63,7 +61,7 @@ $primary-color: #2d2d2d;
   color: $main-title-color;
 }
 
-.app-container p code, .app-container li code {
+.app-container p code:not([class]), .app-container li code:not([class]) {
   background-color: #dfdfdf;
   color: rgba(4, 4, 4, 0.8);
   padding: 0 0.3em;
