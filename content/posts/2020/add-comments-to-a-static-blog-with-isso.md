@@ -2,7 +2,7 @@
 title: "Add comments to a static blog with Isso"
 description: Install Isso on a debian server to self-host comments on your blog.
 date: "2020-01-03"
-draft: true
+draft: false
 categories:
 - Linux
 - Debian
