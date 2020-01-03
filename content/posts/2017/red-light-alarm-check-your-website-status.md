@@ -3,6 +3,7 @@ title: "Set up a red light alarm to check your website status with python, cron 
 date: 2017-07-29T21:18:57+01:00
 draft: false
 aliases: ["/blog/red-light-alarm-check-your-website-status"]
+description: "Fun project where I link LED home lights to the status of my server."
 ---
 
 Just to let you know, there are much better ways to monitor your services. But I found this quite funny to make and it's a first step on creating incredibly useful Hue apps \o/.

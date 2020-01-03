@@ -3,6 +3,7 @@ title: "Propagate shortcuts — key inputs — from dialogs to Maya with Qt"
 date: 2018-01-09T21:37:43+01:00
 draft: false
 aliases: ["/blog/qt-propagate-shortcuts"]
+description: "Prevent your Qt tool from blocking the software's keyboard shortcuts."
 ---
 
 If you want to use Maya or any other application's shortcuts while you are using a custom tool, you need to propagate key events to the application. It can be useful with custom Qt dialogs and widgets.

@@ -3,6 +3,7 @@ title: "Migrate models when adding inheritance in Django"
 date: 2017-09-17T21:28:15+01:00
 draft: false
 aliases: ["/blog/migrate-models-when-adding-inheritance-django"]
+description: "Correctly migrate models when adding a parent class to exisint models."
 ---
 
 When you have one or more models that you are already using in your application and you want to change the parent class, the Django migration tool doesn't know what to do with the fields that will be transferred into the parent class values. By default, Django will erase existing fields and create new ones.

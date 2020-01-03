@@ -2,6 +2,7 @@
 title: "Writting a ray tracer for the web"
 date: 2010-01-01T18:50:00+01:00
 draft: true
+description: "Make a ray tracer using compute shaders in web thanks to WebGL 2.0 Compute."
 ---
 
 In 2019, *Khronos* announced and introduced [WebGL 2.0 Compute](https://www.khronos.org/registry/webgl/specs/latest/2.0-compute/), a new specification allowing to use the GPU for anything else than [Rasterisation](https://en.wikipedia.org/wiki/Rasterisation).

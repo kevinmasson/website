@@ -3,6 +3,7 @@ title: "Safely manage Blender's handlers while developing"
 date: 2017-07-14T21:06:12+01:00
 draft: false
 aliases: ["/blog/safely-manage-blenders-handlers-while-developing"]
+description: "Understand how Blender python handlers work while developing an addon."
 ---
 
 ## What is a handler ?
