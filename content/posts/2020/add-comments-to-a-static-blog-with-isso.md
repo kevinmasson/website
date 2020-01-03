@@ -15,7 +15,7 @@ keywords:
 - hugo
 ---
 
-When adding comments onto your static blog, multiple choices are available. You can wether use a service like **Disqus**, which is really easy to use but cloud-based, or you can self-host them.
+When adding comments onto your static blog, multiple choices are available. You can either use a service like **Disqus**, which is really easy to use but cloud-based, or you can self-host one.
 
 For my blog, I choosed a self-hosting option as I want my website to be compact, fast and without tracking.
 
@@ -93,13 +93,13 @@ timeout = 10
 
 In my case, `https://oktomus.com` is pointing to a [GitHub pages repo](https://github.com/oktomus/oktomus.github.io) and `https://isso.oktomus.com` will point to the Debian server. Both can be on the same server.
 
-All available options are detailled in the [server documentation](https://posativ.org/isso/docs/configuration/server/).
+All available options are detailed in the [server documentation](https://posativ.org/isso/docs/configuration/server/).
 
 If you never configured a smtp service on your server, replace `smtp` by `stdout` for the `notify` setting and remove the `smtp` block.
 
-You will need to create a `A` or `CNAME` record in your DNS to make `isso.oktomus.com` pointing to your server.
+You will need to create a `A` (and/or `AAAA` to support IPv6) or `CNAME` record in your DNS to make `isso.oktomus.com` pointing to your server.
 
-To make sure that our user have write and read permissions to the log and database files, run the following :
+To make sure that our user has write and read permissions to the log and database files, run the following :
 
 ```sh
 sudo touch /var/log/isso.log
@@ -201,7 +201,7 @@ Enable it.
 sudo ln -s /etc/nginx/site-available/isso.conf /etc/nginx/site-enabled/
 ```
 
-We need to create a certificate for this website so that requests can be encrypted. The command is intereactive and may ask you some informations.
+We need to create a certificate for this website so that requests can be encrypted. The command is interactive and may ask you some informations.
 
 When asked to redirect HTTP to HTTPS, you can choose the redirect option. If this is the first certificate you ever install, consider to setup a crontab so that you can renew it automatically. Otherwise, your website will be considered unsecure in a few months.
 
