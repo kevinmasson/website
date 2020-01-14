@@ -1,5 +1,5 @@
 ---
-title: "Writting a ray tracer for the web"
+title: "Writing a ray tracer for the web"
 date: 2020-01-13
 draft: false
 description: "Major issues I encountered while making a toy ray tracer using compute shaders for the web."
@@ -260,7 +260,7 @@ bool hit_world(Ray r, float t_min, float t_max, inout float t, inout int mesh_in
 
 Using triangles and materials on the GPU was certainly the most tricky part of this project.
 
-On CPU, we can almost do whatever we want with the memory. It is very easy to create a custom data type, make some lists and start using them to render. Even when writting multi-threaded applications.
+On CPU, we can almost do whatever we want with the memory. It is very easy to create a custom data type, make some lists and start using them to render. Even when writing multi-threaded applications.
 
 But on GPU, it can be really irritating. The reason is that you need to send your data to the GPU before running the renderer. Which makes sense. But you can't send custom data types, **you can only send bytes** (at least with WebGL).
 
