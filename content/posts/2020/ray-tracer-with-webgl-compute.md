@@ -7,23 +7,21 @@ description: "Major issues involved in making a ray tracer using compute shaders
 
 In 2019, *Khronos* announced and introduced [WebGL 2.0 Compute](https://www.khronos.org/registry/webgl/specs/latest/2.0-compute/), a new specification allowing to use the GPU for more than [rasterisation](https://en.wikipedia.org/wiki/Rasterisation).
 
-What it really means is that we will be able to use **compute shaders**. These shaders allow to do much more things than the classical *vertex, fragment and geometry shader* pipeline used for realtime 3D applicaitons.
+What it really means is that we will be able to use **compute shaders**. These shaders allow to do many more things than the classical *vertex, fragment and geometry shader* pipeline used for realtime 3D applicaitons.
 
-![Path traced cornell box from wikipedia](/2020/cornell_box.png)
-
-*WebGL 2.0 Compute* is still a draft, but some browsers already have implemented it. For example, you can use this API on chrome if you enable some flags :
+*WebGL 2.0 Compute* is still a draft, but some browsers already have implemented it. For example, you can use this API on chrome if you enable some flags:
 
 ```
 chrome --use-cmd-decoder=passthrough --use-angle=gl --enable-webgl2-compute-context
 ```
 
-I really wanted to test this new API. So I decided to write [a very simple ray tracer](https://oktomus.github.io/webgpu-toy-ray-tracer/). The goal wasn't to make something pretty or production-ready, but  to play with compute shaders and see what can be acheived in a web browser.
+I really wanted to test this new API. So I decided to write [a very simple ray tracer](https://oktomus.github.io/webgpu-toy-ray-tracer/). The goal wasn't to make something pretty or production-ready, but  to play with compute shaders and see what can be achieved in a web browser.
 
 The complete project can be found [on github](https://github.com/oktomus/webgpu-toy-ray-tracer).
 
 --------------
 
-There is another API called [Web GPU](https://gpuweb.github.io/gpuweb/) that can be used for the same thing. I will do the same project with this new API and let you know how things goes. If you don't want to miss it, follow me on twitter [@oktomus](https://twitter.com/oktomus) !
+There is another API called [Web GPU](https://gpuweb.github.io/gpuweb/) that can be used for the same thing. I will do the same project with this new API and let you know how things go. If you don't want to miss it, follow me on twitter [@oktomus](https://twitter.com/oktomus) !
 
 ## Random numbers
 
@@ -33,7 +31,7 @@ We need a way to generate pseudo-random numbers that is fast, must not have noti
 
 The one I use is directly copied from [somewhere on internet](https://stackoverflow.com/questions/12964279/whats-the-origin-of-this-glsl-rand-one-liner) and is seed-based.
 
-I created a simple demo showing the RNG result, so that you can easily understand how to use the WebGL 2.0 Compute API : [demo](https://oktomus.com/web-experiments/webgl-compute/rng/) / [code](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/rng). Here is the shader:
+I created a simple demo showing the RNG result, so that you can easily understand how to use the WebGL 2.0 Compute API: [demo](https://oktomus.com/web-experiments/webgl-compute/rng/) / [code](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/rng). Here is the shader:
 
 ```glsl
 #version 310 es
@@ -137,7 +135,7 @@ As with intersection, shading is also similar on GPU and CPU. Just know that:
 
 Regarding dynamic allocation, it's not really a problem because you should already be doing the same on CPU if you want your ray tracer to be fast.
 
-For the recursive part, it's a bit annoying at the begining and it can make coding a bit more difficult. But in the end, you can acheive the same thing using a good old `while` loop with some adjustements in your code.
+For the recursive part, it's a bit annoying at the begining and it can make coding a bit more difficult. But in the end, you can achieve the same thing using a good old `while` loop with some adjustements in your code.
 
 To compute the color of a pixel given a camera ray, I use the following code:
 
@@ -148,23 +146,23 @@ vec3 color(Ray r, inout float seed, vec2 pixel)
     // Some variables used in the while loop.
     float t;
     vec3 n;
-    int mesh_indice;
+    int mesh_index;
 
     vec3 res = vec3(0.0);
 
     // I hard-coded the light in the code, but we could easily
     // make them dynamic.
-    int light_mesh_indice = 0;
-    Mesh light = meshes[light_mesh_indice];
+    int light_mesh_index = 0;
+    Mesh light = meshes[light_mesh_index];
     int light_count = light.triangle_count;
 
     int depth = 0;
 
     while (depth < 5
-        && hit_world(r, EPSILON, MAX_FLOAT, t, mesh_indice, n)
+        && hit_world(r, EPSILON, MAX_FLOAT, t, mesh_index, n)
         && t > 0.0)
     {
-        Mesh mesh = meshes[mesh_indice];
+        Mesh mesh = meshes[mesh_index];
         vec3 surface_normal = n;
 
         // Primary ray hit a light, stop (for simplicity sake).
@@ -191,8 +189,8 @@ vec3 color(Ray r, inout float seed, vec2 pixel)
             shadow_ray.origin = hit_point;
             shadow_ray.direction = normalize(lh);
 
-            if (!hit_world(shadow_ray, EPSILON, dist, t, mesh_indice, n)
-                || mesh_indice == light_mesh_indice)
+            if (!hit_world(shadow_ray, EPSILON, dist, t, mesh_index, n)
+                || mesh_index == light_mesh_index)
             {
                 // Direct lighting contribution.
                 res += light_pdf * mesh.diffuse * light.emission * abs(dot(surface_normal, shadow_ray.direction));
@@ -215,13 +213,13 @@ vec3 color(Ray r, inout float seed, vec2 pixel)
 The `hit_world` method tests the intersection between all triangles and the current ray. To drastically improve performances, and avoid useless triangle-ray tests, we could use an acceleration structure like a [BVH](https://en.wikipedia.org/wiki/Bounding_volume_hierarchy).
 
 ```glsl
-bool hit_world(Ray r, float t_min, float t_max, inout float t, inout int mesh_indice, inout vec3 n)
+bool hit_world(Ray r, float t_min, float t_max, inout float t, inout int mesh_index, inout vec3 n)
 {
     bool does_hit = false;
     t = 0.0;
     float best_min_t = t_max;
 
-    mesh_indice = -1;
+    mesh_index = -1;
 
     // Find the closes triangles that the given ray hit.
     for (int i = 0; i < meshes.length(); ++i)
@@ -238,7 +236,7 @@ bool hit_world(Ray r, float t_min, float t_max, inout float t, inout int mesh_in
             {
                 best_min_t = t;
                 does_hit = true;
-                mesh_indice = i;
+                mesh_index = i;
 
                 // Compute the normal on the fly.
                 n = normalize(cross(v1 - v0, v2 - v0));
@@ -278,9 +276,9 @@ struct Mesh
 };
 ```
 
-On the GPU, you can't create an array of array with undefined size. Which means that we can't put the 3D points directly in the Mesh object. So instead, I put all vertices and triangle indices together in another buffer.
+On the GPU, you can't create an array of array with undefined size. Which means that we can't put the 3D points directly in the Mesh object. So instead, I put all vertices and triangle indexes together in another buffer.
 
-`offset` represents the indice of the first mesh's triangle in the buffer `Triangles` ahd `triangle_count` gives the number of triangles.
+`offset` represents the index of the first mesh's triangle in the buffer `Triangles` ahd `triangle_count` gives the number of triangles.
 
 The buffer `Triangles` store 3 vertex index for each triangle and the `Vertices` buffer store all 3D points.
 
@@ -299,16 +297,16 @@ layout (std430, binding = 3) readonly buffer Meshes {
 };
 ```
 
-On the CPU, the Mesh data type directly contains the vertices and the indices.
+On the CPU, the Mesh data type directly contains the vertices and the indexes.
 
 ```js
 // JS
 export class Mesh {
-    constructor(name, vertices, indices) {
+    constructor(name, vertices, indexes) {
         this.name = name;
         this.vertices = vertices;
-        this.indices = indices;
-        this.triangle_count = indices.length / 3;
+        this.indexes = indexes;
+        this.triangle_count = indexes.length / 3;
         this.vertice_count = vertices.length / 3;
         this.offset = undefined;
         this.diffuse_color = glm.vec3(0.4);
@@ -317,7 +315,7 @@ export class Mesh {
 }
 ```
 
-As I said earlier, we need to send data to the GPU before being able to use our renderer. Here I have 3 buffers in my shader so I need to fill those 3 buffers from the CPU. Let's start with the `Triangles` buffer, which is the easiest as it containes only integers.
+As I said earlier, we need to send data to the GPU before being able to use our renderer. Here I have 3 buffers in my shader so I need to fill those 3 buffers from the CPU. Let's start with the `Triangles` buffer, which is the easiest as it contains only integers.
 
 ```js
 // JS
@@ -325,14 +323,12 @@ As I said earlier, we need to send data to the GPU before being able to use our 
 const triangles_buffer_data = new Array();
 
 // All indicies of all meshes will end up together.
-// We need to offset them so that indices point to the correct vertices.
-let indices_offset = 0;
+// We need to offset them so that indexes point to the correct vertices.
+let indexes_offset = 0;
 
-// Note: this code is dirty and not efficient. But since I run it only once
-// before rendering, it's ok.
 this.meshes.forEach(mesh => {
-    triangles_buffer = triangles_buffer.concat(mesh.indices.map(i => i + indices_offset));
-    indices_offset += mesh.vertice_count;
+    triangles_buffer = triangles_buffer.concat(mesh.indexes.map(i => i + indexes_offset));
+    indexes_offset += mesh.vertice_count;
 });
 
 // Send the triangles buffer to the gpu.
@@ -380,7 +376,7 @@ context.bufferData(context.SHADER_STORAGE_BUFFER, vertices_buffer.length * 4, co
 context.bufferSubData(context.SHADER_STORAGE_BUFFER, 0, vertices_buffer);
 ```
 
-Now that we packed all indices and vertices together, we can send meshes.
+Now that we packed all indexes and vertices together, we can send meshes.
 
 ```js
 // JS
@@ -412,7 +408,7 @@ export function create_meshes_buffer(meshes)
     // vec3 emission         12 bytes
     //  4 bytes padding
     //
-    // total : 48  Rounded up to 16 byte padding
+    // total: 48  Rounded up to 16 byte padding
     const mesh_padding = 48;
 
     const four_bytes_padding = mesh_padding / 4;
@@ -436,7 +432,7 @@ export function create_meshes_buffer(meshes)
 }
 ```
 
-The buffers are now available on the GPU, but we can't use them as-is in the shader. They need to be bind before the shader runs.
+The buffers are now available on the GPU, but we can't use them as-is in the shader. They need to be bound before the shader runs.
 
 ```js
 bindBuffer(context, compute_program, buffer_id, layout_name)
@@ -459,19 +455,19 @@ If you want to learn more about GPU buffers, you can read about the [Shader Stor
 
 ## Progressive and interactive rendering
 
-To keep a realtime frame rate and interactive controls, I used progressive rendering. Many frames are computed over the time with low quality settings (*samples per pixel = 1*) and are accumulated together.
+To keep a realtime frame rate and interactive controls, I used progressive rendering. Many frames are computed over time with low quality settings (*samples per pixel = 1*) and are accumulated together.
 
 Like this, the render is instant and if you want a clean sharp render, you just have to wait.
 
 The code for this is straightforward, you just need 2 textures. One for rendering a frame and one for accumulating and displaying the final result.
 
-Although, I'm not sure that the way I accumulate values together is physically correct.
-
 Here is a simple demo of accumulation over time using compute shaders that helped me to implement progressive rendering: [demo](https://oktomus.com/web-experiments/webgl-compute/progressive-steps/) / [code](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/progressive-steps).
 
 ## Render !
 
-If you are interested into rendering, casting some rays and make them bounce, here are some links that will help you getting started :
+![Path traced cornell box from wikipedia](/2020/cornell_box.png)
+
+If you are interested into rendering, casting some rays and make them bounce, here are some links that will help you getting started:
 - Getting started with webgl: [WebGL fundamentals](https://webglfundamentals.org/)
 - Getting started with compute shaders (web): [WebGL Compute shader collection](https://github.com/9ballsyndrome/WebGL_Compute_shader)
 - Implementation and theory of raytracing: [Ray Tracing in One Weekend Book Series](https://github.com/RayTracing/raytracing.github.io), [Physically Based Rendering book](http://www.pbr-book.org/).
