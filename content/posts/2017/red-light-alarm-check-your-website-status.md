@@ -4,6 +4,9 @@ date: 2017-07-29T21:18:57+01:00
 draft: false
 aliases: ["/blog/red-light-alarm-check-your-website-status"]
 description: "Fun project where I link LED home lights to the status of my server."
+contribute:
+    url: "https://github.com/oktomus/website/blob/master/content/posts/2017/red-light-alarm-check-your-website-status.md"
+    count: 1
 ---
 
 Just to let you know, there are much better ways to monitor your services. But I found this quite funny to make and it's a first step on creating incredibly useful Hue apps \o/.

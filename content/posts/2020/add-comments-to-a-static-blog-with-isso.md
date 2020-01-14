@@ -13,6 +13,9 @@ keywords:
 - linux
 - comments
 - hugo
+contribute:
+    url: "https://github.com/oktomus/website/blob/master/content/posts/2020/add-comments-to-a-static-blog-with-isso.md"
+    count: 2
 ---
 
 When adding comments onto your static blog, multiple choices are available. You can either use a service like **Disqus**, which is really easy to use but cloud-based, or you can self-host one.

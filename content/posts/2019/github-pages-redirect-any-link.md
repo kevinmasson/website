@@ -3,6 +3,9 @@ title: "Redirect any link on a GitHub pages website"
 date: 2019-12-22T18:50:00+01:00
 draft: false
 description: "Redirect broken HTML links on a static website hosted on GitHub pages."
+contribute:
+    url: "https://github.com/oktomus/website/blob/master/content/posts/2019/github-pages-redirect-any-link.md"
+    count: 1
 ---
 
 I recently switched my website from *django* to *hugo*. All the links referencing to my website are now broken and I need to deal with this.

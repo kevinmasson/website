@@ -21,6 +21,12 @@
           {{- end -}}
         </div>
         {{- end -}}
+        {{- with .Params.contribute -}}
+        <div>
+          {{ partial "icon.html" (dict "ctx" $ "name" "github") }}
+          <a href="{{ .url }}" rel="nofollow">{{ .count }} {{ if gt .count 1 }}contributors{{ else }}contributor{{ end }}</a>
+        </div>
+        {{- end -}}
       </div>
     </header>
     <div class="post-content">

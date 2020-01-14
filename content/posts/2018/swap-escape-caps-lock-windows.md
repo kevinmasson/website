@@ -4,6 +4,9 @@ date: 2018-01-30T21:39:17+01:00
 draft: false
 aliases: ["/blog/swap-escape-caps-lock-windows"]
 description: "Swap the Esc and Capslock keys on Windows."
+contribute:
+    url: "https://github.com/oktomus/website/blob/master/content/posts/2018/swap-escape-caps-lock-windows.md"
+    count: 1
 ---
 
 So you want to switch the caps lock key with the escape key, but you don't want to edit the register. Don't worry ! This is fairly simple to do on windows, except that you will need to install a software if you want something that won't blow up. ¯\\\_(ツ)\_/¯
