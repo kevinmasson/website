@@ -2,7 +2,7 @@
 title: "Writting a ray tracer for the web"
 date: 2020-01-13
 draft: false
-description: "Major issues involved in making a ray tracer using compute shaders for the web."
+description: "Major issues I encountered while making a toy ray tracer using compute shaders for the web."
 contribute:
     url: "https://github.com/oktomus/website/blob/master/content/posts/2020/ray-tracer-with-webgl-compute.md"
     count: 2
