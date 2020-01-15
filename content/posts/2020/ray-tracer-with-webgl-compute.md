@@ -72,7 +72,7 @@ There is a really nice shadertoy tool to compare different RNGs that you can fin
 
 ## Intersections
 
-Testing for interesection between a ray and a shape is one of the first thing that you implement when making a ray tracer.
+Testing for intersection between a ray and a shape is one of the first thing that you implement when making a ray tracer.
 
 Compared to CPU, implementing intersection on GPU is pretty much the same. However, it is much more complicated to debug GPU code since you can't attach a debugger or print things.
 
@@ -128,7 +128,7 @@ bool hit_triangle_mt(Ray r, vec3 v0, vec3 v1, vec3 v2, out float t)
 }
 ```
 
-Note that there is a lot of operations that are already implmented on the GPU like `cross` and `dot`.
+Note that there is a lot of operations that are already implemented on the GPU like `cross` and `dot`.
 
 ## Shading
 
