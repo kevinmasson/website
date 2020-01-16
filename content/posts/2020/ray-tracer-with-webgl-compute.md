@@ -5,7 +5,7 @@ draft: false
 description: "Major issues I encountered while making a toy ray tracer using compute shaders for the web."
 contribute:
     url: "https://github.com/oktomus/website/blob/master/content/posts/2020/ray-tracer-with-webgl-compute.md"
-    count: 2
+    count: 3
 ---
 
 In 2019, *Khronos* announced and introduced [WebGL 2.0 Compute](https://www.khronos.org/registry/webgl/specs/latest/2.0-compute/), a new specification allowing to use the GPU for more than [rasterisation](https://en.wikipedia.org/wiki/Rasterisation).
@@ -264,7 +264,7 @@ On CPU, we can almost do whatever we want with the memory. It is very easy to cr
 
 But on GPU, it can be really irritating. The reason is that you need to send your data to the GPU before running the renderer. Which makes sense. But you can't send custom data types, **you can only send bytes** (at least with WebGL).
 
-So basically, you will have to write the CPU code to correctly pack your scene (triangles, materials, lights) into a buffer, send this buffer (or more), but also write the GPU code for your custom data types and declare the buffers to use them. On top of that, there is some rules to follow for packing your data like padding (you can't just the binary equivalent of your data on CPU).
+So basically, you will have to write the CPU code to correctly pack your scene (triangles, materials, lights) into a buffer, send this buffer (or more), but also write the GPU code for your custom data types and declare the buffers to use them. On top of that, there is some rules to follow for packing your data like padding (you can't just use the binary equivalent of your data on CPU).
 
 In this project, I used a simple data type to represent each mesh in the scene:
 
