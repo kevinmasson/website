@@ -16,6 +16,10 @@ $lightest-color: $header-social-color;
 $link-color: #a25b00;
 $primary-color: #2d2d2d;
 
+body {
+  background-color: #fff;
+}
+
 .app-header-avatar {
   max-width: 10rem;
   max-height: 10rem;
@@ -47,18 +51,112 @@ $primary-color: #2d2d2d;
   color: $post-time-color;
 }
 
-.app-container, .app-container p {
-  color: $primary-color;
+// 
+// Extents
+// 
+
+%main-title {
+  font-size: 2rem;
+  color: #303030;
 }
+
+%main-title-sub-description {
+  color: #7a7a7a;
+  font-size: 0.8rem;
+}
+
+%paragraph {
+  color: #515151;
+  font-size: 1.0rem;
+}
+
+%quote {
+  border-left: 5px solid #b3b3b3;
+  padding-left: 1rem;
+  margin-left: 0px;
+
+  p {
+    color: #848484;
+  }
+}
+
+%code-in-text {
+  padding: .125rem .3rem;
+  font-size: 85%;
+  color: #3a5c77;
+  background-color: #cfe9f9;
+  border-radius: 5px;
+}
+
+//
+// Home
+//
+
+.app-container {
+
+  h2 {
+    @extend %main-title;
+  }
+
+  .posts-list {
+    .posts-list-item {
+
+      a.posts-list-item-title
+      {
+        color: $primary-color;
+      }
+
+      span.posts-list-item-description {
+        @extend %main-title-sub-description;
+      }
+    }
+  }
+}
+
+//
+// Blog post
+//
+
+.app-container {
+  article.post {
+    header.post-header {
+
+      h1.post-title {
+        @extend %main-title;
+        margin-bottom: 0;
+      }
+
+      .post-meta {
+        @extend %main-title-sub-description;
+
+        margin-bottom: 2.0rem;
+      }
+    }
+
+    .post-content {
+      p {
+        @extend %paragraph;
+
+        code {
+          @extend %code-in-text;
+        }
+      }
+
+      blockquote {
+        @extend %quote;
+      }
+    }
+  }
+}
+
+//
+// Other
+//
 
 .app-container strong a, .app-container a {
   color: $link-color;
   border-bottom: 1px dotted #000;
   text-decoration: none;
-}
-
-.app-container h2, .app-container h3, .app-container h4, .app-container h5, .app-container h6 {
-  color: $main-title-color;
 }
 
 .app-container p code:not([class]), .app-container li code:not([class]) {

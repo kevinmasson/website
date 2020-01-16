@@ -3,29 +3,19 @@
     <header class="post-header">
       <h1 class ="post-title">{{ .Title }}</h1>
       <div class="post-meta">
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-          {{ .PublishDate.Format "Jan 2, 2006" }}
-        </div>
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-          {{ .ReadingTime }} min read
-        </div>
+        {{ .PublishDate.Format "2 Jan 2006" }}
+          ·  {{ .ReadingTime }} min read
+        {{- with .Params.contribute -}}
+          <span>  ·  {{ partial "icon.html" (dict "ctx" $ "name" "github") }}
+          <a href="{{ .url }}" rel="nofollow">{{ .count }} {{ if gt .count 1 }}contributors{{ else }}contributor{{ end }}</a></span>
+        {{- end -}}
         {{- with .Params.tags -}}
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+        {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
           {{ range . -}}
             {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
               <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
             {{- end -}}
           {{- end -}}
-        </div>
-        {{- end -}}
-        {{- with .Params.contribute -}}
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "github") }}
-          <a href="{{ .url }}" rel="nofollow">{{ .count }} {{ if gt .count 1 }}contributors{{ else }}contributor{{ end }}</a>
-        </div>
         {{- end -}}
       </div>
     </header>
