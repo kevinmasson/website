@@ -38,7 +38,7 @@ Before making any change on your child classes, you must have created and migrat
 
 After having modified your child class (changing the parent and removing the common fields), you can start the process.
 
-```
+```sh
 $ python manage.py makemigrations
 You are trying to add a non-nullable field 'post_ptr' to blog without a default; we can't do that (the database needs something to populate existing rows).
 Please select a fix:
@@ -150,7 +150,7 @@ We have to do it this way because all shared fields' data have to be transferred
 
 ## 4. Migrate!
 
-```
+```sh
 $ python manage.py migrate
 Operations to perform:
     Apply all migrations: admin, auth, blog, contenttypes, post, sessions

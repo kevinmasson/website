@@ -14,7 +14,7 @@ What it really means is that we will be able to use **compute shaders**. These s
 
 *WebGL 2.0 Compute* is still a draft, but some browsers already have implemented it. For example, you can use this API on chrome if you enable some flags:
 
-```
+```posh
 chrome --use-cmd-decoder=passthrough --use-angle=gl --enable-webgl2-compute-context
 ```
 
