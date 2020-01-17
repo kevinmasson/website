@@ -1,13 +1,58 @@
-$darkest-color: {{ .Site.Params.style.darkestColor | default "#242930" }};
-$dark-color: {{ .Site.Params.style.darkColor | default "#353b43" }};
-$light-color: {{ .Site.Params.style.lightColor | default "#afbac4" }};
-$lightest-color: {{ .Site.Params.style.lightestColor | default "#ffffff" }};
-$primary-color: {{ .Site.Params.style.primaryColor | default "#57cc8a" }};
+$background-color: #fff;
+$header-background-color: #2b2b2b;
+$header-social-color: #ffa736;
+$header-description-color: #f2f2f2;
+$header-title-color: #f2f2f2;
 
-@import 'extra';
+$main-title-color: #1c1c1c;
 
-@import 'base';
+$post-time-color: #959595;
 
+$darkest-color: $header-background-color;
+$dark-color: $background-color;
+$light-color: $post-time-color;
+$lightest-color: $header-social-color;
+$link-color: #a25b00;
+$primary-color: #2d2d2d;
+
+//
+// Extents
+//
+
+%main-title {
+  font-size: 2rem;
+  color: #303030;
+}
+
+%main-title-sub-description {
+  color: #7a7a7a;
+  font-size: 0.8rem;
+}
+
+%paragraph {
+  color: #515151;
+  font-size: 1.0rem;
+}
+
+%quote {
+  border-left: 5px solid #b3b3b3;
+  padding-left: 1rem;
+  margin-left: 0px;
+
+  p {
+    color: #848484;
+  }
+}
+
+%code-in-text {
+  padding: .125rem .3rem;
+  font-size: 85%;
+  color: #3a5c77;
+  background-color: #cfe9f9;
+  border-radius: 5px;
+}
+
+@import 'components/base';
 @import 'components/app';
 @import 'components/error_404';
 @import 'components/icon';
@@ -15,7 +60,3 @@ $primary-color: {{ .Site.Params.style.primaryColor | default "#57cc8a" }};
 @import 'components/post';
 @import 'components/posts_list';
 @import 'components/tag';
-
-// The last 'extra' import can optionally be overridden on a per project
-// basis by creating a <HUGO_PROJECT>/assets/css/_extra.scss file.
-@import 'extra';

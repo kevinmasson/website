@@ -1,3 +1,61 @@
+.app-container {
+  article.post {
+    header.post-header {
+
+      h1.post-title {
+        @extend %main-title;
+        margin-bottom: 0;
+      }
+
+      .post-meta {
+        @extend %main-title-sub-description;
+
+        margin-bottom: 2.0rem;
+      }
+    }
+
+    .post-content {
+      p {
+        @extend %paragraph;
+
+        code {
+          @extend %code-in-text;
+        }
+      }
+
+      blockquote {
+        @extend %quote;
+      }
+    }
+  }
+}
+
+.app-container strong a, .app-container a {
+  color: $link-color;
+  border-bottom: 1px dotted #000;
+  text-decoration: none;
+}
+
+.app-container p code:not([class]), .app-container li code:not([class]) {
+  background-color: #dfdfdf;
+  color: rgba(4, 4, 4, 0.8);
+  padding: 0 0.3em;
+}
+
+.app-container pre code {
+  color: inherit;
+}
+
+.app-container pre:not([class]) {
+  background-color: #dfdfdf;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+
+  code:not([class]) {
+    color: $main-title-color;
+  }
+}
+
 .post-title {
   color: $lightest-color;
 }

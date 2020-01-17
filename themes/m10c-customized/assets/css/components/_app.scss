@@ -1,3 +1,21 @@
+.app-header-avatar {
+  max-width: 10rem;
+  max-height: 10rem;
+  border: none;
+}
+
+.app-header-social a {
+  color: $header-social-color;
+}
+
+.app-header h1 a {
+  color: $header-title-color;
+}
+
+.app-header p {
+  color: $header-description-color;
+}
+
 .app-header {
   padding: 2.5em;
   background: $darkest-color;
@@ -13,6 +31,10 @@
 
 .app-container {
   padding: 2.5rem;
+}
+
+.app-container h1 {
+  color: $main-title-color;
 }
 
 .app-header-social {
@@ -36,5 +58,26 @@
   .app-container {
     max-width: 65rem;
     margin-left: 20rem;
+  }
+}
+
+.app-container {
+
+  h2 {
+    @extend %main-title;
+  }
+
+  .posts-list {
+    .posts-list-item {
+
+      a.posts-list-item-title
+      {
+        color: $primary-color;
+      }
+
+      span.posts-list-item-description {
+        @extend %main-title-sub-description;
+      }
+    }
   }
 }
