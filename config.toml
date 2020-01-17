@@ -52,3 +52,15 @@ disableKinds = ["taxonomyTerm", "taxonomy", "section"]
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "native"
+    tabWidth = 4
