@@ -15,6 +15,8 @@
     }
 
     .post-content {
+      color: $text-color;
+
       p {
         @extend %paragraph;
 
@@ -23,8 +25,26 @@
         }
       }
 
+      ul li code {
+        @extend %code-in-text;
+      }
+
       blockquote {
         @extend %quote;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .highlight pre {
+        border-radius: 4px;
+        padding: 1rem 1.5rem;
+        line-height: 1.4;
+
+        code {
+          color: inherit;
+        }
       }
     }
   }
@@ -34,40 +54,6 @@
   color: $link-color;
   border-bottom: 1px dotted #000;
   text-decoration: none;
-}
-
-.app-container p code:not([class]), .app-container li code:not([class]) {
-  background-color: #dfdfdf;
-  color: rgba(4, 4, 4, 0.8);
-  padding: 0 0.3em;
-}
-
-.app-container pre code {
-  color: inherit;
-}
-
-.app-container pre:not([class]) {
-  background-color: #dfdfdf;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-
-  code:not([class]) {
-    color: $main-title-color;
-  }
-}
-
-.post-title {
-  color: $lightest-color;
-}
-
-.post-content {
-  pre {
-    border-left: 0.4em solid rgba($primary-color, .8);
-    padding-left: 1em;
-  }
-  img {
-    max-width: 100%;
-  }
 }
 
 .post-meta {

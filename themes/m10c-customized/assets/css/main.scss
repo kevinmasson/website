@@ -16,6 +16,7 @@ $link-color: #a25b00;
 $primary-color: #2d2d2d;
 
 $heading-color: #303030;
+$text-color: #515151;
 
 //
 // Extents
@@ -32,7 +33,7 @@ $heading-color: #303030;
 }
 
 %paragraph {
-  color: #515151;
+  color: inherit;
   font-size: 1.0rem;
 }
 
