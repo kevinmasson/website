@@ -9,7 +9,7 @@
         {{- with .Params.contribute -}}
         &nbsp;<span class="separator">·</span>&nbsp;
         {{ partial "icon.html" (dict "ctx" $ "name" "github") }}
-        <a href="{{ .url }}" rel="nofollow">{{ .count }} {{ if gt .count 1 }}contributors{{ else }}contributor{{ end }}</a></span>
+        <a href="{{ .url }}" rel="nofollow">{{ .count }} {{ if gt .count 1 }}contributors{{ else }}contributor{{ end }}</a>
         {{- end -}}
         {{- with .Params.tags -}}
         {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
