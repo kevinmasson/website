@@ -5,6 +5,13 @@ set -e
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
+# Remove previous deploy
+rm -rf public
+
+# Fetch last deploy
+mkdir public
+git clone git@github.com:oktomus/oktomus.github.io.git public
+
 # Build the project.
 hugo --minify -v --debug 
 
