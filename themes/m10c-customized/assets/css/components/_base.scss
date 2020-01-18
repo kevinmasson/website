@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -8,7 +12,7 @@ html {
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: $background-color;
   color: $light-color;
 }
@@ -23,14 +27,8 @@ a {
   }
 }
 
-// Browsers seem to use a smaller default font-size with monospaced code
-// blocks (like 80% of the size of normal text) and that looks pretty bad with
-// small inline code-blocks in the middle of normal text (mainly because of
-// the very noticeable difference in x-height). This CSS corrects that problem.
 code {
-  font-family: monospace,monospace;
-  font-size: 1em;
-  color: rgba($light-color, .8);
+  font-family: "Source Code Pro", Menlo, Monaco, "Courier New", monospace;
 }
 
 pre {

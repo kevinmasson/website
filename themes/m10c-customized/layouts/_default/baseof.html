@@ -11,9 +11,18 @@
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS $options | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
+    {{ $options := (dict "targetPath" "sourcesanspro.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
+    {{ $style := resources.Get "css/sourcesanspro.scss" | resources.ExecuteAsTemplate "css/sourcesanspro.scss" . | resources.ToCSS $options | resources.Fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+    {{ if .IsPage }}
+      {{ $options := (dict "targetPath" "sourcecodepro.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
+      {{ $style := resources.Get "css/sourcecodepro.scss" | resources.ExecuteAsTemplate "css/sourcecodepro.scss" . | resources.ToCSS $options | resources.Fingerprint -}}
+      <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ end }}
+
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
-
   </head>
   <body>
     <header class="app-header">
