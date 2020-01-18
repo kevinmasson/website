@@ -1,9 +1,5 @@
 * {
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -42,8 +38,5 @@ pre {
 }
 
 ::selection {
-  background: rgba($light-color, .25);
-}
-::-moz-selection {
-  background: rgba($light-color, .25);
+  background: rgba($link-color, .25);
 }
