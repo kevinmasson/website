@@ -18,9 +18,9 @@ What it really means is that we will be able to use **compute shaders**. These s
 chrome --use-cmd-decoder=passthrough --use-angle=gl --enable-webgl2-compute-context
 ```
 
-I really wanted to test this new API. So I decided to write [a very simple ray tracer](https://oktomus.github.io/webgpu-toy-ray-tracer/). The goal wasn't to make something pretty or production-ready, but  to play with compute shaders and see what can be achieved in a web browser.
+I really wanted to test this new API. So I decided to write [a very simple ray tracer](https://oktomus.com/web-experiments/webgl-compute/toy-raytracer/). The goal wasn't to make something pretty or production-ready, but  to play with compute shaders and see what can be achieved in a web browser.
 
-The complete project can be found [on github](https://github.com/oktomus/webgpu-toy-ray-tracer).
+The complete project can be found [on github](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/toy-raytracer).
 
 --------------
 
@@ -34,7 +34,7 @@ We need a way to generate pseudo-random numbers that is fast, must not have noti
 
 The one I use is directly copied from [somewhere on internet](https://stackoverflow.com/questions/12964279/whats-the-origin-of-this-glsl-rand-one-liner) and is seed-based.
 
-I created a simple demo showing the RNG result, so that you can easily understand how to use the WebGL 2.0 Compute API: [demo](https://oktomus.com/web-experiments/webgl-compute/rng/) / [code](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/rng). Here is the shader:
+I created a simple demo showing the RNG result, so that you can easily understand how to use the WebGL 2.0 Compute API: [demo](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/rng) / [code](https://oktomus.com/web-experiments/webgl-compute/rng/). Here is the shader:
 
 ```glsl
 #version 310 es
@@ -464,7 +464,7 @@ Like this, the render is instant and if you want a clean sharp render, you just 
 
 The code for this is straightforward, you just need 2 textures. One for rendering a frame and one for accumulating and displaying the final result.
 
-Here is a simple demo of accumulation over time using compute shaders that helped me to implement progressive rendering: [demo](https://oktomus.com/web-experiments/webgl-compute/progressive-steps/) / [code](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/progressive-steps).
+Here is a simple demo of accumulation over time using compute shaders that helped me to implement progressive rendering: [demo](https://github.com/oktomus/web-experiments/tree/master/webgl-compute/progressive-steps) / [code](https://oktomus.com/web-experiments/webgl-compute/progressive-steps/).
 
 ## Render !
 
