@@ -1,16 +1,16 @@
 ---
-title: "Using grep on a Unity project to find your way"
-date: 2020-03-29
-draft: true
-description: "With time, your Unity project will get bigger. Looking for something in the different prefabs and scenes can be very time consuming, especially for someone new to the project. Using grep can help you find your way in a project much faster."
+title: "Find stuff in a Unity project with grep"
+date: 2020-03-25
+draft: false
+description: "With time, your Unity project will get bigger. Looking for something in all the prefabs and scenes can be very time consuming, especially for someone new to the project. Using grep can help you find your way in a project much faster."
 contribute:
     url: "https://github.com/oktomus/website/blob/master/content/posts/2020/grep-and-unity.md"
     count: 1
 ---
 
-With time, your Unity project will get bigger. Looking for something in the different prefabs and scenes can be very time consuming, especially for someone new to the project.
+With time, your Unity project will get bigger. Looking for something in all the prefabs and scenes can be very time consuming, especially for someone new to the project.
 
-I'm going to share with you two tips that I use on a daily basis as a developer to find my way in a Unity project. I'm using the `grep` command, a very powerful text search tool.
+I'm going to share with you two tips that I use to easily find stuff in a Unity project. I'm using the `grep` command, a very powerful text search tool.
 
 ## Find which UI or Event Trigger is calling a method
 
