@@ -4,7 +4,7 @@ date: 2020-03-29
 draft: true
 description: "With time, your Unity project will get bigger. Looking for something in the different prefabs and scenes can be very time consuming, especially for someone new to the project. Using grep can help you find your way in a project much faster."
 contribute:
-    url: "https://github.com/oktomus/website/blob/master/content/posts/2020/find-grep-unity-project.md"
+    url: "https://github.com/oktomus/website/blob/master/content/posts/2020/grep-and-unity.md"
     count: 1
 ---
 
