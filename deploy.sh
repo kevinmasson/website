@@ -13,7 +13,7 @@ mkdir public
 git clone git@github.com:oktomus/oktomus.github.io.git public
 
 # Build the project.
-hugo --minify -v --debug 
+hugo -v --debug 
 
 # Go To Public folder
 cd public
