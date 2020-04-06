@@ -373,7 +373,7 @@ console.assert(gpu_i == vertices_buffer.length, "GPU buffer does not match verti
 console.assert(gpu_i == ((total_vertice_count / 3) * 4));
 
 // Send the vertices buffer to the gpu.
-cons vertices_buffer_id = context.createBuffer();
+const vertices_buffer_id = context.createBuffer();
 context.bindBuffer(context.SHADER_STORAGE_BUFFER, vertices_buffer_id);
 context.bufferData(context.SHADER_STORAGE_BUFFER, vertices_buffer.length * 4, context.STATIC_DRAW);
 context.bufferSubData(context.SHADER_STORAGE_BUFFER, 0, vertices_buffer);

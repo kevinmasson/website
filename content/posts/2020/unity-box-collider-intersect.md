@@ -14,7 +14,7 @@ To check if a point is inside a box in Unity, you will probably use `BoxCollder.
 
 ![The problem with box bolliders](/2020/the-problem-with-box-collider.gif)
 
-The code running for the above gif is this one (attached on the moving point):
+The code running for the above gif is this one (attached to moving point):
 
 ```csharp
 [SerializeField] BoxCollider BoxCollider;
@@ -28,15 +28,15 @@ private void OnDrawGizmosSelected()
 }
 ```
 
-I will try to explain here as clearly as possible what's hapenning and how to fix it.
+I will try to explain here as clearly as possible what's happening and how to fix it.
 
-## What's hapenning ?
+## What's happening ?
 
 First of all, you may have noticed that the results are wrong only when the box is rotated or scaled. Here is the same code running on a box with rotation `0, 0, 0`:
 
 ![Non rotated box](/2020/non-rotated-box.gif)
 
-The reason is that the [bounds of the box collider is *axis-aligned*](https://docs.unity3d.com/ScriptReference/Bounds.html). This mean that it can't be rotated and so it won't take into account your box rotation.
+The reason is that the [bounds of the box collider is *axis-aligned*](https://docs.unity3d.com/ScriptReference/Bounds.html). This means that it can't be rotated and so it won't take into account your box rotation.
 
 It can be really confusing, especially when you see this that green wireframe following the box closely when rotating it:
 
@@ -60,7 +60,7 @@ private void OnDrawGizmosSelected()
 
 ## How to fix it ?
 
-A way to fix it is to place the point in the box space. By doing so, the rotation is correctly taken into account and the results are correct. Althoug, it is a more expensive call as you have to transform points. The bounds is also re-created to make sure the size is correct.
+A way to fix it is to place the point in the box space. By doing so, the rotation is correctly taken into account and the results are correct. Although, it is a more expensive call as you have to transform the points. The bounds is also re-created to make sure the size is correct.
 
 ```csharp
 // Place the point in box space.
@@ -76,6 +76,6 @@ bool isPointInside = correctBounds.Contains(pointBoxSpace);
 
 ## What about box intersection ?
 
-Testing intersection between multiple boxes using `BoxCollider.Bounds.Intersect` is easy, as long as the boxes are in the same space. But if one of the boxes doesn't have uniform rotation (0, 90, 180, 270), then there is no easy and working way to test for intersection.
+Testing intersection between multiple boxes using `BoxCollider.Bounds.Intersect` is easy, as long as the boxes are in the same space. But if one of the boxes doesn't have a uniform rotation (0, 90, 180, 270), then there is no easy and working way to test for intersection.
 
 You would need to create a oriented box (*OBB* as opposed to *AABB*) from the box collider and then write an intersection test for these boxes. More info [here](https://www.gamasutra.com/view/feature/131790/simple_intersection_tests_for_games.php) in the *An Oriented Bounding Box (OBB) Intersection Test* section.
