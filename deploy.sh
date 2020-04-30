@@ -12,8 +12,11 @@ rm -rf public
 mkdir public
 git clone git@github.com:oktomus/oktomus.github.io.git public
 
-# Build the project.
-hugo -v --debug 
+if hash rez 2>/dev/null; then
+	rez-env hugo -- hugo -v --debug
+else
+	hugo -v --debug
+fi
 
 # Go To Public folder
 cd public
