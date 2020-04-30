@@ -8,12 +8,39 @@
   color: $header-social-color;
 }
 
-.app-header h1 a {
+.app-header .site-title {
   color: $header-title-color;
 }
 
 .app-header p {
   color: $header-description-color;
+}
+
+.app-header {
+  nav {
+    color: blue;
+
+    ul {
+
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+
+        a {
+          font-size: 1.2rem;
+          color: $header-title-color;
+
+          .icon {
+            opacity: 0.5;
+            font-size: 0.8rem;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
 }
 
 .app-header {
