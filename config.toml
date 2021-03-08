@@ -27,8 +27,8 @@ disableKinds = ["taxonomyTerm", "taxonomy", "section"]
 
 [[params.social]]
   name = "mail"
-  url = "mailto:hi@oktomus.com"
-  title = "hi@oktomus.com"
+  url = "mailto:oktomus@ecomail.fr"
+  title = "oktomus@ecomail.fr"
 
 [[params.social]]
   name = "linkedin"
