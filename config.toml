@@ -11,7 +11,6 @@ disableKinds = ["taxonomyTerm", "taxonomy", "section"]
 
 [params]
   author = "Kevin Masson"
-  description = "Makes 3D softwares and photography while eating noodles."
   header = "oktomus"
   blogTitle = "Blog"
 
@@ -27,13 +26,8 @@ disableKinds = ["taxonomyTerm", "taxonomy", "section"]
 
 [[params.social]]
   name = "mail"
-  url = "mailto:oktomus@ecomail.fr"
-  title = "oktomus@ecomail.fr"
-
-[[params.social]]
-  name = "linkedin"
-  url = "https://www.linkedin.com/in/oktomus/"
-  title = "LinkedIn"
+  url = "mailto:contact@oktomus.com"
+  title = "contact@oktomus.com"
 
 [markup.goldmark.renderer]
 unsafe= true
