@@ -12,13 +12,12 @@
   .page-link {
     display: block;
     padding: 0.285em 0.8em;
+    border-bottom: none;
   }
 
   &.active {
     .page-link {
-      color: $lightest-color;
-      border-radius: 2em;
-      background: $primary-color;
+      font-weight: 800;
     }
   }
 }
